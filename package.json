@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "description": "The Spiral Scholar — an in-depth, beginner-friendly Wizard101 guide site",
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "dev": "next dev",
     "build": "next build",

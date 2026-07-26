@@ -44,7 +44,27 @@ npm run typecheck  # tsc --noEmit
 ```
 
 Optionally set `NEXT_PUBLIC_SITE_URL` for correct absolute URLs in the
-sitemap/robots/OG metadata.
+sitemap/robots/OG metadata (on Vercel this is auto-detected — see below).
+
+## Deploying to Vercel
+
+The app is a zero-config Vercel deploy:
+
+1. Push this repo to GitHub (already done if you're reading this there).
+2. On [vercel.com](https://vercel.com), **Add New → Project** and import the
+   repository. Vercel auto-detects Next.js — keep the defaults
+   (`npm install`, `next build`) and hit **Deploy**.
+3. Done. Every push to `main` redeploys production; PRs get preview URLs.
+
+Environment variables: none required. The canonical URL for the sitemap,
+robots.txt, and Open Graph tags is resolved automatically from Vercel's
+`VERCEL_PROJECT_PRODUCTION_URL`. If you attach a custom domain, set
+`NEXT_PUBLIC_SITE_URL=https://yourdomain.com` in the Vercel project settings
+so canonical URLs point at it.
+
+The site is fully static (54 prerendered pages, no database, no API routes),
+so it also runs anywhere else Next.js does (`npm run build && npm start`,
+Docker, etc.).
 
 ## Editing & adding content
 

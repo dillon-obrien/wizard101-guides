@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import { SchoolIcon } from "@/components/SchoolIcon";
 import { schools } from "@/content/schools";
 
 export const metadata: Metadata = {
@@ -29,9 +31,23 @@ export default function SchoolsPage() {
             href={`/schools/${s.slug}`}
             className="card overflow-hidden"
           >
-            <div aria-hidden className="h-1 w-full" style={{ backgroundColor: s.color }} />
+            <div className="relative">
+              <Image
+                src={`/images/school-${s.slug}.webp`}
+                alt={`Official artwork of the ${s.name} school professor`}
+                width={548}
+                height={414}
+                className="h-40 w-full object-cover object-top"
+              />
+              <div aria-hidden className="h-1 w-full" style={{ backgroundColor: s.color }} />
+            </div>
             <div className="p-6">
-              <h2 className="font-display text-2xl font-bold text-slate-900">{s.name}</h2>
+              <h2 className="flex items-center gap-2.5 font-display text-2xl font-bold text-slate-900">
+                <span style={{ color: s.color }}>
+                  <SchoolIcon school={s.slug} className="h-6 w-6" />
+                </span>
+                {s.name}
+              </h2>
               <p className="mt-1 text-sm font-semibold" style={{ color: s.color }}>
                 {s.archetype}
               </p>

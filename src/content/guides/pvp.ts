@@ -10,6 +10,7 @@ export const pvpGuides: Guide[] = [
       "How the arena actually works — practice vs ranked, seasons and ratings, the modern ruleset — and the mindset shift from PvE that decides most matches.",
     tags: ["pvp", "arena", "ranked", "beginner pvp"],
     updated: "July 2026",
+    image: { src: "/images/feature-pvp.webp", alt: "Official Wizard101 artwork of PvP dueling", width: 608, height: 342 },
     tldr: [
       "Two queues: **Practice** (free-for-all rules, zero stakes — start here) and **Ranked** (seasonal ratings, rewards, stricter modern ruleset).",
       "Modern ranked runs on the '5th Age' framework (the big 2022 overhaul): heavily curated spell rules — many treasure cards, healing enchants, and TC globals are flagged No-PvP — plus rating-based matchmaking. Exact rules shift patch to patch; the in-game arena screens are current law.",
@@ -95,6 +96,7 @@ export const pvpGuides: Guide[] = [
       "The preparation checklist serious arena players run: defensive stat floors, the PvP pet, deck architecture with answers, and side-tech that wins brackets.",
     tags: ["pvp gear", "pvp deck", "pet", "preparation"],
     updated: "July 2026",
+    image: { src: "/images/feature-pvp.webp", alt: "Official Wizard101 artwork of PvP dueling", width: 608, height: 342 },
     tldr: [
       "PvP gear inverts PvE logic: **resist, block, health, and pip consistency** climb the priority list; glass-cannon loadouts get farmed.",
       "The classic PvP pet leads with Spell-Proof + Spell-Defying (resist), then block/health/may-cast utility.",

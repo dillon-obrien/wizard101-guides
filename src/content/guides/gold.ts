@@ -88,6 +88,39 @@ export const goldGuides: Guide[] = [
           "The pattern: gold stops being scarce once selling discipline plus one burst farm exists. The real economy shifts to **energy, reagents, and time** — which is why the [gardening](/guides/gardening-101) and [reagent](/guides/reagent-farming-guide) guides exist.",
         ],
       },
+      {
+        title: "Gold sinks, ranked by value",
+        blocks: [
+          {
+            table: {
+              headers: ["Sink", "Verdict", "Why"],
+              rows: [
+                ["Pet hatches", "Excellent", "Converts gold into permanent account power — the endgame's main sink for a reason"],
+                ["Treasure card library", "Excellent", "Feints, heals, Tower Shields: consumables that win real fights, pennies each"],
+                ["Training point buyback", "Good (once)", "Fixing a genuinely misspent build beats living with it — but plan so you never need a second"],
+                ["Crafting reagents from the Bazaar", "Good", "Buying scarce reagents cheap beats farming them at 100g/hour of your time"],
+                ["Gold mounts", "Good (once)", "+40% speed forever; buy one permanent mount and never look back"],
+                ["Housing & furniture", "Fun-money", "A wonderful hobby with zero combat return — budget it like one"],
+                ["World-shop gear", "Never", "The Bazaar sells better for less, always"],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        title: "The week-one money plan (new wizard edition)",
+        blocks: [
+          {
+            steps: [
+              "Days 1–2: sell **every** drop at the Bazaar; buy nothing but Bazaar gear refreshes. You'll clear a few thousand gold by level 10.",
+              "Days 3–4: keep a 2k float for deck/gear upgrades; start the mount fund.",
+              "Day 5-ish: buy the cheapest **permanent** mount you like the look of — it out-earns every other early purchase in saved minutes.",
+              "Week 2+: float grows on autopilot; start the TC library (heals, Tower Shields) and stop thinking about gold until [pet hatching](/guides/pet-hatching-guide) begins.",
+              "From then on: gold problems are solved by one Halfang session, forever. Welcome to the middle class of the Spiral.",
+            ],
+          },
+        ],
+      },
     ],
     related: ["best-bosses-to-farm", "reagent-farming-guide", "gear-guide-levels-1-50"],
   },

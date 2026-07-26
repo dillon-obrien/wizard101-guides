@@ -10,6 +10,7 @@ export const systemsGuides: Guide[] = [
       "How fishing works, why school lures matter, what fish are actually for, and the chest drops that make it more than a screensaver.",
     tags: ["fishing", "lures", "energy", "chests"],
     updated: "July 2026",
+    image: { src: "/images/feature-fishing.webp", alt: "Official Wizard101 artwork of the fishing system", width: 608, height: 342 },
     tldr: [
       "Fishing unlocks at **level 7** — Lucky Hookline calls you to the Commons pond in Wizard City to learn the basics.",
       "Every fish belongs to a school; you catch it with the matching school's **lure**. Wrong lure = ignored bobber.",
@@ -67,6 +68,7 @@ export const systemsGuides: Guide[] = [
       "Stations, ranks, transmutes, and the crafted items that genuinely matter — plus why you do each world's crafting quest on the way through.",
     tags: ["crafting", "recipes", "stations", "transmutes"],
     updated: "July 2026",
+    image: { src: "/images/feature-crafting.webp", alt: "Official Wizard101 artwork of the crafting system", width: 608, height: 342 },
     tldr: [
       "Start with Eudora Tangletree in Olde Town (Wizard City) in your early teens; each world's crafting trainer then offers a rank-up quest.",
       "**Ranks gate recipes.** Do every world's crafting quest as you pass — backtracking rank quests at endgame is misery.",
@@ -329,6 +331,7 @@ export const systemsGuides: Guide[] = [
       "Deckathalon, Beastmoon, reward scrolls, holiday seasons — what each recurring event actually is and which are worth your week.",
     tags: ["events", "deckathalon", "beastmoon", "calendar"],
     updated: "July 2026",
+    image: { src: "/images/feature-events.webp", alt: "Official Wizard101 artwork of in-game events", width: 608, height: 342 },
     tldr: [
       "Wizard101 runs a rotating event calendar; most events are low-commitment reward tracks layered over a novel game mode.",
       "**Deckathalon**: solo tower climbs using treasure-card-only decks — a deckbuilding puzzle event with spellement/pet rewards.",
@@ -559,6 +562,7 @@ export const systemsGuides: Guide[] = [
       "From dorm room to island fortress: buying houses, decorating economics, gauntlet houses that contain dungeons, and the scripting rabbit hole.",
     tags: ["housing", "castles", "gauntlets", "castle magic", "decorating"],
     updated: "July 2026",
+    image: { src: "/images/feature-housing.webp", alt: "Official Wizard101 artwork of player housing", width: 608, height: 342 },
     tldr: [
       "Everyone starts with a free dorm; real houses come from gold vendors (each world sells themed castles) or crowns/bundles.",
       "Houses hold your [gardens](/guides/gardening-101), crafting stations, pets, mounts display, and up to hundreds of furniture items.",

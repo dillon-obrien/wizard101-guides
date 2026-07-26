@@ -31,6 +31,10 @@ export function Footer() {
             Game details change with updates — treat exact numbers as
             approximate and double-check current values in game.
           </p>
+          <p className="mt-2">
+            Artwork and screenshots © KingsIsle Entertainment, used here as
+            official promotional material for a non-commercial fan resource.
+          </p>
         </div>
       </div>
     </footer>

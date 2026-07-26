@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { worlds } from "@/content/worlds";
 import { slugify } from "@/lib/text";
@@ -66,6 +67,17 @@ export default function WorldsPage() {
         </Link>
         .
       </p>
+
+      <div className="mt-8 overflow-hidden rounded-2xl border border-slate-200 shadow-sm">
+        <Image
+          src="/images/worlds-wizard-city.webp"
+          alt="Official Wizard101 artwork of Wizard City, where every journey begins"
+          width={3444}
+          height={1152}
+          priority
+          className="h-auto w-full object-cover"
+        />
+      </div>
 
       <div className="mt-12 space-y-16">
         {ARCS.map((arc) => (

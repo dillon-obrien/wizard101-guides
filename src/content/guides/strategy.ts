@@ -41,6 +41,35 @@ export const strategyGuides: Guide[] = [
         ],
       },
       {
+        title: "The multiplier cheat sheet",
+        blocks: [
+          "Common stacks and what they're actually worth (using typical values — one +35% blade, +25% trap, +70% Feint; your school's exact numbers shift these slightly):",
+          {
+            table: {
+              headers: ["Setup", "Multiplier", "Rounds spent", "When it's right"],
+              rows: [
+                ["Blade → hit", "×1.35", "1 setup", "Street mobs — the everyday play"],
+                ["Blade + blade (two sources) → hit", "×1.82", "2", "Tanky streets, fast boss adds"],
+                ["Blade + Feint → hit", "×2.30", "2", "The standard solo boss opener"],
+                ["Blade + blade + Feint", "×3.10", "3", "Real bosses, solo"],
+                ["Two blades + two Feints (trained + TC)", "×5.27", "4", "Dungeon bosses; the classic 'one-shot' setup"],
+                ["Team: 3 supports blade the hitter + 2 Feints", "×7 and climbing", "2–3 (parallel!)", "Why coordinated teams delete bosses in one turn"],
+              ],
+              caption:
+                "Teams multiply *in parallel* — four wizards each casting one buff per round stack four multipliers per round. That's the entire secret of fast dungeon groups.",
+            },
+          },
+          {
+            callout: {
+              kind: "info",
+              body: [
+                "Diminishing returns are about *overkill*, not math — the sixth multiplier works fine, but if four already kill the boss, the fifth setup round was a wasted round. Know the target's health, stop stacking at 'dead'.",
+              ],
+            },
+          },
+        ],
+      },
+      {
         title: "What stacks with what (memorize this bit)",
         blocks: [
           {
@@ -261,5 +290,103 @@ export const strategyGuides: Guide[] = [
       },
     ],
     related: ["blades-traps-and-stacking", "waterworks-gear-guide", "darkmoor-gear-guide"],
+  },
+
+  {
+    slug: "shadow-magic-and-archmastery",
+    title: "Shadow Magic & Archmastery: The Endgame Pip Economy",
+    category: "strategy",
+    difficulty: "advanced",
+    blurb:
+      "The two systems that redefine combat after level 90: shadow pips and shadow-enhanced spells, plus the Archmastery school-pip engine that replaced old habits.",
+    tags: ["shadow magic", "archmastery", "school pips", "shadow pips", "endgame"],
+    updated: "July 2026",
+    tldr: [
+      "**Shadow magic** unlocks near the end of Khrysalis (~level 90s): shadow-enhanced spells are your new biggest hits, paid for with **shadow pips** earned during combat via your shadow pip rating.",
+      "**Archmastery** (added in 2022) gives everyone a Power Orb: your archmastery rating fills it, and each fill converts one power pip into a **school pip** of a school you choose.",
+      "School pips act like a switchable Mastery amulet — they count as power pips for their school, letting any wizard efficiently cast off-school utility (Life heals on a Storm, Feints on anyone).",
+      "You pick your school-pip school with the orb button on your deck — the choice saves per deck and can even be changed mid-fight.",
+      "Practical result: endgame turns are planned around three currencies at once — regular pips, shadow pips, and school pips. This guide is the mental model.",
+    ],
+    sections: [
+      {
+        title: "Shadow magic in plain English",
+        blocks: [
+          "Late in Arc 2 the story hands you shadow magic — mechanically, a second resource layered onto combat:",
+          {
+            list: [
+              "**Shadow pips** appear alongside normal pips during a fight. You don't buy them; they arrive based on your **shadow pip rating** (a gear stat) and combat flow.",
+              "**Shadow-enhanced spells** — the huge attacks your professors grant from the shadow era onward — cost normal pips *plus* one or more shadow pips. They're your endgame nukes; boss strategies revolve around timing them.",
+              "**True shadow forms** (transformations with backlash mechanics) also exist from the original system — niche today, but the backlash concept survives: shadow power always asks a price.",
+              "Because shadow pips arrive semi-randomly, endgame planning means having a 'shadow turn' play ready whenever the pip lands — not casting your setup at the exact moment the nuke becomes possible.",
+            ],
+          },
+          {
+            callout: {
+              kind: "info",
+              body: [
+                "Gear from Castle Darkmoor onward carries shadow pip rating for exactly this reason — the [gear progression guide](/guides/gear-progression-60-to-max) tracks which sets prioritize it (the Darkmoor-world 'Monster Hide' line famously trades crit for shadow rating).",
+              ],
+            },
+          },
+        ],
+      },
+      {
+        title: "Archmastery: the Power Orb explained",
+        blocks: [
+          "Archmastery arrived in the Fall 2022 update and quietly modernized the whole pip system:",
+          {
+            steps: [
+              "Your **archmastery rating** (a gear stat) fills a Power Orb during combat — faster rating, faster fills.",
+              "When the orb fills, one of your **power pips converts into a school pip** of your currently selected school.",
+              "**School pips** work like power pips *for that school* — including schools that aren't yours. This is the old Mastery-amulet effect, built into everyone, for free.",
+              "You choose the school with the orb icon on your deck screen; the choice is **saved per deck**, and you can switch it live during a match.",
+              "At full power-pip chance, the practical ceiling is about one school pip per round of orb-fill — enough to fundamentally change what off-school casting costs you.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "What Archmastery actually changes for you",
+        blocks: [
+          {
+            table: {
+              headers: ["You are…", "The Archmastery play"],
+              rows: [
+                ["A hitter (Storm/Fire/Myth)", "Set school pips to **Life** for real heals, or **Death** to power trained Feints — your glass cannon just grew a first-aid kit"],
+                ["A support (Life/Balance/Ice)", "Set pips to the hitter's school for tri-blades and utility, or to Death for cheap Feint spam — supports gained the most from this system"],
+                ["A soloist", "Rotate by fight: Life pips for hard bosses, your own school for farming speed"],
+                ["A PvP player", "Pip-school choice is now a strategic layer opponents read and bait — see [PvP prep](/guides/pvp-deck-and-prep)"],
+              ],
+              caption:
+                "One deck per job, each with its own saved pip school, is the modern loadout pattern.",
+            },
+          },
+          {
+            callout: {
+              kind: "tip",
+              body: [
+                "Old advice said 'buy a Mastery amulet if you want off-school power pips.' Archmastery made that free and flexible — amulets still stack value for dedicated builds, but a new player should learn the orb first and spend nothing.",
+              ],
+            },
+          },
+        ],
+      },
+      {
+        title: "The three-currency turn",
+        blocks: [
+          "Endgame turns juggle three resources. A comfortable mental model:",
+          {
+            list: [
+              "**Regular/power pips** — your bread: hits, blades, heals. Managed like always ([combat basics](/guides/combat-basics)).",
+              "**School pips** — your flexibility: budget them for the off-school utility you planned the deck around; don't let them idle unspent.",
+              "**Shadow pips** — your spike: the moment one lands, the next 1–2 turns should build into the shadow-enhanced finisher.",
+              "Cheat bosses at this level assume you're doing all three — scripts often punish hoarding or interrupt on a rhythm ([cheat literacy](/guides/cheating-bosses-101)) — so practice the juggle on street mobs until it's automatic.",
+            ],
+          },
+        ],
+      },
+    ],
+    related: ["combat-basics", "gear-progression-60-to-max", "cheating-bosses-101"],
   },
 ];

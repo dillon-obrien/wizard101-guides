@@ -47,6 +47,13 @@ export interface Section {
   blocks: Block[];
 }
 
+export interface GuideImage {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}
+
 export interface Guide {
   slug: string;
   title: string;
@@ -57,6 +64,8 @@ export interface Guide {
   tags: string[];
   /** e.g. "July 2026" */
   updated: string;
+  /** Optional banner artwork shown at the top of the guide. */
+  image?: GuideImage;
   /** The plain-English summary shown at the top of every guide. */
   tldr: string[];
   sections: Section[];

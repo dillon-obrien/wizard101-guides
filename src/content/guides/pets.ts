@@ -10,6 +10,7 @@ export const petGuides: Guide[] = [
       "What pets actually do, how ages and talents work, and the realistic path from 'cute follower' to 'stat machine that saves your life'.",
     tags: ["pets", "talents", "ages", "energy", "basics"],
     updated: "July 2026",
+    image: { src: "/images/feature-pets.webp", alt: "Official Wizard101 artwork of wizards with their pets", width: 608, height: 342 },
     tldr: [
       "A trained pet is effectively an extra gear slot: +damage, +resist, and lifesaving 'may-cast' heals, all passive.",
       "Pets level through **ages** (Baby → Teen → Adult → Ancient → Epic → Mega and beyond), revealing one talent per age from a hidden pool of ten.",
@@ -75,6 +76,34 @@ export const petGuides: Guide[] = [
         ],
       },
       {
+        title: "May-casts: triggers, value, and the silent-pet rule",
+        blocks: [
+          "May-cast talents fire on chance when specific things happen — taking a hit, casting, a round passing. Three practical truths:",
+          {
+            list: [
+              "**They're a soloist's superpower**: a pet that sometimes drops a free heal (Fairy Friend, Spritely) converts near-deaths into non-events all day. For leveling wizards, one may-cast heal outvalues a third damage talent.",
+              "**They're random, so never *plan* on them**: the pet is a bonus healer, not your healer. Decks still carry real heals ([deck building](/guides/deck-building-basics)).",
+              "**They can betray you in scripted fights**: cheat bosses that punish blades, traps, or heals count *pet casts* too. Veterans keep one 'silent' pet (pure stat talents, zero may-casts) for choreography-sensitive fights — an advanced-but-real reason the [cheat guide](/guides/cheating-bosses-101) keeps mentioning pets.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Kiosk search cheat sheet",
+        blocks: [
+          "Finding the right hatch partner in the Hatchmaking Kiosk is a skill. What to type and look for:",
+          {
+            list: [
+              "**Search your school** first — school pets often carry your school's Dealer/Giver line plus a useful item card.",
+              "**Scan revealed talents, ignore the species**: a Mega pet showing Dealer + Giver + Pain-Giver + Proof + a heal may-cast is the jackpot listing regardless of what animal it is.",
+              "**Full reveals beat potential**: five known-good talents beats three good reveals with two mysteries — you're buying the *pool*, and reveals are your only window into it.",
+              "**Check attribute totals** (Strength/Agility/etc.): higher stat caps mean the same talents give bigger numbers.",
+              "**Price ≠ quality**: kiosk fees scale with pedigree, but a well-bred mid-price pet from a generous breeder is common. The community keeps the kiosk stocked with god-tier lines on purpose — use them, and pay it forward later.",
+            ],
+          },
+        ],
+      },
+      {
         title: "Your realistic pet roadmap",
         blocks: [
           {
@@ -100,6 +129,7 @@ export const petGuides: Guide[] = [
       "How hatching mixes talent pools, why the Hatchmaking Kiosk changed everything, and the selective-breeding loop that ends in a perfect pet.",
     tags: ["hatching", "kiosk", "breeding", "talent pool"],
     updated: "July 2026",
+    image: { src: "/images/feature-pets.webp", alt: "Official Wizard101 artwork of wizards with their pets", width: 608, height: 342 },
     tldr: [
       "Hatching combines two pets: the egg's hidden talent pool draws from both parents. Hatch with a great pet and your baby can inherit its greatness.",
       "The **Hatchmaking Kiosk** (Pet Pavilion) lists community-offered pets — you can hatch with a near-perfect pet without knowing its owner.",
@@ -186,6 +216,7 @@ export const petGuides: Guide[] = [
       "The community-standard talent builds: the damage quint, the tank build, may-cast heals — with approximate values and what to reroll away.",
     tags: ["talents", "spell-proof", "pain-giver", "may cast", "meta"],
     updated: "July 2026",
+    image: { src: "/images/feature-pets.webp", alt: "Official Wizard101 artwork of wizards with their pets", width: 608, height: 342 },
     tldr: [
       "The classic questing build is 'damage + safety': school-Dealer + school-Giver + Pain-Giver (all +damage) plus Spell-Proof (+~10% resist) and a flex slot.",
       "May-cast heals (Fairy Friend, Spritely) are the best training wheels in the game — soloists should keep at least one.",

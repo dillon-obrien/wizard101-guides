@@ -342,6 +342,42 @@ export const gettingStartedGuides: Guide[] = [
         ],
       },
       {
+        title: "The status-effect zoo, tamed",
+        blocks: [
+          "Every icon that appears around a combatant belongs to one of a few families. Learn the families and no fight will ever look like visual noise again:",
+          {
+            table: {
+              headers: ["Family", "Sits on", "Examples", "One-line rule"],
+              rows: [
+                ["Charms (positive)", "A wizard, affects their *outgoing* casts", "Blades (+damage)", "Consumed by your next qualifying cast"],
+                ["Charms (negative)", "Same", "Weakness (−damage), Infection (−healing)", "Your next cast eats it — sometimes worth 'flushing' with a wand hit"],
+                ["Wards (positive)", "A combatant, affects *incoming* casts", "Shields (−damage), Absorbs (soak N damage)", "Consumed by the next qualifying hit against you"],
+                ["Wards (negative)", "Same", "Traps (+damage taken), Prisms (convert school)", "Consumed by the next qualifying hit — Feint is a trap"],
+                ["Overtime effects", "A combatant, ticks each round", "DoTs (burns), HoTs (Sprite)", "Tick at the start of the affected side's turns; DoTs already running ignore later shields"],
+                ["Auras", "You, several rounds", "Damage/healing/armor auras (Star school)", "One at a time — casting a new aura replaces the old"],
+                ["Globals", "The whole duel", "School 'bubbles' boosting damage or healing", "One at a time for *everyone* — casting replaces the enemy's bubble, and vice versa"],
+              ],
+              caption:
+                "Hover any icon in-game to read exactly what it is — the tooltip names the family for you.",
+            },
+          },
+        ],
+      },
+      {
+        title: "Turn order, precisely",
+        blocks: [
+          {
+            list: [
+              "**Join order = seat order.** Whoever enters a fight first sits first and acts first each round; allies who join later act later. In a planned team, your hitter joining *last* means everyone's blades land before their hit resolves that same round.",
+              "**First circle advantage:** acting earlier means your kill can remove an enemy before it acts; acting later means you see nothing new but benefit from teammates' setup. Both seats have uses — farming teams often deliberately order their entry.",
+              "**Mid-fight joiners** (friends porting in, street mobs wandering in) append to the end of their side's order and start with base pips — a rescuer arriving round 5 is a fresh body, not a fully-fueled one.",
+              "**Enemies added mid-fight** work the same way, which is why pulling extra street mobs into a running battle ('adds') is survivable: they arrive pipless.",
+              "**Fizzles, passes, and defeated combatants** don't shift the order — your seat is your seat until the fight ends.",
+            ],
+          },
+        ],
+      },
+      {
         title: "Reading the enemy",
         blocks: [
           "Hover any enemy to see its school, health, and rank. This tells you almost everything:",
@@ -446,6 +482,63 @@ export const gettingStartedGuides: Guide[] = [
               "Enchanted cards can't be enchanted twice — pick your best available enchant.",
               "Keep unenchanted copies of spells you plan to use with *other* enchants (like accuracy or the AoE-converting ones much later).",
             ],
+          },
+        ],
+      },
+      {
+        title: "Three ready-made deck skeletons",
+        blocks: [
+          "Copy these shapes, swap in your school's spells, adjust as your card pool grows:",
+          {
+            table: {
+              headers: ["Deck", "Main deck", "Sideboard (TCs)", "Use for"],
+              rows: [
+                [
+                  "**Street sweeper**",
+                  "3–4 school blades · 3 enchanted AoEs · 1–2 single hits",
+                  "2 heal TCs",
+                  "All normal questing. 8–9 cards, perfect draws, three-round fights",
+                ],
+                [
+                  "**Boss deck**",
+                  "3 blades · 2 Feints · 2–3 enchanted big hits (AoE + single) · 2 heals or shields",
+                  "2 heal TCs · 1 Feint TC · 1 Tower Shield TC · 1 big attack TC",
+                  "Named bosses, dungeon finales, anything with real health",
+                ],
+                [
+                  "**Cheat-fight deck**",
+                  "Blades *or* traps (whichever the script allows) · 2 hits · absorbs/shields for the script's beats",
+                  "Heals · cleanse (Triage-type) · one flexible answer",
+                  "Scripted fights — trimmed to the minimum spell types so nothing triggers by accident ([why](/guides/cheating-bosses-101))",
+                ],
+              ],
+              caption:
+                "The pattern: every deck answers exactly one question — 'what does *this* fight punish, and what does it reward?'",
+            },
+          },
+        ],
+      },
+      {
+        title: "Treasure cards worth stocking",
+        blocks: [
+          "A small standing TC library covers 95% of emergencies. All of these are cheap at the Bazaar or common drops:",
+          {
+            list: [
+              "**Heals:** Fairy and Pixie early; Satyr-tier once fights hit harder. The universal 'oops' button for every school but Life.",
+              "**Tower Shields:** −50% on demand turns boss nukes into shrugs; also the classic answer while learning a new dungeon.",
+              "**Feints:** the TC version stacks with your trained Feint — standard issue for boss and farming decks ([the math](/guides/blades-traps-and-stacking)).",
+              "**Blades of your school:** TC blades stack with trained and item blades; hitters should never run dry.",
+              "**One oversized attack:** a big off-school or same-school nuke TC for fights just above your weight class.",
+              "**Cleanse/utility:** a DoT-remover and a shield-breaker cover the two most common 'I'm stuck' moments.",
+            ],
+          },
+          {
+            callout: {
+              kind: "tip",
+              body: [
+                "Restock in tens, not twos — future-you burns TCs faster than present-you expects. Surplus is also tradeable to your own alt wizards through the Shared Bank.",
+              ],
+            },
           },
         ],
       },
@@ -722,5 +815,92 @@ export const gettingStartedGuides: Guide[] = [
       },
     ],
     related: ["complete-beginners-guide", "gold-farming-guide", "questing-faster"],
+  },
+
+  {
+    slug: "daily-and-weekly-routines",
+    title: "Daily & Weekly Routines: Compound Interest for Wizards",
+    category: "getting-started",
+    difficulty: "beginner",
+    blurb:
+      "The 15-minute daily loop and weekly rhythm that veterans run on autopilot — gardens, pets, dailies, events, and benefit weekends, in the right order.",
+    tags: ["daily", "routine", "checklist", "habits", "efficiency"],
+    updated: "July 2026",
+    tldr: [
+      "Progress in Wizard101 compounds: gardens, pet training, daily assignments, and event tracks all pay more for showing up daily than for binging.",
+      "The core 15-minute daily: tend the garden → daily assignment → spend spare energy (pet games or fishing) → claim any event track progress.",
+      "Weekly rhythm: plan farming around **Member Benefit weekends** (double rewards), check the event calendar Tuesday-ish, and batch Bazaar selling.",
+      "Streaks matter: daily assignment rewards escalate with consecutive days.",
+      "None of this is mandatory — it's the difference between an account that drifts and one that quietly gets rich while you quest.",
+    ],
+    sections: [
+      {
+        title: "Why routines beat binges here",
+        blocks: [
+          "Several of the game's systems are literally time-gated: plants grow in real days, energy refills on a clock, daily assignments reset daily, events run weekly tracks. A player who logs in 20 minutes a day out-earns a once-a-week marathoner on every one of those clocks — same total playtime, wildly different returns.",
+          {
+            callout: {
+              kind: "info",
+              body: [
+                "This guide assumes systems you may not have unlocked yet — gardens ([Gardening 101](/guides/gardening-101)), pets ([Pets 101](/guides/pets-101)), keys ([Skeleton Keys](/guides/skeleton-keys-guide)). Adopt each piece as it unlocks; the routine grows with your account.",
+              ],
+            },
+          },
+        ],
+      },
+      {
+        title: "The daily loop (~15 minutes)",
+        blocks: [
+          {
+            steps: [
+              "**Garden first** (5–8 min): tend needs, harvest matures/elders, replant returned seeds. The single highest-value habit in the game — it funds [pet snacks](/guides/best-plants-to-grow), gold, and amber.",
+              "**Daily assignment** (2–5 min): the daily task from the assignment system — rewards escalate with your streak and include gold, crowns-tier items, and keys. Never skip a streak day you could have kept.",
+              "**Spend the energy** (3–5 min): whatever the garden didn't use goes to pet minigames (training toward the next age) or a few fishing casts.",
+              "**Claim, then log off**: open the current event page and claim any completed track tiers — most tracks progress from things you already did.",
+              "Optional minute: glance at the Bazaar's reagent tab for underpriced rares ([sniping](/guides/reagent-farming-guide)); buy, bank, leave.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "The weekly rhythm",
+        blocks: [
+          {
+            table: {
+              headers: ["When", "What", "Why"],
+              rows: [
+                ["Early week", "Check the in-game event calendar and news", "Events rotate monthly-ish; knowing the week's modes shapes your plans"],
+                ["Any two evenings", "Your actual questing/farming sessions", "Progress happens here; the dailies just compound around it"],
+                ["**Member Benefit weekends**", "Batch the matching activity: double pet XP → train; double gardening → replant cycles; double reagents → harvest runs", "The same effort pays literally double — planning around benefits is the biggest free multiplier in the game"],
+                ["Weekend", "Batch Bazaar selling + one social farm (Team-Up a dungeon, spend saved keys with friends)", "Selling in batches saves time; [key bosses](/guides/skeleton-keys-guide) are better shared"],
+                ["Sunday check", "Pet age milestone? Garden replant? Event track finishing?", "Five minutes of review keeps every clock ticking into next week"],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        title: "Routines by account age",
+        blocks: [
+          {
+            list: [
+              "**Fresh account (level 1–20):** just quest. Add the daily assignment the day you notice it; add gardening ~level 12+. Don't build routines before there's anything to compound.",
+              "**Growing account (20–60):** the full daily loop starts paying — Couch Potato garden up, first serious pet in training, streak running.",
+              "**Endgame account:** the loop is the economy: mega-snack gardens feed hatch projects, keys accumulate for weekend runs, event tracks bankroll spellements. Questing becomes the thing you do *between* harvests, and honestly? It rules.",
+              "**Coming back from a break:** expect wilted plants (replant, forgive yourself), a dead streak (it rebuilds), and a full week of banked event progress. The routine restarts in one day.",
+            ],
+          },
+          {
+            callout: {
+              kind: "tip",
+              body: [
+                "Cap the routine at ~20 minutes. The moment dailies feel like a second job, cut the garden size, not the streak — sustainability beats scale, in gardening and in you.",
+              ],
+            },
+          },
+        ],
+      },
+    ],
+    related: ["gardening-101", "pets-101", "skeleton-keys-guide", "events-overview"],
   },
 ];

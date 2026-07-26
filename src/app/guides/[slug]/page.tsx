@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { DifficultyBadge, MetaBadge } from "@/components/Badges";
@@ -98,6 +99,19 @@ export default async function GuidePage({
           <MetaBadge>Updated {guide.updated}</MetaBadge>
         </div>
       </header>
+
+      {guide.image && (
+        <div className="mt-8 max-w-3xl overflow-hidden rounded-2xl border border-slate-200">
+          <Image
+            src={guide.image.src}
+            alt={guide.image.alt}
+            width={guide.image.width}
+            height={guide.image.height}
+            priority
+            className="h-auto w-full object-cover"
+          />
+        </div>
+      )}
 
       <div className="mt-10 gap-10 lg:grid lg:grid-cols-[minmax(0,1fr)_15rem]">
         <div className="max-w-3xl">

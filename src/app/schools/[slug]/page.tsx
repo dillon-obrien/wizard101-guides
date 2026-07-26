@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { GuideCard } from "@/components/GuideCard";
+import { SchoolIcon } from "@/components/SchoolIcon";
 import { schoolBySlug, schools } from "@/content/schools";
 import { getGuide } from "@/lib/guides";
 
@@ -42,30 +44,43 @@ export default async function SchoolPage({
     <article>
       {/* Hero */}
       <header className="border-b border-slate-200 bg-white">
-        <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6">
-          <p
-            className="text-sm font-bold uppercase tracking-widest"
-            style={{ color: school.color }}
-          >
-            {school.title}
-          </p>
-          <h1 className="mt-2 font-display text-4xl font-bold text-slate-900 sm:text-5xl">
-            {school.name}
-          </h1>
-          <p className="mt-3 max-w-2xl text-lg text-slate-600">{school.tagline}</p>
-          <div className="mt-6 flex flex-wrap items-center gap-2 text-sm">
-            {[
-              school.archetype,
-              `Base accuracy ${school.baseAccuracy}`,
-              `${school.newPlayerFriendliness} for new players`,
-            ].map((chip) => (
-              <span
-                key={chip}
-                className="rounded-full border border-slate-200 bg-slate-50 px-3.5 py-1.5 font-medium text-slate-600"
-              >
-                {chip}
-              </span>
-            ))}
+        <div className="mx-auto grid max-w-4xl items-center gap-8 px-4 py-12 sm:px-6 md:grid-cols-[1fr_16rem]">
+          <div>
+            <p
+              className="flex items-center gap-2 text-sm font-bold uppercase tracking-widest"
+              style={{ color: school.color }}
+            >
+              <SchoolIcon school={school.slug} className="h-5 w-5" />
+              {school.title}
+            </p>
+            <h1 className="mt-2 font-display text-4xl font-bold text-slate-900 sm:text-5xl">
+              {school.name}
+            </h1>
+            <p className="mt-3 max-w-2xl text-lg text-slate-600">{school.tagline}</p>
+            <div className="mt-6 flex flex-wrap items-center gap-2 text-sm">
+              {[
+                school.archetype,
+                `Base accuracy ${school.baseAccuracy}`,
+                `${school.newPlayerFriendliness} for new players`,
+              ].map((chip) => (
+                <span
+                  key={chip}
+                  className="rounded-full border border-slate-200 bg-slate-50 px-3.5 py-1.5 font-medium text-slate-600"
+                >
+                  {chip}
+                </span>
+              ))}
+            </div>
+          </div>
+          <div className="hidden overflow-hidden rounded-2xl border border-slate-200 shadow-sm md:block">
+            <Image
+              src={`/images/school-${school.slug}.webp`}
+              alt={`Official artwork of the ${school.name} school professor`}
+              width={548}
+              height={414}
+              priority
+              className="h-full w-full object-cover"
+            />
           </div>
         </div>
         <div aria-hidden className="h-1 w-full" style={{ backgroundColor: school.color }} />

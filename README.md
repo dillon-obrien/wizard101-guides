@@ -10,10 +10,14 @@ deeper when you want the details.
 
 ## What's inside
 
-- **35 deep-dive guides** across 9 categories: Getting Started, Leveling &
+- **37 deep-dive guides** across 9 categories: Getting Started, Leveling &
   Worlds, Gear, Pets, Gardening, Gold & Farming, Combat & Strategy, PvP, and
   Other Systems (fishing, crafting, monstrology, keys, events, raids,
-  housing…)
+  housing…) — including endgame systems like Shadow Magic & Archmastery
+- **Official artwork** (hero, school professors, feature banners) served
+  locally from `public/images/`, © KingsIsle Entertainment, credited in the
+  footer as non-commercial fan-site use of promotional material
+- **Custom SVG icon sets** for the seven schools and nine guide categories
 - **7 school deep-dives** — playstyle, strengths/weaknesses, signature
   spells, stat priorities, secondary picks, leveling tips
 - **Worlds timeline** — every world by arc with level ranges and highlights

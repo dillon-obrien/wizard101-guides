@@ -144,6 +144,34 @@ export const levelingGuides: Guide[] = [
         ],
       },
       {
+        title: "How long does this actually take?",
+        blocks: [
+          "Very rough played-time budgets from community experience — assume efficient solo play with a [tight deck](/guides/deck-building-basics); halve them for veteran duos, add half for explorers who read everything (respect):",
+          {
+            table: {
+              headers: ["Stretch", "Ballpark", "Feel"],
+              rows: [
+                ["Arc 1 (1–50)", "~40–60 hours", "Fast levels, short worlds; momentum era"],
+                ["Arc 2 (50–100)", "~80–120 hours", "Worlds double in length; Khrysalis alone is a saga"],
+                ["Arc 3 (100–130)", "~50–70 hours", "Shorter, denser worlds with harder fights"],
+                ["Arcs 4–5 (130–180)", "~60–90 hours", "Modern pacing; side systems compete for your time"],
+                ["The whole story", "~250–350 hours", "A season of your life, honestly well spent"],
+              ],
+              caption:
+                "Numbers are directional, not promises — XP events, membership benefits, and how often you stop to garden swing everything.",
+            },
+          },
+          {
+            callout: {
+              kind: "tip",
+              body: [
+                "Don't race it. The players who burn out are almost always the ones who treated 1–180 as a checklist; the ones still here a decade later gardened, farmed, and made friends along the way. The Spiral is a marathon aid station every ten levels.",
+              ],
+            },
+          },
+        ],
+      },
+      {
         title: "If you're underleveled (or bored)",
         blocks: [
           {

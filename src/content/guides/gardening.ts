@@ -10,6 +10,7 @@ export const gardeningGuides: Guide[] = [
       "How gardening works — plots, likes, needs, elder harvests — and the daily routine that quietly funds your pets, gold, and crafting forever.",
     tags: ["gardening", "plants", "energy", "elder harvest", "basics"],
     updated: "July 2026",
+    image: { src: "/images/feature-gardening.webp", alt: "Official Wizard101 artwork of the gardening system", width: 608, height: 342 },
     tldr: [
       "Gardening = plant seeds at your house, tend their needs with energy each day, and collect increasingly good harvests as they age.",
       "The jackpot is the **elder harvest**: the final, biggest reward, which usually returns seed(s) so the garden sustains itself.",
@@ -94,6 +95,7 @@ export const gardeningGuides: Guide[] = [
       "Couch Potatoes, Evil Magma Peas, Ultra King Parsley and friends — what each is for, where to get seeds, and sample garden setups.",
     tags: ["couch potatoes", "evil magma peas", "king parsley", "amber", "mega snacks"],
     updated: "July 2026",
+    image: { src: "/images/feature-gardening.webp", alt: "Official Wizard101 artwork of the gardening system", width: 608, height: 342 },
     tldr: [
       "**Couch Potatoes** are the backbone: reliable mega snacks for pet training, seeds farmable from Grizzleheim mobs or the Bazaar.",
       "**Evil Magma Peas** are the premium snack plant — outstanding harvests, scarcer seeds (drops/packs/gifting).",

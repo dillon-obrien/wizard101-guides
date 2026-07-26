@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import type { TocItem } from "@/lib/text";
 
 export function ScrollSpyToc({ items }: { items: TocItem[] }) {
-  const [active, setActive] = useState<string | null>(null);
+  const [active, setActive] = useState<string | null>(items[0]?.id ?? null);
 
   useEffect(() => {
     const headings = items

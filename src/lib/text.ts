@@ -30,7 +30,8 @@ export function readingMinutes(guide: Guide): number {
       (n, sec) => n + sec.blocks.reduce((m, b) => m + blockWords(b), 0),
       0,
     );
-  return Math.max(1, Math.round(words / 215));
+  // ~180 wpm: guide prose is dense with tables and steps, which read slower.
+  return Math.max(1, Math.ceil(words / 180));
 }
 
 export interface TocItem {

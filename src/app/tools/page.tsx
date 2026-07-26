@@ -15,6 +15,18 @@ const TOOLS = [
       "Stack blades, traps, auras, pierce and crits — see the exact hit, step by step. The classic community tool, rebuilt.",
   },
   {
+    href: "/tools/hatch-calculator",
+    name: "Hatch Odds Calculator",
+    blurb:
+      "Wow Factor return odds for both pet bodies, with the exclusive-pet placement rules built in.",
+  },
+  {
+    href: "/tools/draw-odds",
+    name: "Deck Draw Odds",
+    blurb:
+      "The exact chance your blade shows up by each round, for any deck size. The math behind small decks.",
+  },
+  {
     href: "/tools/training-points",
     name: "Training Point Planner",
     blurb:

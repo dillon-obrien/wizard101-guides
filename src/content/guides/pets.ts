@@ -176,6 +176,28 @@ export const petGuides: Guide[] = [
         ],
       },
       {
+        title: "Wow Factor: the hidden return-odds game",
+        blocks: [
+          "Which *body* comes out of the egg isn't a coin flip. Every pet body carries a hidden **Wow Factor** (0–10): the flashier and rarer the body, the higher the number — and the LOWER its chance of being returned from a hatch. Common drop pets sit around 0–3; rare crowns-tier bodies sit 7–10.",
+          {
+            list: [
+              "**The math:** each body's return chance is (11 − its WF) ÷ (22 − (WF₁ + WF₂)). Hatch a Firecat (WF 1) with a Clockwork Paladin (WF 10) and the Firecat body comes back ~91% of the time — plug your own pair into the [Hatch Odds Calculator](/tools/hatch-calculator).",
+              "**Exclusive bodies break the rules:** in a *self-hatch*, an Exclusive body placed on the RIGHT always returns the LEFT body — even if the left is itself Exclusive or retired.",
+              "**To get an Exclusive back:** put it on the LEFT in a self-hatch, or make it your Selected Pet in kiosk and in-person hatches, so normal wow-factor odds apply.",
+              "**Practical takeaway:** chasing a rare body through the kiosk is a numbers game — expect several hatches, and budget gold accordingly. Chasing *talents* doesn't care which body returns; the pool mixes either way.",
+            ],
+          },
+          {
+            callout: {
+              kind: "info",
+              body: [
+                "Wow factor is invisible in-game; the community has mapped it for ~1,700 pets through hatching research (the lineage of the classic petcalc tool). Our [calculator](/tools/hatch-calculator) ships the formulas plus a 0–10 reference table with example bodies per tier.",
+              ],
+            },
+          },
+        ],
+      },
+      {
         title: "Costs, timers, and multi-hatching",
         blocks: [
           {

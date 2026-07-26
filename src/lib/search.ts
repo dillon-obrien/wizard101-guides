@@ -42,6 +42,20 @@ const TOOL_DOCS: SearchDoc[] = [
     context: "Your world, gear standard, and next milestones at any level",
     keywords: "level advisor tool what to do at my level milestones gear checkpoint",
   },
+  {
+    title: "Hatch Odds Calculator",
+    href: "/tools/hatch-calculator",
+    type: "Tool",
+    context: "Wow Factor return odds + exclusive pet placement rules",
+    keywords: "hatch calculator wow factor pet body return odds hatching exclusive kiosk",
+  },
+  {
+    title: "Deck Draw Odds",
+    href: "/tools/draw-odds",
+    type: "Tool",
+    context: "Chance of drawing your blade by each round, any deck size",
+    keywords: "draw odds deck size probability blade hand cards math",
+  },
 ];
 
 export function buildSearchIndex(): SearchDoc[] {

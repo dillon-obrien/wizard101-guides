@@ -12,6 +12,11 @@ export interface GlossaryItem {
 export function GlossaryList({ entries }: { entries: GlossaryItem[] }) {
   const [query, setQuery] = useState("");
 
+  const allLetters = useMemo(
+    () => [...new Set(entries.map((e) => e.term[0].toUpperCase()))].sort(),
+    [entries],
+  );
+
   const groups = useMemo(() => {
     const q = query.trim().toLowerCase();
     const filtered = q
@@ -31,16 +36,49 @@ export function GlossaryList({ entries }: { entries: GlossaryItem[] }) {
     return [...byLetter.entries()].sort(([a], [b]) => a.localeCompare(b));
   }, [entries, query]);
 
+  const activeLetters = new Set(groups.map(([l]) => l));
+
   return (
     <div>
-      <input
-        type="search"
-        value={query}
-        onChange={(e) => setQuery(e.target.value)}
-        placeholder="Filter terms… (e.g. pip, feint, resist)"
-        aria-label="Filter glossary terms"
-        className="mb-8 w-full max-w-md rounded-full border border-night-600 bg-night-850 px-4 py-2.5 text-sm text-night-100 placeholder-night-400 outline-none focus:border-spark-500/60"
-      />
+      <div className="mb-6 flex flex-wrap items-center gap-4">
+        <input
+          type="search"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder="Filter terms… (e.g. pip, feint, resist)"
+          aria-label="Filter glossary terms"
+          className="w-full max-w-md rounded-full border border-night-600 bg-night-850 px-4 py-2.5 text-sm text-night-100 placeholder-night-400 outline-none focus:border-spark-500/60"
+        />
+      </div>
+
+      {/* A–Z jump bar */}
+      <nav
+        aria-label="Jump to letter"
+        className="sticky top-16 z-20 -mx-1 mb-8 overflow-x-auto border-b border-night-700/70 bg-night-900/95 px-1 py-2 backdrop-blur"
+      >
+        <div className="flex gap-1">
+          {allLetters.map((letter) => {
+            const enabled = activeLetters.has(letter);
+            return enabled ? (
+              <a
+                key={letter}
+                href={`#letter-${letter}`}
+                className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-sm font-bold text-night-200 transition hover:bg-night-700 hover:text-spark-300"
+              >
+                {letter}
+              </a>
+            ) : (
+              <span
+                key={letter}
+                aria-hidden
+                className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg text-sm font-bold text-night-600"
+              >
+                {letter}
+              </span>
+            );
+          })}
+        </div>
+      </nav>
 
       {groups.length === 0 && (
         <p className="rounded-xl border border-night-700 bg-night-850 p-8 text-center text-night-300">
@@ -50,7 +88,11 @@ export function GlossaryList({ entries }: { entries: GlossaryItem[] }) {
 
       <div className="space-y-10">
         {groups.map(([letter, items]) => (
-          <section key={letter} aria-label={`Terms starting with ${letter}`}>
+          <section
+            key={letter}
+            id={`letter-${letter}`}
+            aria-label={`Terms starting with ${letter}`}
+          >
             <h2 className="mb-3 font-display text-2xl font-bold text-spark-400">
               {letter}
             </h2>

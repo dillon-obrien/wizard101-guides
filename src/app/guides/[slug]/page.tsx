@@ -5,8 +5,11 @@ import { DifficultyBadge, MetaBadge } from "@/components/Badges";
 import { BlockRenderer } from "@/components/Blocks";
 import { GuideCard } from "@/components/GuideCard";
 import { Inline } from "@/components/Inline";
+import { ProgressBar } from "@/components/ProgressBar";
+import { ScrollSpyToc } from "@/components/ScrollSpyToc";
 import { categoryById } from "@/content/categories";
 import { allGuides, getGuide, relatedGuides } from "@/lib/guides";
+import { SITE_NAME, SITE_URL } from "@/lib/site";
 import { readingMinutes, tocFor } from "@/lib/text";
 
 interface Params {
@@ -42,9 +45,29 @@ export default async function GuidePage({
   const cat = categoryById.get(guide.category);
   const toc = tocFor(guide.sections);
   const related = relatedGuides(guide);
+  const index = allGuides.findIndex((g) => g.slug === guide.slug);
+  const prev = index > 0 ? allGuides[index - 1] : null;
+  const next = index < allGuides.length - 1 ? allGuides[index + 1] : null;
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: guide.title,
+    description: guide.blurb,
+    url: `${SITE_URL}/guides/${guide.slug}`,
+    articleSection: cat?.name,
+    keywords: guide.tags.join(", "),
+    publisher: { "@type": "Organization", name: SITE_NAME },
+  };
 
   return (
     <article className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
+      <ProgressBar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+
       {/* Breadcrumbs */}
       <nav aria-label="Breadcrumb" className="mb-6 text-sm text-night-300">
         <ol className="flex flex-wrap items-center gap-2">
@@ -142,6 +165,35 @@ export default async function GuidePage({
             and search it.
           </aside>
 
+          {/* Prev / next */}
+          <nav
+            aria-label="Previous and next guide"
+            className="mt-10 grid gap-4 sm:grid-cols-2"
+          >
+            {prev ? (
+              <Link href={`/guides/${prev.slug}`} className="card p-4">
+                <span className="text-xs font-semibold uppercase tracking-wide text-night-400">
+                  ← Previous
+                </span>
+                <span className="mt-1 block font-display font-bold leading-snug text-white">
+                  {prev.title}
+                </span>
+              </Link>
+            ) : (
+              <span aria-hidden />
+            )}
+            {next && (
+              <Link href={`/guides/${next.slug}`} className="card p-4 text-right">
+                <span className="text-xs font-semibold uppercase tracking-wide text-night-400">
+                  Next →
+                </span>
+                <span className="mt-1 block font-display font-bold leading-snug text-white">
+                  {next.title}
+                </span>
+              </Link>
+            )}
+          </nav>
+
           {/* Related */}
           {related.length > 0 && (
             <section className="mt-14" aria-label="Related guides">
@@ -157,26 +209,7 @@ export default async function GuidePage({
 
         {/* Desktop TOC */}
         <aside className="hidden lg:block">
-          <nav
-            aria-label="Table of contents"
-            className="sticky top-24 rounded-xl border border-night-700 bg-night-850/70 p-4"
-          >
-            <p className="mb-3 text-xs font-bold uppercase tracking-wider text-night-400">
-              On this page
-            </p>
-            <ol className="space-y-2.5 text-sm">
-              {toc.map((item) => (
-                <li key={item.id}>
-                  <a
-                    href={`#${item.id}`}
-                    className="block leading-snug text-night-300 transition hover:text-spark-300"
-                  >
-                    {item.title}
-                  </a>
-                </li>
-              ))}
-            </ol>
-          </nav>
+          <ScrollSpyToc items={toc} />
         </aside>
       </div>
     </article>

@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { BackToTop } from "@/components/BackToTop";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { buildSearchIndex } from "@/lib/search";
@@ -38,6 +39,7 @@ export default function RootLayout({
         <Header searchDocs={searchDocs} />
         <main id="content">{children}</main>
         <Footer />
+        <BackToTop />
       </body>
     </html>
   );

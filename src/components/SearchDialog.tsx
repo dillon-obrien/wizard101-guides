@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { SearchDoc } from "@/lib/search";
 
@@ -27,11 +28,15 @@ function score(doc: SearchDoc, tokens: string[]): number {
 export function SearchDialog({ docs }: { docs: SearchDoc[] }) {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
+  const [selected, setSelected] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
+  const listRef = useRef<HTMLDivElement>(null);
+  const router = useRouter();
 
   const close = useCallback(() => {
     setOpen(false);
     setQuery("");
+    setSelected(0);
   }, []);
 
   useEffect(() => {
@@ -70,9 +75,27 @@ export function SearchDialog({ docs }: { docs: SearchDoc[] }) {
       .map((r) => r.doc);
   }, [docs, query]);
 
+  // Flat list in display order so arrow keys move visually top-to-bottom.
+  const flat = useMemo(() => {
+    const grouped: SearchDoc[] = [];
+    for (const type of GROUP_ORDER) {
+      grouped.push(...results.filter((r) => r.type === type));
+    }
+    return grouped;
+  }, [results]);
+
+  useEffect(() => {
+    setSelected(0);
+  }, [query]);
+
+  useEffect(() => {
+    const el = listRef.current?.querySelector('[data-selected="true"]');
+    el?.scrollIntoView({ block: "nearest" });
+  }, [selected]);
+
   const grouped = useMemo(() => {
     const map = new Map<SearchDoc["type"], SearchDoc[]>();
-    for (const doc of results) {
+    for (const doc of flat) {
       const list = map.get(doc.type) ?? [];
       list.push(doc);
       map.set(doc.type, list);
@@ -81,7 +104,21 @@ export function SearchDialog({ docs }: { docs: SearchDoc[] }) {
       type: t,
       items: map.get(t)!,
     }));
-  }, [results]);
+  }, [flat]);
+
+  function onInputKeyDown(e: React.KeyboardEvent) {
+    if (e.key === "ArrowDown") {
+      e.preventDefault();
+      setSelected((s) => Math.min(s + 1, flat.length - 1));
+    } else if (e.key === "ArrowUp") {
+      e.preventDefault();
+      setSelected((s) => Math.max(s - 1, 0));
+    } else if (e.key === "Enter" && flat[selected]) {
+      e.preventDefault();
+      router.push(flat[selected].href);
+      close();
+    }
+  }
 
   return (
     <>
@@ -119,7 +156,9 @@ export function SearchDialog({ docs }: { docs: SearchDoc[] }) {
                 ref={inputRef}
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
+                onKeyDown={onInputKeyDown}
                 placeholder="Search guides, schools, glossary…"
+                aria-label="Search query"
                 className="w-full bg-transparent py-3.5 text-base text-night-100 placeholder-night-400 outline-none"
               />
               <button
@@ -131,7 +170,7 @@ export function SearchDialog({ docs }: { docs: SearchDoc[] }) {
               </button>
             </div>
 
-            <div className="max-h-[55vh] overflow-y-auto p-2">
+            <div ref={listRef} className="max-h-[55vh] overflow-y-auto p-2">
               {query.trim() === "" && (
                 <p className="px-3 py-6 text-center text-sm text-night-300">
                   Try <span className="text-spark-400">“feint”</span>,{" "}
@@ -140,7 +179,7 @@ export function SearchDialog({ docs }: { docs: SearchDoc[] }) {
                   <span className="text-spark-400">“best school”</span>
                 </p>
               )}
-              {query.trim() !== "" && results.length === 0 && (
+              {query.trim() !== "" && flat.length === 0 && (
                 <p className="px-3 py-6 text-center text-sm text-night-300">
                   Nothing found — the spell fizzled. Try a shorter word?
                 </p>
@@ -150,23 +189,36 @@ export function SearchDialog({ docs }: { docs: SearchDoc[] }) {
                   <p className="px-3 pb-1 pt-2 text-[11px] font-bold uppercase tracking-wider text-night-400">
                     {group.type === "Guide" ? "Guides" : group.type === "School" ? "Schools" : group.type === "World" ? "Worlds" : group.type}
                   </p>
-                  {group.items.map((doc) => (
-                    <Link
-                      key={doc.href + doc.title}
-                      href={doc.href}
-                      onClick={close}
-                      className="block rounded-lg px-3 py-2 hover:bg-night-700/60"
-                    >
-                      <span className="block text-sm font-semibold text-night-100">
-                        {doc.title}
-                      </span>
-                      <span className="mt-0.5 block truncate text-xs text-night-300">
-                        {doc.context}
-                      </span>
-                    </Link>
-                  ))}
+                  {group.items.map((doc) => {
+                    const index = flat.indexOf(doc);
+                    const isSelected = index === selected;
+                    return (
+                      <Link
+                        key={doc.href + doc.title}
+                        href={doc.href}
+                        onClick={close}
+                        onMouseEnter={() => setSelected(index)}
+                        data-selected={isSelected || undefined}
+                        className={`block rounded-lg px-3 py-2 ${
+                          isSelected ? "bg-night-700/80" : "hover:bg-night-700/60"
+                        }`}
+                      >
+                        <span className="block text-sm font-semibold text-night-100">
+                          {doc.title}
+                        </span>
+                        <span className="mt-0.5 block truncate text-xs text-night-300">
+                          {doc.context}
+                        </span>
+                      </Link>
+                    );
+                  })}
                 </div>
               ))}
+              {flat.length > 0 && (
+                <p className="border-t border-night-700 px-3 pb-1 pt-2 text-center text-[11px] text-night-400">
+                  ↑↓ to navigate · Enter to open · Esc to close
+                </p>
+              )}
             </div>
           </div>
         </div>

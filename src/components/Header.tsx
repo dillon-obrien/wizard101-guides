@@ -58,6 +58,12 @@ export function Header({ searchDocs }: { searchDocs: SearchDoc[] }) {
         </nav>
 
         <div className="flex items-center gap-2">
+          <Link
+            href="/guides/complete-beginners-guide"
+            className="hidden shrink-0 rounded-full bg-spark-500 px-4 py-1.5 text-sm font-semibold text-night-950 transition hover:bg-spark-400 lg:inline-flex"
+          >
+            🧭 Start here
+          </Link>
           <SearchDialog docs={searchDocs} />
           <button
             type="button"
@@ -91,6 +97,12 @@ export function Header({ searchDocs }: { searchDocs: SearchDoc[] }) {
               {item.label}
             </Link>
           ))}
+          <Link
+            href="/guides/complete-beginners-guide"
+            className="mt-2 block rounded-lg bg-spark-500 px-3 py-2.5 text-center text-base font-semibold text-night-950"
+          >
+            🧭 New player? Start here
+          </Link>
         </nav>
       )}
     </header>

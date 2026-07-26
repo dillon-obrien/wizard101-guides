@@ -130,6 +130,33 @@ export default function HomePage() {
         </ol>
       </section>
 
+      {/* Quick answers */}
+      <section className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
+        <h2 className="font-display text-3xl font-bold text-white">
+          What do you need <span className="text-spark-400">right now?</span>
+        </h2>
+        <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            ["😤", "I'm stuck on a boss", "It's probably a cheat script — here's how to read it.", "/guides/cheating-bosses-101"],
+            ["💸", "I'm broke", "The Halfang routine and sell-discipline that fixes gold forever.", "/guides/gold-farming-guide"],
+            ["🐌", "Fights feel slow", "The tiny-deck trick and blade math that end fights in 3 rounds.", "/guides/deck-building-basics"],
+            ["🐾", "My pet is useless", "The talents that matter and the breeding loop to get them.", "/guides/pet-talents-that-matter"],
+            ["🎒", "What gear at my level?", "The free checkpoint path from Bazaar rags to Darkmoor.", "/guides/gear-guide-levels-1-50"],
+            ["🗺️", "Where do I quest next?", "Every world in order, with detours worth taking.", "/guides/world-order-and-leveling"],
+            ["🤝", "I can't find a team", "Team-Up, sigil manners, and why supports blade the hitter.", "/guides/team-up-and-dungeon-etiquette"],
+            ["❓", "What does this word mean?", "Every Spiral term, defined in plain English.", "/glossary"],
+          ].map(([emoji, title, note, href]) => (
+            <Link key={href} href={href} className="card flex items-start gap-3 p-4">
+              <span aria-hidden className="text-2xl">{emoji}</span>
+              <span>
+                <span className="block font-semibold text-white">{title}</span>
+                <span className="mt-0.5 block text-xs leading-relaxed text-night-300">{note}</span>
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* Categories */}
       <section className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
         <h2 className="font-display text-3xl font-bold text-white">

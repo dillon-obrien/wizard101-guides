@@ -10,9 +10,10 @@ deeper when you want the details.
 
 ## What's inside
 
-- **34 deep-dive guides** across 9 categories: Getting Started, Leveling &
+- **35 deep-dive guides** across 9 categories: Getting Started, Leveling &
   Worlds, Gear, Pets, Gardening, Gold & Farming, Combat & Strategy, PvP, and
-  Other Systems (fishing, crafting, monstrology, keys, events, housing…)
+  Other Systems (fishing, crafting, monstrology, keys, events, raids,
+  housing…)
 - **7 school deep-dives** — playstyle, strengths/weaknesses, signature
   spells, stat priorities, secondary picks, leveling tips
 - **Worlds timeline** — every world by arc with level ranges and highlights
@@ -89,7 +90,10 @@ duplicate slugs, and bad `related` references **fail the build** on purpose
 
 ## Content accuracy
 
-Wizard101 changes with every update. The guides deliberately teach durable
-systems and strategy, hedge exact numbers (~values), and point readers to
-in-game screens or live community resources for patch-sensitive specifics
-(drop tables, PvP rules, current level cap).
+Wizard101 changes with every update. Content was verified against community
+sources (Final Bastion, official news, established fan guides) as of the
+**Darkmoor world era (Arc 5, level cap 180, mid-2026 snapshot)**. The guides
+still deliberately teach durable systems and strategy first, hedge
+patch-sensitive numbers (~values), and point readers to in-game screens or
+live community resources for the fastest-moving specifics (drop tables, PvP
+rules, current best-in-slot).

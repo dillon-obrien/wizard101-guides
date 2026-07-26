@@ -11,9 +11,9 @@ export const levelingGuides: Guide[] = [
     tags: ["worlds", "leveling", "roadmap", "story arcs", "level ranges"],
     updated: "July 2026",
     tldr: [
-      "Follow the main storyline and the worlds order themselves: Wizard City → Krokotopia → Marleybone → MooShu → Dragonspyre completes Arc 1 (levels ~1–50).",
-      "Arc 2 (Celestia → Khrysalis) covers ~50–100. Arc 3 (Polaris → Empyrea) covers ~100–130. Arc 4 (Karamelle onward) runs to the current cap.",
-      "Feeling underleveled? Detour into side content — Grizzleheim (20+), Wysteria (25+), Wintertusk (40+) — instead of grinding mobs.",
+      "Follow the main storyline and the worlds order themselves: Wizard City → Krokotopia → Marleybone → MooShu → Dragonspyre completes Arc 1 (levels ~1–50). The rhythm after that: one world per 10 levels.",
+      "Arc 2 (Celestia → Khrysalis) covers 50–100. Arc 3 (Polaris → Empyrea) covers 100–130. Arc 4 (Karamelle → Wallaru) covers 130–170. Arc 5 opened in late 2025 with the Darkmoor world (170–180, the current cap).",
+      "Feeling underleveled? Detour into side content — Grizzleheim (20+), Wysteria (25+), Wintertusk (after Grizzleheim) — instead of grinding mobs.",
       "Do every world's Zeke quest for training points as you pass through.",
       "A visual version of this list lives on the [Worlds page](/worlds).",
     ],
@@ -42,13 +42,13 @@ export const levelingGuides: Guide[] = [
             table: {
               headers: ["World", "Rough levels", "Vibe & what matters"],
               rows: [
-                ["🏰 Wizard City", "1–12", "Home base. Learn combat, meet the schools, clear the streets. Fishing/crafting/monstrology intros unlock here around level 12."],
-                ["🐫 Krokotopia", "12–22", "Desert pyramids and the Krok empire. Visit Niles on the Krokosphinx for elemental/spirit blades; the Bazaar back home becomes your gear shop."],
-                ["🎩 Marleybone", "22–32", "Victorian dog-detective city. Rooftop navigation, tougher street mobs, and the infamous Big Ben tower finale."],
-                ["🌸 MooShu", "32–42", "Serene East-Asian-inspired world with corrupted emperors. Long but pretty; your healing and AoE spells mature here."],
-                ["🌋 Dragonspyre", "42–50", "Ruined volcanic war-world. Arc 1 finale: labyrinths, the Great Spyre, and Malistaire himself. Your level-48 school spell quest happens here too."],
+                ["🏰 Wizard City", "1–10", "Home base. Learn combat, meet the schools, clear the streets. Fishing/crafting/monstrology intros unlock here around level 12."],
+                ["🐫 Krokotopia", "10–20", "Desert pyramids and the Krok empire. Visit Niles on the Krokosphinx for elemental/spirit blades; the Bazaar back home becomes your gear shop. (A 2024 update rebuilt this world visually and added the Selenopolis zone — a level-50 bridge story you'll return for.)"],
+                ["🎩 Marleybone", "20–30", "Victorian dog-detective city. Rooftop navigation, tougher street mobs, and the infamous Big Ben tower finale."],
+                ["🌸 MooShu", "30–40", "Serene East-Asian-inspired world with corrupted emperors. Long but pretty; your healing and AoE spells mature here."],
+                ["🌋 Dragonspyre", "40–50", "Ruined volcanic war-world. Arc 1 finale: labyrinths, the Great Spyre, and Malistaire himself. Your level-48 school spell quest happens here too."],
               ],
-              caption: "Level ranges are the community's practical guideposts, not hard gates.",
+              caption: "Level ranges are the community's practical guideposts (one world per ~10 levels), not hard gates.",
             },
           },
         ],
@@ -61,11 +61,11 @@ export const levelingGuides: Guide[] = [
             table: {
               headers: ["World", "Rough levels", "Vibe & what matters"],
               rows: [
-                ["🌊 Celestia", "50–58", "Sunken sci-fi Atlantis. Introduces the **Astral schools** (Sun/Star/Moon) — start buying damage enchants immediately. Waterworks unlocks at 60 back in Wizard City."],
-                ["🦓 Zafaria", "58–68", "Savanna world. Mobs start hitting harder in packs; your AoE game matters."],
-                ["⚔️ Avalon", "68–78", "Arthurian Britain with a wyrm-sized twist. Fan-favorite story; solid gear steps."],
-                ["🦖 Azteca", "78–88", "Dinosaur apocalypse. Widely considered the arc's difficulty spike — bring friends or henchmen for the endgame gauntlet."],
-                ["🕷️ Khrysalis", "88–100", "Morganthe's insect empire. Long (two chapters), dark, and satisfying; **Shadow magic** unlocks near the end. Darkmoor gear farming begins at 100."],
+                ["🌊 Celestia", "50–60", "Sunken sci-fi Atlantis. Introduces the **Astral schools** (Sun/Star/Moon) — start buying damage enchants immediately. Waterworks unlocks at 60 back in Wizard City."],
+                ["🦓 Zafaria", "60–70", "Savanna world. Mobs start hitting harder in packs; your AoE game matters."],
+                ["⚔️ Avalon", "70–80", "Arthurian Britain with a wyrm-sized twist. Fan-favorite story; solid gear steps."],
+                ["🦖 Azteca", "80–90", "Dinosaur apocalypse. Widely considered the arc's difficulty spike — bring friends or henchmen for the endgame gauntlet."],
+                ["🕷️ Khrysalis", "90–100", "Morganthe's insect empire. Long (two chapters), dark, and satisfying; **Shadow magic** unlocks near the end. Castle Darkmoor gear farming begins at 100."],
               ],
             },
           },
@@ -96,20 +96,32 @@ export const levelingGuides: Guide[] = [
         ],
       },
       {
-        title: "Arc 4 — The newest chapters (levels ~130 to the cap)",
+        title: "Arc 4 — The Cabal years (levels ~130–170)",
         blocks: [
           {
             table: {
               headers: ["World", "Rough levels", "Vibe & what matters"],
               rows: [
                 ["🍬 Karamelle", "130–140", "A candy world with a surprisingly sinister aftertaste."],
-                ["🌺 Lemuria", "140–150", "Lost-continent mystery; the Cabal storyline deepens."],
+                ["🌺 Lemuria", "140–150", "Lost-continent mystery; the Cabal storyline deepens. Guild **raids** (12-wizard bosses) enter the game this era."],
                 ["🎨 Novus", "150–160", "Surreal, abstract, end-of-the-map energy."],
-                ["🪃 Wallaru", "160–170", "Australian-inspired world; the current frontier as of this writing."],
+                ["🪃 Wallaru", "160–170", "Australian-inspired world that closes out the arc."],
               ],
-              caption:
-                "New worlds usually arrive in fall updates and raise the cap by ~10 levels. Check in-game for anything newer than this table.",
             },
+          },
+        ],
+      },
+      {
+        title: "Arc 5 — Darkmoor rising (levels ~170–180, the current cap)",
+        blocks: [
+          "In November 2025 the Spiral got its newest world — and it's a familiar name: **Darkmoor**, the gothic-horror homeland of the infamous level-100 castle, expanded into a full world that opens Arc 5 and raises the level cap to **180** (the current maximum as of this guide's snapshot).",
+          {
+            list: [
+              "Don't confuse the two Darkmoors: **Castle Darkmoor** is the classic level-100 dungeon; **Darkmoor the world** is the 170–180 Arc 5 opener.",
+              "Its 180 gear splits into offense (**Abomination**) and defense (**Monster Hide**) philosophies — the era's loadout decision.",
+              "Between Wallaru and Darkmoor, a 2024 update also added **Selenopolis** (a story zone inside revamped Krokotopia) and the **Magic Weaving** spell-progression system — the game keeps growing between worlds, not just with them.",
+              "New worlds usually land in fall updates and raise the cap ~10 levels; check in-game news for anything newer than this table.",
+            ],
           },
         ],
       },
@@ -120,11 +132,11 @@ export const levelingGuides: Guide[] = [
             table: {
               headers: ["Side world", "Unlocks", "Do it when…", "Payoff"],
               rows: [
-                ["🐻 Grizzleheim", "~Level 20 (quest from Ambrose)", "During Marleybone/MooShu lulls", "XP, gear, and it seeds Wintertusk"],
-                ["🐷 Wysteria", "~Level 25", "Any Arc 1 slow patch", "Quick XP burst, fun tournament story"],
-                ["🐻‍❄️ Wintertusk", "~Level 40 (after Grizzleheim)", "Late Dragonspyre / early Celestia", "Big XP and the famous level-55 'Grandmother Raven' school spells — [full guide](/guides/grizzleheim-and-wintertusk)"],
-                ["🏛️ Aquila dungeons", "Levels 30 / 70 / 90", "Exactly at those levels", "Mount Olympus, Atlantea, and Tartarus drop era-defining gear"],
-                ["🗝️ Catacombs & key bosses", "Endgame", "Max-level gear pushes", "Dragoon gear, spellements, raids-lite"],
+                ["🐻 Grizzleheim", "Level 20 (Ambrose's quest 'Grizzleheim')", "During Marleybone/MooShu lulls", "XP, gear, and it seeds Wintertusk"],
+                ["🐷 Wysteria", "Level 25 (Ambrose's 'To The Registrar')", "Any Arc 1 slow patch", "Quick XP burst, fun tournament story"],
+                ["🐻‍❄️ Wintertusk", "After finishing Grizzleheim (Ambrose's 'Cold News'; tuned for 40+)", "Late Dragonspyre / early Celestia", "Big XP and the famous level-55 bonus spells (Talos, Availing Hands…) — [full guide](/guides/grizzleheim-and-wintertusk)"],
+                ["🏛️ Aquila dungeons", "Levels 30 / 70 / 90 (Cyrus Drake's quests)", "Exactly at those levels", "Mount Olympus, Atlantea, and Tartarus drop era-defining gear"],
+                ["🗝️ Catacombs & key bosses", "Level 130 (under Wizard City)", "Max-level gear pushes", "Dragoon gear, spellements, and the endgame community's playground"],
               ],
             },
           },
@@ -264,8 +276,8 @@ export const levelingGuides: Guide[] = [
     tags: ["grizzleheim", "wintertusk", "side worlds", "level 55 spells"],
     updated: "July 2026",
     tldr: [
-      "Grizzleheim unlocks around level 20; Wintertusk continues its story from around level 40. Together they're the best XP-per-hour side content in the game.",
-      "Wintertusk's endgame quests from Grandmother Raven award bonus school spells (the famous \"level 55 spells\") — a real power bump for every school.",
+      "Grizzleheim unlocks at level 20 (Merle Ambrose summons you); Wintertusk unlocks once Grizzleheim's story is done, via Ambrose's quest 'Cold News'. Together they're the best XP-per-hour side content in the game.",
+      "These worlds award **bonus school spells** via Baldur Goldpaws in Olde Town: a level-35 spell from Grizzleheim (Fuel, Supercharge, Triage…) and the famous level-55 spell from Wintertusk (Talos, Availing Hands, Frozen Armor…).",
       "Ideal timing: nibble Grizzleheim during Marleybone/MooShu, then clear Wintertusk during late Dragonspyre or early Celestia.",
       "Couch Potato seeds (the mega-snack plant) drop from Grizzleheim mobs — relevant the moment you start [gardening](/guides/gardening-101).",
       "Wintertusk's Halfang is the game's classic [gold farm](/guides/gold-farming-guide).",
@@ -294,18 +306,47 @@ export const levelingGuides: Guide[] = [
               "**Levels 25–35:** Continue Grizzleheim in chunks between MooShu chapters. Finishing the world around the high 30s is perfect.",
               "**~Level 40:** Wintertusk's opening becomes available once Grizzleheim's story is done. Park it.",
               "**Levels 48–55 (late Dragonspyre / early Celestia):** Clear Wintertusk properly. The XP often carries you across an entire main-world level gap, and you finish right as its spell rewards become usable.",
-              "**Level 55+:** Complete Grandmother Raven's quests for your school's bonus spell — then enjoy being noticeably stronger for the rest of Arc 2.",
+              "**Level 55+:** Return to Baldur Goldpaws for the level-55 spell quest (you'll need your level-35 spell and Sudrilund progress) — then enjoy the upgrade for the rest of Arc 2.",
             ],
           },
         ],
       },
       {
-        title: "What you're there to collect",
+        title: "The bonus spells (levels 35 & 55) — verified list",
+        blocks: [
+          "Both worlds feed a special quest line from **Baldur Goldpaws in Olde Town** (Wizard City). Complete the requirements and your school gets a bonus spell — one at level 35 tied to Grizzleheim, one at level 55 tied to Wintertusk. These are mostly *utility* spells rather than nukes, and several are quietly kit-defining:",
+          {
+            table: {
+              caption:
+                "The level-55 quest ('Su Su Sudrilund' era) requires having the level-35 spell and questing to Sudrilund in Wintertusk.",
+              headers: ["School", "Level 35 (Grizzleheim)", "Level 55 (Wintertusk)"],
+              rows: [
+                ["🔥 Fire", "Fuel (triple trap for your burns)", "Power Link (heal-over-time link)"],
+                ["❄️ Ice", "Legion Shield (team shield)", "Frozen Armor (absorb)"],
+                ["⚡ Storm", "Supercharge (pips → blades)", "Insane Bolt (huge gamble bolt — the meme lives)"],
+                ["👁️ Myth", "Shatter (wipe ALL enemy shields)", "Talos (a genuinely excellent minion)"],
+                ["🌿 Life", "Triage (remove a DoT)", "Brilliant Light (heal support)"],
+                ["💀 Death", "Dark Pact (self-trap → blade)", "Virulent Plague (mass debuff)"],
+                ["⚖️ Balance", "Elemental/Spirit Defuse (trap removal)", "Availing Hands (strong heal-over-time)"],
+              ],
+            },
+          },
+          {
+            callout: {
+              kind: "tip",
+              body: [
+                "Standouts worth planning around: **Shatter** (Myth) deletes turtle bosses, **Talos** (Myth) is arguably the best minion in the game, **Availing Hands** (Balance) patches Balance's healing, and **Fuel + burns** (Fire) is a whole playstyle. Storm's Insane Bolt can hit *you* — cast it for the story, keep it for the laughs.",
+              ],
+            },
+          },
+        ],
+      },
+      {
+        title: "What else you're there to collect",
         blocks: [
           {
             list: [
               "**XP, in slabs** — Wintertusk especially is famous for how far it fast-forwards the Celestia-era grind.",
-              "**Bonus school spells** — Wintertusk's finale rewards each school a strong extra spell (community shorthand: \"the 55 spells\"). For several schools it's a kit-defining pickup.",
               "**A training point** from Grizzleheim's Zeke-equivalent collectible quest (and one in Wintertusk too) — see [side content](/guides/side-content-worth-doing).",
               "**Couch Potato seeds** — drop from Grizzleheim-area mobs; the backbone of the mega-snack economy in [gardening](/guides/best-plants-to-grow).",
               "**Craftable gear recipes** — Wintertusk-era crafted gear (level ~56) is a respected free alternative if Waterworks farming bores you.",
@@ -321,7 +362,7 @@ export const levelingGuides: Guide[] = [
           {
             list: [
               "Wintertusk's final dungeons feature bosses with real health pools and support minions — bring your boss deck (Feint, backup hit, a heal), not your street-mob deck.",
-              "Grandmother Raven's spell quests can include solo-ish fights; if one wall-stops you, return two levels later and it evaporates.",
+              "The bonus-spell quests can include solo-ish fights (the level-55 one happens behind Sudrilund's dragon gates); if one wall-stops you, return two levels later and it evaporates.",
             ],
           },
         ],

@@ -68,10 +68,11 @@ export const gearGuides: Guide[] = [
       {
         title: "Level 30 checkpoint: the Zeus set",
         blocks: [
-          "At level 30, take the boat from Wizard City's docks to Aquila and run **Mount Olympus**. The dungeon takes 20–30 minutes, is soloable at-level for most schools (Team-Up makes it trivial), and its final boss drops the **'Zeus' / Senator's-tier gear** — hat, robe, and boots with damage, accuracy, health, and power pips that embarrass everything else in the 30–50 bracket.",
+          "At level 30, **Cyrus Drake summons you** with a quest sending you to Aquila (he does it again at 70 for Atlantea and 90 for Tartarus — never ignore the Myth professor's mail). Run **Mount Olympus**: the dungeon takes 20–30 minutes, is soloable at-level for most schools (Team-Up makes it trivial), and its final boss **Zeus Sky Father** drops the **Zeus and Senator's gear** — hats, robes, and boots with damage, accuracy, health, and power pips that embarrass everything else in the 30–50 bracket.",
           {
             list: [
               "Farm it until you have your school's hat/robe/boots. Drop luck varies; most players finish in a handful of runs.",
+              "The same dungeon drops the **Sky Iron Hasta** — a legendary +damage sword many wizards keep equipped for *dozens* of levels. Grab it while you're there.",
               "It stays worth re-running for gold and jewels even after you're geared.",
               "Wearing Zeus gear, you can generally coast to the low 50s (Waterworks range) without another gear stop.",
             ],
@@ -85,7 +86,7 @@ export const gearGuides: Guide[] = [
             table: {
               headers: ["Slot", "Leveling advice"],
               rows: [
-                ["Wand", "Any at-level wand with a decent stat line. The crafted **Sky Iron Hasta** from the Grizzleheim/Wintertusk area is famously long-lived if you're into crafting; otherwise Bazaar wands are fine."],
+                ["Wand", "Any at-level wand with a decent stat line until 30 — then the **Sky Iron Hasta** from Mount Olympus, the famously long-lived +damage sword that many wizards swing well past level 60."],
                 ["Athame / Ring", "Bazaar pieces with health or damage. Marginal until endgame; don't overthink."],
                 ["Amulet", "Mostly cosmetic early. Later, **Mastery amulets** (power pips for a second school) become build-defining for support players."],
                 ["Deck", "Biggest at-level deck from the Bazaar; what matters is [what you put in it](/guides/deck-building-basics)."],
@@ -115,10 +116,10 @@ export const gearGuides: Guide[] = [
     tags: ["waterworks", "level 60", "gear", "luska", "sylster", "farming"],
     updated: "July 2026",
     tldr: [
-      "Waterworks is a level 60 dungeon in Crab Alley (off Triton Avenue, Wizard City). The hat/robe/boots it drops are the free best-in-slot for most schools deep into the 60s–90s.",
-      "Its two headline bosses **cheat**: notoriously, traps provoke punishment. Blades are your friend; traps mostly are not.",
+      "Waterworks is a level 60 dungeon in Crab Alley (off Triton Avenue, Wizard City — the quest comes from Blad Raveneye in Triton Avenue). The hat/robe/boots it drops are the free best-in-slot for most schools deep into the 60s–90s.",
+      "Its two headline bosses **cheat**: Luska Charmbeak punishes single-target traps; Sylster Glowstorm alternates Light/Dark auras that eat blades or traps depending on the phase.",
+      "Rough drop map: **Luska drops the hats; Sylster drops the robes and boots** (plus coveted Mastery amulets from the dungeon's tables).",
       "Expect multiple runs (30–60 min each with a group) before your full set drops. Team-Up works well here — it's a perpetually popular dungeon.",
-      "Gear drops are school-specific from the final chest; you're rolling for your school's pieces each run.",
       "Not into farming? Wintertusk-era crafted gear is a respectable substitute — but Waterworks is a community rite of passage for a reason.",
     ],
     sections: [
@@ -128,8 +129,8 @@ export const gearGuides: Guide[] = [
           {
             steps: [
               "Reach level 60.",
-              "Head to Triton Avenue in Wizard City and enter **Crab Alley**.",
-              "Pick up the Waterworks quest from the crab NPC by the sigil area (a short intro chain points you at the tower).",
+              "Pick up the Waterworks quest from **Blad Raveneye in Triton Avenue** (Wizard City).",
+              "Follow it into **Crab Alley** and down to the dungeon sigil.",
               "Enter with a full team if you can — this is a genuine group dungeon, and one of the most Team-Up-friendly in the game.",
             ],
           },
@@ -140,9 +141,23 @@ export const gearGuides: Guide[] = [
         blocks: [
           "Waterworks is a vertical dungeon — a series of flooded chambers with mob fights, two puzzle/parkour interludes (follow the seaweed/valve prompts; a teammate who knows the route saves minutes), and two boss encounters that made the dungeon famous:",
           {
+            sub: "Luska Charmbeak (mid-dungeon)",
+          },
+          {
             list: [
-              "**Luska Charmbeard** — the mid-dungeon pirate crab. His signature cheat punishes **traps** placed on him. The standard play: blades and straightforward hits only.",
-              "**Sylster Glowstorm** — the finale, fought with support minions whose healing can out-pace a slow team. The standard play: build blades quietly, then delete the room in one coordinated AoE turn before the heal engine spins up.",
+              "**The cheat:** place a *single-target* trap on him and he removes it and retaliates with a boosted damage-over-time hit (a nasty multi-round burn in the ~1,000-per-tick range). ",
+              "**The loopholes:** AoE traps (Windstorm, Mass Feint), item-card and pet traps are exempt — the cheat only hates directly-cast single-target traps.",
+              "**The play:** blades and straightforward hits; if your team insists on traps, make them the mass versions.",
+            ],
+          },
+          {
+            sub: "Sylster Glowstorm (the finale)",
+          },
+          {
+            list: [
+              "**The cheat:** he alternates a white **Light aura** and black **Dark aura** roughly every four rounds. In the Light, traps are safe but *blades get eaten* — 'Traps go undetected in the Light.' In the Dark, blades are safe but *traps get eaten* — 'The blade goes unseen in the dark.'",
+              "**The punishment:** buffing with the forbidden type (or hitting without the right setup) draws a heavy counterattack in the 2,000+ range.",
+              "**The play:** watch the aura, buff with whichever type is currently legal, and coordinate one big hit turn — or simply overwhelm him fast before the phases matter.",
             ],
           },
           {
@@ -150,7 +165,7 @@ export const gearGuides: Guide[] = [
               kind: "warn",
               title: "About cheat specifics",
               body: [
-                "Cheat scripts are occasionally adjusted in updates, and item cards/pet may-casts can trigger trap-type cheats by accident. Before your first run, skim a current cheat rundown (any recent community guide) — then remember the evergreen version: **keep it simple, blade up, hit once, hit huge.** Deep theory in [Cheating Bosses 101](/guides/cheating-bosses-101).",
+                "Scripts get adjusted in updates, and pet may-casts can trip buff-type cheats by accident. The details above match long-standing community documentation — but the evergreen version never changes: **keep it simple, buff with what the phase allows, hit once, hit huge.** Deep theory in [Cheating Bosses 101](/guides/cheating-bosses-101).",
               ],
             },
           },
@@ -159,9 +174,10 @@ export const gearGuides: Guide[] = [
       {
         title: "Why this gear is worth it",
         blocks: [
-          "The Waterworks set (hat/robe/boots per school) bundles damage, resist, critical, power pips, and health in proportions that free gear simply doesn't match again for a long stretch. For many schools, pieces of it remain competitive until the level 90–100 replacements (Hades, then [Darkmoor](/guides/darkmoor-gear-guide)).",
+          "The Waterworks set (hat/robe/boots per school) bundles damage, resist, critical, power pips, and health in proportions that free gear simply doesn't match again for a long stretch. For many schools, pieces of it remain competitive until the level 90–100 replacements (Hades, then [Castle Darkmoor](/guides/darkmoor-gear-guide)) — though Atlantea's Poseidon gear at 70 beats individual pieces for some schools.",
           {
             list: [
+              "**Who drops what:** Luska Charmbeak drops the hats; Sylster Glowstorm drops the robes and boots. The dungeon also drops **Mastery amulets** — the build-defining items that let power pips work for a second school.",
               "It's the first set that makes your wizard feel *built* rather than dressed.",
               "It's free — the grind is the price.",
               "Wearing it signals you did the rite of passage. (This matters more socially than we admit.)",
@@ -175,7 +191,7 @@ export const gearGuides: Guide[] = [
           {
             steps: [
               "Assemble via Team-Up (the kiosk in any Commons) or friends; full teams of four make runs fast and safe.",
-              "Bring your boss deck: blades, enchanted AoEs, a heal column, **no traps** in the main deck to avoid muscle-memory accidents.",
+              "Bring your boss deck: blades, enchanted AoEs, a heal column — and if you pack traps, make them **mass versions** (Mass Feint is legal on Luska; single-target traps are not).",
               "Assign a hitter before each boss; everyone else blades the hitter. One-turn kills skip cheat phases entirely.",
               "Loot everything — non-set drops sell, and the seed/pet drops here are decent.",
               "Didn't get your piece? Re-queue. Veterans measure Waterworks in runs-per-set, and single-digit counts are normal luck.",
@@ -197,25 +213,34 @@ export const gearGuides: Guide[] = [
 
   {
     slug: "darkmoor-gear-guide",
-    title: "Darkmoor: Malistaire Returns, and He Has Your Robe",
+    title: "Castle Darkmoor: Malistaire Returns, and He Has Your Robe",
     category: "gear",
     difficulty: "advanced",
     blurb:
-      "The level 100 gauntlet that defines the endgame gear chase — its three wings, the Graveyard fight, and how teams actually beat it.",
-    tags: ["darkmoor", "level 100", "malistaire", "graveyard", "gear"],
+      "The level 100 gauntlet that defines the endgame gear chase — its three wings, who drops which tier, the Graveyard fight, and how teams actually beat it.",
+    tags: ["castle darkmoor", "level 100", "malistaire", "graveyard", "gear"],
     updated: "July 2026",
     tldr: [
-      "Castle Darkmoor is the level-100 dungeon complex (reached via a quest in the level ~100 era; Team-Up covers all three wings). It drops the era-defining 'Malistaire' gear.",
-      "Three wings: Castle Darkmoor → Upper Halls → **The Graveyard**, home of Malistaire the Undying. The Graveyard is where the headline hat/robe drops live.",
+      "Castle Darkmoor is the level-100 dungeon complex, unlocked via **Dworgyn's quest 'Branches of Woe'** (Nightside). Team-Up covers all three wings. It drops the era-defining 'Malistaire' gear.",
+      "Three wings: Castle Darkmoor → The Upper Halls → **The Graveyard**, home of Malistaire the Undying — who drops the **Tier 1 versions of every slot** (the headline hats/robes/boots/wands).",
+      "Supporting cast worth knowing: Yevgeny Nightcreeper drops the Tier 1 athames, secret boss **Aphrodite II** drops the Tier 1 rings, and gold-skeleton-key chests hold Tier 1 amulets.",
       "Every fight cheats. Teams win with the shadow-era formula: stack blades and Feints on one hitter, control the script, kill in one shadow-boosted turn.",
-      "It's the hardest content most players have met at that point. Go with a coordinated team (or a patient Team-Up group) and expect to learn the script over a few runs.",
-      "Pieces drop across the wings; the full farm takes multiple clears. The payoff gears you for all of Arc 3.",
+      "Naming alert: this is the classic *dungeon*. **Darkmoor the world** (level 170–180, Arc 5, released 2025) is a different, much later thing.",
     ],
     sections: [
       {
-        title: "What Darkmoor is",
+        title: "What Castle Darkmoor is",
         blocks: [
-          "A gothic castle raid-lite in three wings, tuned for level 100 wizards with Shadow magic unlocked. Its final act is a rematch with a resurrected **Malistaire the Undying** — mechanically the hardest fight in the game up to that point, and the source of gear so good the community still calls level-100 loadouts 'Darkmoor gear' years later.",
+          "A gothic castle raid-lite in three wings, tuned for level 100 wizards with Shadow magic unlocked. It begins with **Dworgyn's quest 'Branches of Woe'** in Nightside, and its final act is a rematch with a resurrected **Malistaire the Undying** — mechanically the hardest fight in the game up to that point, and the source of gear so good the community still calls level-100 loadouts 'Darkmoor gear' years later.",
+          {
+            callout: {
+              kind: "info",
+              title: "Two Darkmoors now exist",
+              body: [
+                "In November 2025, KingsIsle expanded Darkmoor into a **full world** — the level 170–180 opener of Arc 5. This guide covers the classic level-100 *Castle* Darkmoor dungeon. Same gothic postcode, seventy levels apart.",
+              ],
+            },
+          },
           {
             callout: {
               kind: "lore",
@@ -227,21 +252,21 @@ export const gearGuides: Guide[] = [
         ],
       },
       {
-        title: "The three wings",
+        title: "The three wings — and who drops what",
         blocks: [
+          "The set comes in tiers (Tier 1 = the real thing; Tiers 2–3 are stepping-stone versions). Knowing the drop map saves dozens of wasted runs:",
           {
             table: {
-              headers: ["Wing", "Boss headline", "Notable loot"],
+              headers: ["Wing", "Bosses", "The loot that matters"],
               rows: [
-                ["Castle Darkmoor", "Vampiric nobility with charm-punishing scripts", "Set pieces, wands, spellement-era extras"],
-                ["Upper Halls", "A tougher mid-wing with mixed cheat mechanics", "More set pieces; deck/athame-tier drops"],
-                ["The Graveyard", "**Malistaire the Undying** (with a multi-phase script)", "The signature hats and robes — the reason everyone is here"],
+                ["Castle Darkmoor", "Sir Blackwater & the vampiric nobility", "Tier 2 athames, Tier 3 set pieces — warm-up loot"],
+                ["The Upper Halls", "Spirit of Darkmoor, Akhtang Wormcrawl (+ key boss Bunferatu)", "Tier 2–3 pieces; Bunferatu adds Tier 2 rings"],
+                ["The Graveyard", "Shane von Shane → Yevgeny Nightcreeper → **Malistaire the Undying** (+ secret boss Aphrodite II)", "**Malistaire: Tier 1 everything** (hats/robes/boots/wands/decks); **Yevgeny: Tier 1 athames**; **Aphrodite II: Tier 1 rings**; Shane: Tier 2–3"],
               ],
               caption:
-                "Exact best-in-slot per school varies; the Graveyard's hat/robe are the universal chase items.",
+                "Gold-skeleton-key chests in the dungeon hold Tier 1 amulets — bring a key when you have one. Wing-by-wing Team-Up queues mean you can farm the Graveyard directly after the story pass.",
             },
           },
-          "Each wing is its own Team-Up queue, so you can farm the Graveyard directly once you've cleared the story pass.",
         ],
       },
       {
@@ -286,10 +311,11 @@ export const gearGuides: Guide[] = [
     tags: ["gear", "endgame", "hades", "dragoon", "progression"],
     updated: "July 2026",
     tldr: [
-      "The classic free-gear spine: **Waterworks (60) → Atlantea/Poseidon (70, optional) → Tartarus/Hades (90) → Darkmoor (100) → Catacombs/Dragoon (130) → current-world sets**.",
+      "The free-gear spine: **Waterworks (60) → Poseidon (70) → Hades (90) → Castle Darkmoor (100, holds through 120) → Dragoon (130) → Uber/'Paradox' (140) → Merciless/Demiurge (150) → Aeon/Eternal (160) → Dream Reaver & raid sets (170) → Abomination/Monster Hide (180)**.",
       "Between checkpoints, don't chase marginal upgrades — quest in your last checkpoint set and skip ahead.",
-      "From ~130 on, crafted gear, raid gear, and **set bonuses** enter the picture; check a live community resource for this season's best-in-slot before grinding.",
+      "From ~130 on, **crafting and raids** join dungeon drops as first-class gear sources, and **set bonuses** change the math.",
       "Evergreen stat philosophy: questing wants damage first; hard endgame content wants a damage/resist balance; supports want pips, resist, and outgoing healing.",
+      "Names verified as of the Darkmoor-world era (level cap 180) — balance passes still shuffle edges, so sanity-check the current season before a long grind.",
     ],
     sections: [
       {
@@ -297,23 +323,27 @@ export const gearGuides: Guide[] = [
         blocks: [
           {
             table: {
-              headers: ["Level", "Checkpoint", "Effort", "Verdict"],
+              headers: ["Level", "Checkpoint", "Where it comes from", "Verdict"],
               rows: [
-                ["60", "[Waterworks](/guides/waterworks-gear-guide) hat/robe/boots", "A few dungeon runs", "Mandatory rite of passage"],
-                ["70", "Atlantea (Poseidon pieces)", "Light farming", "Optional — grab pieces if Waterworks luck was bad or you want a mid-arc boost"],
-                ["90", "Tartarus (Hades set)", "Moderate farming", "Strongly recommended — the 90s standard"],
-                ["100", "[Darkmoor](/guides/darkmoor-gear-guide) (Malistaire set)", "Serious farming", "The endgame's front door; do it"],
-                ["130", "Catacombs (Dragoon set)", "Serious farming + crafting elements", "The Arc 4 workhorse set, with set bonuses"],
-                ["140–max", "Current-world dropped/crafted/raid sets", "Varies by season", "Consult a live wiki/community tier list — this shifts with every world"],
+                ["60", "[Waterworks](/guides/waterworks-gear-guide) set", "Waterworks dungeon (Crab Alley)", "Mandatory rite of passage"],
+                ["70", "Poseidon set", "Atlantea (Cyrus Drake's level-70 quest)", "Better than Waterworks for several slots — pierce debuts here"],
+                ["90", "Hades set", "Tartarus; side boss Cronus drops the famous Blade of the Felled Titan athame", "The 90s standard"],
+                ["100", "Malistaire Tier 1 set", "[Castle Darkmoor](/guides/darkmoor-gear-guide) (the Graveyard)", "The endgame's front door — and it holds through Polaris, Mirage, and Empyrea (110–120 have no standard replacement)"],
+                ["130", "**Vanguard → Dragoon**", "Vanguard drops in Empyrea Part 2; Dragoon is *crafted* at Zasha Emberforge in the Catacombs from a Vanguard piece + alchemical reagents (only the key boss Fellspawn drops it directly)", "The Arc 4 workhorse, with set bonuses"],
+                ["140", "Uber (dropped) / 'Paradox' (crafted)", "Karamelle bosses (incl. the Aberrant Paradox)", "Solid refresh; skippable for strong Dragoon users"],
+                ["150", "Merciless (dropped) / Demiurge (crafted) / raid sets", "Lemuria bosses; recipes from Perry in Sky City; the Voracious Void raid (Nullity's & Void's sets)", "First era where raids join the race"],
+                ["160", "Aeon (dropped) / Eternal (crafted) / raid upgrades", "Novus bosses (Aeon of Atavus & co.); Crying Sky raid (Hunhau/Xibalba sets)", "The 160 standard"],
+                ["170", "Dream Reaver + Cabal's Revenge sets", "Wallaru's Nightmare dungeon (farm or craft); Cabal's Revenge raid (Daemonic crafted / Unreal dropped — its robes headline the era)", "Wallaru's endgame wardrobe"],
+                ["180", "Abomination vs Monster Hide", "The Darkmoor world (Arc 5)", "Current cap: pick offense (Abomination) or defense (Monster Hide) per activity"],
               ],
             },
           },
           {
             callout: {
               kind: "info",
-              title: "Why we stop naming exact items past 130",
+              title: "How current is this table?",
               body: [
-                "Each new world adds a gear tier, raids rotate rewards, and balance passes shuffle best-in-slot lists. Printed specifics rot in a year; the checkpoint *pattern* hasn't changed in a decade. Learn the pattern here, verify this season's names on a live resource.",
+                "Verified against community gear guides as of the Darkmoor-world era (cap 180). The checkpoint *pattern* has held for a decade; individual best-in-slot edges shuffle with balance passes and new raids, so sanity-check the current season's list before committing to a long grind.",
               ],
             },
           },

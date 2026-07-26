@@ -100,7 +100,7 @@ export interface School {
 
 export interface World {
   name: string;
-  arc: 1 | 2 | 3 | 4 | "side";
+  arc: 1 | 2 | 3 | 4 | 5 | "side";
   emoji: string;
   levels: string;
   blurb: string;

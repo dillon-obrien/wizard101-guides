@@ -11,7 +11,7 @@ export const systemsGuides: Guide[] = [
     tags: ["fishing", "lures", "energy", "chests"],
     updated: "July 2026",
     tldr: [
-      "Fishing unlocks around level 12 via a quest in Wizard City's Commons (the pond has a fishing trainer waiting).",
+      "Fishing unlocks at **level 7** — Lucky Hookline calls you to the Commons pond in Wizard City to learn the basics.",
       "Every fish belongs to a school; you catch it with the matching school's **lure**. Wrong lure = ignored bobber.",
       "Casts cost energy (shared with pets/gardening). Fishing luck stats/elixirs and higher ranks improve results.",
       "Fish sell for gold, fill house aquariums, and power some crafting recipes; **chests** you reel in drop gear, reagents, and TCs.",
@@ -23,7 +23,7 @@ export const systemsGuides: Guide[] = [
         blocks: [
           {
             steps: [
-              "Learn fishing from the trainer by the Commons pond (~level 12) — the intro quest teaches casting and your first lure.",
+              "Learn fishing from **Lucky Hookline** by the Commons pond (he summons you at level 7) — the intro quest teaches casting and your first lure.",
               "At any fishable water, examine the fish shadows: size and behavior hint at species and rank.",
               "Cast the **lure matching the fish's school** (you learn more lure spells as your fishing rank grows). A reveal spell that shows fish schools is an early, essential purchase.",
               "When the bobber *fully* sinks, click to reel — early clicks lose the fish. The tension minigame is forgiving with practice.",
@@ -154,7 +154,7 @@ export const systemsGuides: Guide[] = [
         blocks: [
           {
             steps: [
-              "Grab Burke's intro quest in Ravenwood; he teaches **Extract Undead** — your first collection tool.",
+              "Grab Burke's intro quest **'Know Thine Enemy'** in Ravenwood; he teaches **Extract Undead** — your first collection tool.",
               "In any fight with a matching creature, cast the extract on it (costs a couple of pips; still lets the fight proceed).",
               "Defeat the creature; you bank animus for that specific monster. Repeat until its recipe threshold.",
               "At Burke, spend animus: summon TC, house guest (the monster wanders your castle!), or expel utility.",
@@ -238,6 +238,16 @@ export const systemsGuides: Guide[] = [
               "Spellement hunting (next guide) is the modern headline reason to care.",
             ],
           },
+          {
+            sub: "Three doors everyone eventually cares about",
+          },
+          {
+            list: [
+              "**Fellspawn** (the Catacombs) — the *only* boss that directly drops Dragoon gear pieces, skipping the crafting grind. See the [gear progression map](/guides/gear-progression-60-to-max).",
+              "**Bunferatu** (Castle Darkmoor's Upper Halls) — key-gated vampire with Darkmoor-set extras, farmed alongside [Graveyard runs](/guides/darkmoor-gear-guide).",
+              "**Aphrodite II** (a secret of the Graveyard) — source of the era's Tier 1 rings.",
+            ],
+          },
         ],
       },
     ],
@@ -277,6 +287,15 @@ export const systemsGuides: Guide[] = [
               kind: "info",
               body: [
                 "Which spells have paths, and where their spellements drop, expands every few updates. The system started with lore/low-level spells and has been steadily eating the spell list — check the in-game page for current coverage.",
+              ],
+            },
+          },
+          {
+            callout: {
+              kind: "lore",
+              title: "The newer sibling: Magic Weaving",
+              body: [
+                "Since late 2024 the game has also been rolling out **Magic Weaving** (with Spell Fusion) — a parallel spell-progression system introduced alongside the Selenopolis update, with higher ranks still being added through 2026. It's evolving fast enough that the in-game Magic Weaving screens are the best current reference; think of it as the next layer on the same 'grow your spells' philosophy spellements started.",
               ],
             },
           },
@@ -331,9 +350,9 @@ export const systemsGuides: Guide[] = [
                   "Genuinely clever deck puzzles; spellements, jewels, and event pet rewards",
                 ],
                 [
-                  "🌙 Beastmoon Hunt (and variants)",
-                  "Team vs team battles as craftable monster *forms* on a special map",
-                  "A whole parallel progression (forms, lunari currency); the best 'sick of my main deck' cure",
+                  "🌙 Beastmoon Hunt & Beastmoon Monster Mayhem",
+                  "Team battles as craftable monster *forms* — Hunt is PvP, Monster Mayhem is the PvE wave-defense variant",
+                  "A whole parallel progression (forms, Lunari currency, permanent form tiers); the best 'sick of my main deck' cure",
                 ],
                 [
                   "📜 Reward scroll / pass events",
@@ -385,7 +404,7 @@ export const systemsGuides: Guide[] = [
     tags: ["team up", "etiquette", "dungeons", "multiplayer"],
     updated: "July 2026",
     tldr: [
-      "The **Team-Up kiosk** (every world's hub) queues you with strangers for any dungeon/boss — the standard way to group since forever.",
+      "The **Team-Up kiosk** (in Olde Town, right outside the Bazaar) queues you with strangers for any dungeon/boss you've unlocked — and every dungeon sigil offers Team-Up on the spot too.",
       "Rule zero: **don't join, then vanish.** Fleeing/AFK mid-dungeon wastes three humans' half hour.",
       "Default strategy assumption: one hitter, everyone else blades/feints the hitter. First-round chat ('who's hitting?') sorts it in seconds.",
       "Port-to-friend also works as dungeon entry ('porting in') — same etiquette applies.",
@@ -397,7 +416,7 @@ export const systemsGuides: Guide[] = [
         blocks: [
           {
             steps: [
-              "Queue at the kiosk for your target (or from the dungeon's sigil). Popular farms fill fast; obscure story dungeons can be slow off-peak.",
+              "Queue at the kiosk (Olde Town, beside the Bazaar) for your target, or hit Team-Up straight from the dungeon's sigil. Popular farms fill fast; obscure story dungeons can be slow off-peak. Modern updates even added level-range filters to the queue.",
               "While queued: set your deck for that content, refill potions, empty backpack space. Arriving ready is half the etiquette.",
               "First round: say hi, ask 'roles?' — thirty seconds of typing beats twenty minutes of chaos. Highest-damage school usually hits; others support.",
               "Fight with your role: supports blade the hitter (their blade on the hitter outdamages their own attack — [the math](/guides/blades-traps-and-stacking)), hitters communicate the kill turn.",
@@ -431,6 +450,104 @@ export const systemsGuides: Guide[] = [
       },
     ],
     related: ["blades-traps-and-stacking", "cheating-bosses-101", "waterworks-gear-guide"],
+  },
+
+  {
+    slug: "guilds-and-raids",
+    title: "Guilds & Raids: The Spiral's Hardest Content",
+    category: "systems",
+    difficulty: "advanced",
+    blurb:
+      "The four endgame raids — Voracious Void, Crying Sky, Cabal's Revenge, and The Ghastly Conspiracy — plus how guilds, raid keys, and raid gear actually work.",
+    tags: ["raids", "guilds", "endgame", "voracious void", "crying sky"],
+    updated: "July 2026",
+    tldr: [
+      "**Raids** are the Spiral's hardest PvE: coordinated 12-wizard (and now 8-wizard) boss gauntlets run through **guilds**, with mechanics a Team-Up pickup group cannot brute-force.",
+      "Four exist as of mid-2026: The Voracious Void (~150), The Crying Sky (160), Cabal's Revenge (170), and The Ghastly Conspiracy (170, the first 8-player raid, added 2025).",
+      "Raids are accessed from guild houses (raid gates/keys) and reward exclusive gear sets that headline their level bands — Cabal's Revenge robes are era-famous at 170.",
+      "You need a guild: join an active one recruiting in-game or via community Discords. Raiding is scheduled, role-assigned, voice-chat-flavored content — the closest Wizard101 gets to classic MMO raiding.",
+      "Not required for story completion. Very required for 'I want the best robe in the game' completion.",
+    ],
+    sections: [
+      {
+        title: "Guilds in sixty seconds",
+        blocks: [
+          {
+            list: [
+              "Guilds are player organizations with a shared **guild house** — the social hub where raid content physically lives.",
+              "Joining: get invited by a member. Finding one: ask in-game around raid-era zones, or (realistically) community Discords and the official forums, where guilds recruit constantly.",
+              "Guild progression (activity, raid clears) unlocks perks and deeper raid access — active beats large when choosing one.",
+              "No guild fits? Team-Up-style pickup raiding mostly doesn't exist; raids were designed as the organized-play pillar on purpose.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "The four raids",
+        blocks: [
+          {
+            table: {
+              headers: ["Raid", "Level", "Size", "Setting & headline boss", "Signature loot"],
+              rows: [
+                [
+                  "🕳️ The Voracious Void",
+                  "~150 (Lemuria era)",
+                  "12",
+                  "Reality-eating anomaly; final boss The Nullity",
+                  "Nullity's Set & Void's Set (upgradeable at 160)",
+                ],
+                [
+                  "☄️ The Crying Sky",
+                  "160 (side quest 'Raid Island')",
+                  "12",
+                  "The Xibalba Wastes of comet-fallen Azteca; main boss Hunhau",
+                  "Hunhau & Xibalba sets (170 versions came with Wallaru)",
+                ],
+                [
+                  "🗡️ Cabal's Revenge",
+                  "170",
+                  "12",
+                  "An abandoned fort in Polaris; Divine Cabalist & Personal Daemon",
+                  "Daemonic (crafted) / Unreal (dropped) — the era's best robes for most schools",
+                ],
+                [
+                  "🕵️ The Ghastly Conspiracy",
+                  "170",
+                  "8 (the first smaller-format raid)",
+                  "Noir mystery at Malfeasance Plaza in Lemuria's Heap; Mr. Ghastly",
+                  "Exclusive raid outfit & pets (added June 2025)",
+                ],
+              ],
+              caption:
+                "Raid rewards typically come via raid vendors/crafters using raid currencies and drops — clears fund the set over weeks, not one lucky chest.",
+            },
+          },
+        ],
+      },
+      {
+        title: "How raids differ from dungeons",
+        blocks: [
+          {
+            list: [
+              "**Mechanics-first design**: phases, assigned lanes/rooms, and coordination checks — the fights assume roles were planned *before* the sigil.",
+              "**Preparation is gear + build + homework**: teams expect era gear ([progression map](/guides/gear-progression-60-to-max)), tuned decks per role, and familiarity with the fight script.",
+              "**Scheduling is real**: 8–12 humans, set times, usually voice chat. The social contract of [Team-Up etiquette](/guides/team-up-and-dungeon-etiquette), professionalized.",
+              "**Failure is normal**: progression raiding means wiping on purpose until the choreography clicks. Budget evenings, not minutes.",
+              "**The reward is matching**: raid sets and titles are the visible proof of organized play — and genuinely best-in-slot pieces at their levels.",
+            ],
+          },
+          {
+            callout: {
+              kind: "tip",
+              body: [
+                "Not ready to raid but curious? The Catacombs, key bosses, and gauntlets are the training ladder — the same one-turn-kill and script-reading skills ([Cheating Bosses 101](/guides/cheating-bosses-101)) scale straight up into raid lanes.",
+              ],
+            },
+          },
+        ],
+      },
+    ],
+    related: ["gear-progression-60-to-max", "team-up-and-dungeon-etiquette", "cheating-bosses-101"],
   },
 
   {

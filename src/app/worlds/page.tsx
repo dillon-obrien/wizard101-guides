@@ -31,9 +31,15 @@ const ARCS: { key: World["arc"]; title: string; blurb: string }[] = [
   },
   {
     key: 4,
-    title: "Arc 4 — The Newest Chapters",
+    title: "Arc 4 — The Cabal Years",
     blurb:
-      "Levels ~130 to the cap (170 in the Wallaru era as of this snapshot — new worlds usually land each fall).",
+      "Levels ~130–170. Candy kingdoms, lost continents, and the rise of guild raids across four worlds.",
+  },
+  {
+    key: 5,
+    title: "Arc 5 — Darkmoor Rising",
+    blurb:
+      "Levels ~170–180. The gothic-horror world of Darkmoor (November 2025) opens a new multi-year story and holds the current cap of 180.",
   },
   {
     key: "side",
@@ -102,10 +108,11 @@ export default function WorldsPage() {
       </div>
 
       <p className="mt-14 rounded-xl border border-night-700 bg-night-850 p-5 text-sm leading-relaxed text-night-300">
-        📌 Snapshot note: this map is current through the Wallaru era. KingsIsle
-        ships new worlds regularly (usually fall updates) — whatever exists past
-        this page, the pattern holds: follow the story, hit the gear
-        checkpoints, do Zeke, and detour when underleveled.
+        📌 Snapshot note: current through the Darkmoor world (Arc 5, November
+        2025 — level cap 180). KingsIsle ships new worlds regularly, usually in
+        fall updates — whatever exists past this page, the pattern holds:
+        follow the story, hit the gear checkpoints, do Zeke, and detour when
+        underleveled.
       </p>
     </div>
   );

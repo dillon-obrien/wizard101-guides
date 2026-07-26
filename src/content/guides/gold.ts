@@ -35,12 +35,18 @@ export const goldGuides: Guide[] = [
       {
         title: "The Halfang run (the classic burst farm)",
         blocks: [
-          "Halfang Bristlecrown is a boss in Wintertusk (Vigrid Roughland) beloved for one reason: he's seconds from a teleport point, falls over fast, and his loot table vendors extremely well for the effort.",
+          "Halfang Bristlecrown is a boss in Wintertusk — his tower sits in **Vestrilund, immediately next to the zone entrance**, which is the entire secret: walk in, fight, walk out, reset, repeat, with runs taking about a minute once you outlevel him.",
+          {
+            list: [
+              "He's a Rank 9 Storm boss (~1,900 health) with a single Myth minion — a one-shot for anyone 50+, trivial to AoE down even earlier.",
+              "The payday is his drop table vendoring absurdly well: his signature **Cow's Pearl Amulet sells for ~8,000–9,000 gold** at the Bazaar, wands ~3,000, and armor pieces ~2,000 each.",
+            ],
+          },
           {
             steps: [
               "Unlock Wintertusk (see [Grizzleheim & Wintertusk](/guides/grizzleheim-and-wintertusk)); level 50+ makes runs trivial.",
               "Deck: blades + your AoE/big single hit. The fight is a speed-run, not a puzzle.",
-              "Kill, loot, **port out and back** (or re-enter) to reset, repeat. Each loop is a couple of minutes.",
+              "Kill, loot, **port out and back** (or re-enter) to reset, repeat. Each loop is a couple of minutes at most.",
               "Bazaar-sell the haul every dozen runs. Expect tens of thousands per focused session at mid levels, more later.",
             ],
           },
@@ -235,7 +241,23 @@ export const goldGuides: Guide[] = [
       {
         title: "Loremaster, the special case",
         blocks: [
-          "Most bosses drop *items*; the Loremaster drops **spells** — permanent, learnable, often best-in-class utility/attacks for schools that lack them (the famous example being Death's beloved AoE, Deer Knight, from the era when Death lacked a cheap one). Modern updates layered **spellements** onto her table too, letting you *craft progress* toward her spells instead of praying.",
+          "Most bosses drop *items*; the Loremaster (a Balance boss in Dragonspyre's Atheneum, reached via the side quest 'The Lore Master') drops **spells** — permanent, learnable, often best-in-class utility/attacks for schools that lack them. Modern updates layered **spellements** onto her table too, letting you *craft progress* toward her spells instead of praying.",
+          {
+            table: {
+              headers: ["School", "Headline lore spells from her table"],
+              rows: [
+                ["💀 Death", "**Deer Knight** (the famous cheap AoE-DoT), Headless Horseman, Lord of Night"],
+                ["🔥 Fire", "Brimstone Revenant, Krampus, Hephaestus"],
+                ["❄️ Ice", "Handsome Fomori, Winter Moon, Angry Snowpig"],
+                ["⚡ Storm", "Catalan, Queen Calypso"],
+                ["👁️ Myth", "Ninja Pigs, Athena Battle Sight, Keeper of the Flame"],
+                ["🌿 Life", "Luminous Weaver, Pigsie, Goat Monk"],
+                ["⚖️ Balance", "Loremaster (her own spell), Savage Paw, Samoorai, Ninja Piglets"],
+              ],
+              caption:
+                "The full table runs two dozen spells deep — these are the community-famous pickups.",
+            },
+          },
           {
             list: [
               "Effective from the moment you can survive her (drag friends at 50; comfortably solo later).",

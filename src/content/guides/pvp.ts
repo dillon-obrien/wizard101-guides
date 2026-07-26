@@ -12,7 +12,7 @@ export const pvpGuides: Guide[] = [
     updated: "July 2026",
     tldr: [
       "Two queues: **Practice** (free-for-all rules, zero stakes — start here) and **Ranked** (seasonal ratings, rewards, stricter modern ruleset).",
-      "Modern ranked runs on the PvP-2.0-era framework: heavily curated spell rules (notably, no treasure cards) and rating-based matchmaking. Exact rules shift patch to patch — read the in-game arena screens for current law.",
+      "Modern ranked runs on the '5th Age' framework (the big 2022 overhaul): heavily curated spell rules — many treasure cards, healing enchants, and TC globals are flagged No-PvP — plus rating-based matchmaking. Exact rules shift patch to patch; the in-game arena screens are current law.",
       "PvP is a different game from PvE: it's resource warfare (pips, cards, health as currency), not a race to stack damage.",
       "Expect to lose a lot at first — ratings exist so you find your level. Watch good players of your school between sessions.",
       "Arena tickets (match rewards) buy PvP gear from arena vendors — losing still pays.",
@@ -145,7 +145,7 @@ export const pvpGuides: Guide[] = [
                 ["Utility", "Pierce/steal tech, pip manipulation, reshuffle at some brackets", "The 5% of cards that decide mirror matches"],
               ],
               caption:
-                "Ranked's ruleset constrains card sources (no TCs) — everything must live in your trained/item kit, which is why PvP players agonize over training points.",
+                "Ranked's ruleset constrains card sources — many TCs and enchants carry No-PvP flags, so the trained/item kit does the heavy lifting. This is why PvP players agonize over training points.",
             },
           },
           {

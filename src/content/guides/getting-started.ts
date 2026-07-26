@@ -84,7 +84,7 @@ export const gettingStartedGuides: Guide[] = [
               rows: [
                 ["1–5", "Core combat, first gear, potions", "The basics — potions refill health/mana, so keep them topped up"],
                 ["5–10", "First training points, mounts become worth wanting", "Training points let you learn spells from *other* schools"],
-                ["~12", "Fishing, crafting, and monstrology intro quests (all in Wizard City)", "Side systems you can dip into whenever you need a break"],
+                ["7–12", "Fishing (level 7, Lucky Hookline), then crafting, monstrology, and gardening intros (all in Wizard City)", "Side systems you can dip into whenever you need a break"],
                 ["15–25", "Grizzleheim & Wysteria side worlds, gardening", "Optional XP, gear, and the start of your snack economy"],
                 ["~30", "Mount Olympus dungeon (Aquila)", "The first big gear checkpoint — see the [gear guide](/guides/gear-guide-levels-1-50)"],
                 ["48–50", "Your school's iconic high-rank spell, Dragonspyre endgame", "Arc 1 finale and your first taste of real boss mechanics"],
@@ -507,9 +507,9 @@ export const gettingStartedGuides: Guide[] = [
               headers: ["Buy", "Trainer school", "Cost", "Why it's core"],
               rows: [
                 [
-                  "Dark Sprite → Ghoul → Banshee → **Feint**",
-                  "Death (Ravenwood / Nightside)",
-                  "4 points total",
+                  "Dark Sprite → Ghoul → Dream Shield → Banshee → **Feint**",
+                  "Death (Ravenwood / Nightside), needs level 26",
+                  "5 points total",
                   "Feint = +70% trap for 1 pip. The best damage-per-pip card in the game; every boss guide assumes you have it.",
                 ],
                 [

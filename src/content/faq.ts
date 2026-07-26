@@ -78,7 +78,7 @@ export const faqs: FaqEntry[] = [
     q: "When do I get my school's big iconic spells?",
     a: [
       "Your professor summons you for spell quests at level milestones — the famous one being the level-48 quest in the Dragonspyre era (Fire Dragon, Storm Lord, Scarecrow and friends), with more at 58, 68, and beyond.",
-      "Never skip a professor's summons, and do Wintertusk for the bonus 'level 55' spells from Grandmother Raven.",
+      "Never skip a professor's summons — and do the Grizzleheim/Wintertusk line for the bonus spells at levels 35 and 55 (quests from Baldur Goldpaws in Olde Town; full table in the [Grizzleheim & Wintertusk guide](/guides/grizzleheim-and-wintertusk)).",
     ],
   },
   {
@@ -139,7 +139,7 @@ export const faqs: FaqEntry[] = [
     category: "Multiplayer",
     q: "Is PvP worth trying? Is it pay-to-win?",
     a: [
-      "It's a genuinely deep 1v1 card duel scene with seasonal ladders — worth trying once you're comfortable in PvE. Gear/pets matter (preparation wins brackets), but the modern ruleset (no treasure cards in ranked, curated spell rules) narrowed the wallet gap considerably.",
+      "It's a genuinely deep 1v1 card duel scene with seasonal ladders — worth trying once you're comfortable in PvE. Gear/pets matter (preparation wins brackets), but the modern '5th Age' ruleset (many treasure cards and enchants flagged No-PvP, curated spell rules) narrowed the wallet gap considerably.",
       "Start with [PvP Basics](/guides/pvp-basics); prep properly with the [gear & deck guide](/guides/pvp-deck-and-prep).",
     ],
   },
@@ -147,7 +147,8 @@ export const faqs: FaqEntry[] = [
     category: "Meta",
     q: "What's the max level right now?",
     a: [
-      "As of this guide's snapshot (the Wallaru era), the cap sits at 170 — but KingsIsle ships a new world most falls, typically raising the cap ~10 levels. Check the in-game news for the current number; our strategy content ages far slower than the cap does.",
+      "**180**, as of the Darkmoor world — the gothic-horror world released in November 2025 that opened Arc 5 (yes, the level-100 castle grew into a whole world). KingsIsle typically ships a new world each fall and raises the cap ~10 levels, so check in-game news for anything newer.",
+      "Between-world updates matter too: 2024's Selenopolis update rebuilt Krokotopia and added the Magic Weaving system, and new raids arrive in summer updates. Our strategy content ages far slower than the cap does.",
     ],
   },
   {

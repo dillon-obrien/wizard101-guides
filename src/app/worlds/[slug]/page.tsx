@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { Checklist } from "@/components/Checklist";
 import { Inline } from "@/components/Inline";
 import { playbookBySlug, playbooks } from "@/content/playbooks";
 import { worlds } from "@/content/worlds";
@@ -115,18 +116,15 @@ export default async function PlaybookPage({
             tone="amber"
           >
             <p className="mb-3 text-sm text-slate-500">
-              Grab the quest from Zeke in the hub on arrival — one full training point. Items sit in:
+              Grab the quest from Zeke in the hub on arrival — one full training
+              point. Tap zones as you clear them (saves on this device):
             </p>
-            <ul className="flex flex-wrap gap-1.5">
-              {pb.zeke.zones.map((z) => (
-                <li
-                  key={z}
-                  className="rounded-full border border-slate-200 bg-slate-50 px-2.5 py-1 text-xs font-medium text-slate-600"
-                >
-                  {z}
-                </li>
-              ))}
-            </ul>
+            <Checklist
+              storageKey={`spiral-scholar:pb:${pb.slug}:zeke`}
+              items={pb.zeke.zones}
+              variant="chips"
+              accent="amber"
+            />
             {pb.zeke.note && (
               <p className="mt-3 text-sm leading-relaxed text-slate-500">
                 <Inline text={pb.zeke.note} />
@@ -149,14 +147,12 @@ export default async function PlaybookPage({
         )}
 
         <Panel label="Grab before you leave" tone="emerald">
-          <ul className="space-y-2">
-            {pb.grab.map((g, i) => (
-              <li key={i} className="flex gap-2.5 text-[0.95rem] leading-relaxed text-slate-700">
-                <span aria-hidden className="mt-[0.55rem] h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" />
-                <span><Inline text={g} /></span>
-              </li>
-            ))}
-          </ul>
+          <Checklist
+            storageKey={`spiral-scholar:pb:${pb.slug}:grab`}
+            items={pb.grab}
+            variant="list"
+            accent="emerald"
+          />
         </Panel>
 
         <Panel label="Skip without guilt" tone="slate">

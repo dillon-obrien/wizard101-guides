@@ -57,6 +57,8 @@ export const petGuides: Guide[] = [
                 ["Mega", "5", "The classic 'finished' pet"],
                 ["Ultra+", "5+", "Later ages add further perks for dedicated trainers"],
               ],
+              caption:
+                "XP per stage: 125 → 250 → 525 → 1050 → 2125 → 2250 (Ultra). Exact feedings for your snack quality: the [Pet XP & Snack Planner](/tools/pet-snacks).",
             },
           },
           "A pet's five **attributes** (Strength, Intellect, Agility, Will, Power) grow alongside ages and determine how strong its talents are — e.g. a maxed pet's damage talent gives its full listed value.",

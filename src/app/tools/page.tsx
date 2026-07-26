@@ -27,6 +27,12 @@ const TOOLS = [
       "The exact chance your blade shows up by each round, for any deck size. The math behind small decks.",
   },
   {
+    href: "/tools/pet-snacks",
+    name: "Pet XP & Snack Planner",
+    blurb:
+      "How many snacks from here to Mega — exact feedings for any age, snack quality, and double-XP weekends.",
+  },
+  {
     href: "/tools/training-points",
     name: "Training Point Planner",
     blurb:

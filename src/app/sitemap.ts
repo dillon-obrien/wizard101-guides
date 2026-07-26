@@ -14,6 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/tools/damage-calculator",
     "/tools/hatch-calculator",
     "/tools/draw-odds",
+    "/tools/pet-snacks",
     "/tools/training-points",
     "/tools/level-advisor",
     "/glossary",

@@ -56,6 +56,13 @@ const TOOL_DOCS: SearchDoc[] = [
     context: "Chance of drawing your blade by each round, any deck size",
     keywords: "draw odds deck size probability blade hand cards math",
   },
+  {
+    title: "Pet XP & Snack Planner",
+    href: "/tools/pet-snacks",
+    type: "Tool",
+    context: "Exact feedings from any age to Mega, by snack quality",
+    keywords: "pet xp snack planner calculator mega snacks feedings age train leveling",
+  },
 ];
 
 export function buildSearchIndex(): SearchDoc[] {

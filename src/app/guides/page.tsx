@@ -13,8 +13,8 @@ export const metadata: Metadata = {
 export default function GuidesPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-      <h1 className="font-display text-4xl font-bold text-white">The Guide Library</h1>
-      <p className="mt-3 max-w-2xl text-lg text-night-300">
+      <h1 className="font-display text-4xl font-bold text-slate-900">The Guide Library</h1>
+      <p className="mt-3 max-w-2xl text-lg text-slate-600">
         {allGuideMetas.length} guides, all written the same way: a TL;DR up
         top, plain English throughout, and depth for when you want it.
       </p>

@@ -33,7 +33,7 @@ export function ProgressBar() {
       className="fixed inset-x-0 top-16 z-30 h-0.5 bg-transparent"
     >
       <div
-        className="h-full bg-gradient-to-r from-arcane-500 to-spark-400 transition-[width] duration-100"
+        className="h-full bg-indigo-600 transition-[width] duration-100"
         style={{ width: `${progress * 100}%` }}
       />
     </div>

@@ -345,27 +345,27 @@ export const systemsGuides: Guide[] = [
               headers: ["Event", "The mode", "Why show up"],
               rows: [
                 [
-                  "🗼 Deckathalon",
+                  "Deckathalon",
                   "School-themed tower; your normal spells are off — you climb with TC-only decks",
                   "Genuinely clever deck puzzles; spellements, jewels, and event pet rewards",
                 ],
                 [
-                  "🌙 Beastmoon Hunt & Beastmoon Monster Mayhem",
+                  "Beastmoon Hunt & Beastmoon Monster Mayhem",
                   "Team battles as craftable monster *forms* — Hunt is PvP, Monster Mayhem is the PvE wave-defense variant",
                   "A whole parallel progression (forms, Lunari currency, permanent form tiers); the best 'sick of my main deck' cure",
                 ],
                 [
-                  "📜 Reward scroll / pass events",
+                  "Reward scroll / pass events",
                   "Do daily activities, fill a track, claim tiers",
                   "Free crowns-tier goodies for existing habits — never skip claiming",
                 ],
                 [
-                  "📦 Time-capsule 'boxes' events",
+                  "Time-capsule 'boxes' events",
                   "Mini-quests at drop-in locations across worlds",
                   "Spellements and unique loot for quick errands",
                 ],
                 [
-                  "🎃 Seasonal holidays",
+                  "Seasonal holidays",
                   "Halloween towers, winter quests, spring rotations",
                   "Cosmetics, event pets/mounts, atmosphere",
                 ],
@@ -490,28 +490,28 @@ export const systemsGuides: Guide[] = [
               headers: ["Raid", "Level", "Size", "Setting & headline boss", "Signature loot"],
               rows: [
                 [
-                  "🕳️ The Voracious Void",
+                  "The Voracious Void",
                   "~150 (Lemuria era)",
                   "12",
                   "Reality-eating anomaly; final boss The Nullity",
                   "Nullity's Set & Void's Set (upgradeable at 160)",
                 ],
                 [
-                  "☄️ The Crying Sky",
+                  "The Crying Sky",
                   "160 (side quest 'Raid Island')",
                   "12",
                   "The Xibalba Wastes of comet-fallen Azteca; main boss Hunhau",
                   "Hunhau & Xibalba sets (170 versions came with Wallaru)",
                 ],
                 [
-                  "🗡️ Cabal's Revenge",
+                  "Cabal's Revenge",
                   "170",
                   "12",
                   "An abandoned fort in Polaris; Divine Cabalist & Personal Daemon",
                   "Daemonic (crafted) / Unreal (dropped) — the era's best robes for most schools",
                 ],
                 [
-                  "🕵️ The Ghastly Conspiracy",
+                  "The Ghastly Conspiracy",
                   "170",
                   "8 (the first smaller-format raid)",
                   "Noir mystery at Malfeasance Plaza in Lemuria's Heap; Mr. Ghastly",

@@ -69,33 +69,33 @@ export default async function GuidePage({
       />
 
       {/* Breadcrumbs */}
-      <nav aria-label="Breadcrumb" className="mb-6 text-sm text-night-300">
+      <nav aria-label="Breadcrumb" className="mb-6 text-sm text-slate-500">
         <ol className="flex flex-wrap items-center gap-2">
           <li>
-            <Link href="/" className="hover:text-spark-300">Home</Link>
+            <Link href="/" className="hover:text-indigo-700">Home</Link>
           </li>
           <li aria-hidden>›</li>
           <li>
-            <Link href="/guides" className="hover:text-spark-300">Guides</Link>
+            <Link href="/guides" className="hover:text-indigo-700">Guides</Link>
           </li>
           <li aria-hidden>›</li>
           <li>
-            <Link href={`/guides?c=${guide.category}`} className="hover:text-spark-300">
-              {cat?.emoji} {cat?.name}
+            <Link href={`/guides?c=${guide.category}`} className="hover:text-indigo-700">
+              {cat?.name}
             </Link>
           </li>
         </ol>
       </nav>
 
       <header className="max-w-3xl">
-        <h1 className="font-display text-3xl font-bold leading-tight text-white sm:text-5xl">
+        <h1 className="font-display text-3xl font-bold leading-tight text-slate-900 sm:text-5xl">
           {guide.title}
         </h1>
-        <p className="mt-4 text-lg leading-relaxed text-night-200">{guide.blurb}</p>
+        <p className="mt-4 text-lg leading-relaxed text-slate-600">{guide.blurb}</p>
         <div className="mt-5 flex flex-wrap items-center gap-2">
           <DifficultyBadge level={guide.difficulty} />
-          <MetaBadge>⏱️ {readingMinutes(guide)} min read</MetaBadge>
-          <MetaBadge>🗓️ Updated {guide.updated}</MetaBadge>
+          <MetaBadge>{readingMinutes(guide)} min read</MetaBadge>
+          <MetaBadge>Updated {guide.updated}</MetaBadge>
         </div>
       </header>
 
@@ -103,16 +103,16 @@ export default async function GuidePage({
         <div className="max-w-3xl">
           {/* TL;DR */}
           <section
-            aria-label="Too long; didn't read summary"
-            className="rounded-2xl border border-spark-500/30 bg-spark-500/[0.06] p-5 sm:p-6"
+            aria-label="Summary"
+            className="rounded-r-xl border-l-4 border-indigo-600 bg-indigo-50/50 p-5 sm:p-6"
           >
-            <p className="mb-3 flex items-center gap-2 font-display text-lg font-bold text-spark-300">
-              ⚡ TL;DR — the short version
+            <p className="mb-3 text-xs font-bold uppercase tracking-wider text-indigo-700">
+              TL;DR — the short version
             </p>
             <ul className="space-y-2.5">
               {guide.tldr.map((line, i) => (
-                <li key={i} className="flex gap-2.5 text-[0.95rem] leading-relaxed text-night-100">
-                  <span aria-hidden className="mt-[0.55rem] h-1.5 w-1.5 shrink-0 rounded-full bg-spark-400" />
+                <li key={i} className="flex gap-2.5 text-[0.95rem] leading-relaxed text-slate-700">
+                  <span aria-hidden className="mt-[0.55rem] h-1.5 w-1.5 shrink-0 rounded-full bg-indigo-500" />
                   <span><Inline text={line} /></span>
                 </li>
               ))}
@@ -120,14 +120,14 @@ export default async function GuidePage({
           </section>
 
           {/* Mobile TOC */}
-          <details className="mt-6 rounded-xl border border-night-700 bg-night-850 p-4 lg:hidden">
-            <summary className="cursor-pointer font-semibold text-night-100">
-              📑 On this page
+          <details className="mt-6 rounded-xl border border-slate-200 bg-white p-4 lg:hidden">
+            <summary className="cursor-pointer font-semibold text-slate-800">
+              On this page
             </summary>
             <ol className="mt-3 space-y-2 text-sm">
               {toc.map((item) => (
                 <li key={item.id}>
-                  <a href={`#${item.id}`} className="text-night-300 hover:text-spark-300">
+                  <a href={`#${item.id}`} className="text-slate-500 hover:text-indigo-700">
                     {item.title}
                   </a>
                 </li>
@@ -141,7 +141,7 @@ export default async function GuidePage({
               <section key={toc[i].id} aria-labelledby={toc[i].id}>
                 <h2
                   id={toc[i].id}
-                  className="mb-5 border-b border-night-700 pb-3 font-display text-2xl font-bold text-white"
+                  className="mb-5 border-b border-slate-200 pb-3 font-display text-2xl font-bold text-slate-900"
                 >
                   {section.title}
                 </h2>
@@ -155,13 +155,13 @@ export default async function GuidePage({
           </div>
 
           {/* Jargon helper */}
-          <aside className="mt-12 rounded-xl border border-night-700 bg-night-850 p-5 text-sm text-night-300">
+          <aside className="mt-12 rounded-xl border border-slate-200 bg-white p-5 text-sm text-slate-500">
             Hit a word you don't know? The{" "}
-            <Link href="/glossary" className="font-medium text-spark-400 hover:text-spark-300">
+            <Link href="/glossary" className="font-medium text-indigo-700 hover:text-indigo-900">
               glossary
             </Link>{" "}
             defines every Spiral term in plain English — or press{" "}
-            <kbd className="rounded border border-night-600 bg-night-900 px-1.5 py-0.5 text-[11px] font-semibold text-night-300">⌘K</kbd>{" "}
+            <kbd className="rounded border border-slate-300 bg-slate-50 px-1.5 py-0.5 text-[11px] font-semibold text-slate-500">⌘K</kbd>{" "}
             and search it.
           </aside>
 
@@ -172,10 +172,10 @@ export default async function GuidePage({
           >
             {prev ? (
               <Link href={`/guides/${prev.slug}`} className="card p-4">
-                <span className="text-xs font-semibold uppercase tracking-wide text-night-400">
+                <span className="text-xs font-semibold uppercase tracking-wide text-slate-400">
                   ← Previous
                 </span>
-                <span className="mt-1 block font-display font-bold leading-snug text-white">
+                <span className="mt-1 block font-display font-bold leading-snug text-slate-900">
                   {prev.title}
                 </span>
               </Link>
@@ -184,10 +184,10 @@ export default async function GuidePage({
             )}
             {next && (
               <Link href={`/guides/${next.slug}`} className="card p-4 text-right">
-                <span className="text-xs font-semibold uppercase tracking-wide text-night-400">
+                <span className="text-xs font-semibold uppercase tracking-wide text-slate-400">
                   Next →
                 </span>
-                <span className="mt-1 block font-display font-bold leading-snug text-white">
+                <span className="mt-1 block font-display font-bold leading-snug text-slate-900">
                   {next.title}
                 </span>
               </Link>
@@ -197,7 +197,7 @@ export default async function GuidePage({
           {/* Related */}
           {related.length > 0 && (
             <section className="mt-14" aria-label="Related guides">
-              <h2 className="font-display text-2xl font-bold text-white">Keep reading</h2>
+              <h2 className="font-display text-2xl font-bold text-slate-900">Keep reading</h2>
               <div className="mt-6 grid gap-4 sm:grid-cols-2">
                 {related.map((g) => (
                   <GuideCard key={g.slug} guide={g} />

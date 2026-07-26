@@ -11,12 +11,12 @@ export const metadata: Metadata = {
 export default function SchoolsPage() {
   return (
     <div className="mx-auto max-w-6xl px-4 py-12 sm:px-6">
-      <h1 className="font-display text-4xl font-bold text-white">The Seven Schools</h1>
-      <p className="mt-3 max-w-2xl text-lg text-night-300">
+      <h1 className="font-display text-4xl font-bold text-slate-900">The Seven Schools</h1>
+      <p className="mt-3 max-w-2xl text-lg text-slate-600">
         Your school shapes every fight for hundreds of hours. Here's how each
         one actually plays — no wrong answers, but very different lives.
         Undecided? Read{" "}
-        <Link href="/guides/choosing-your-school" className="font-medium text-spark-400 hover:text-spark-300">
+        <Link href="/guides/choosing-your-school" className="font-medium text-indigo-700 hover:text-indigo-900">
           Choosing Your School
         </Link>{" "}
         first.
@@ -27,24 +27,16 @@ export default function SchoolsPage() {
           <Link
             key={s.slug}
             href={`/schools/${s.slug}`}
-            className="card group relative overflow-hidden p-6"
-            style={{ borderColor: `${s.color}55` }}
+            className="card overflow-hidden"
           >
-            <div
-              aria-hidden
-              className="pointer-events-none absolute inset-x-0 top-0 h-24 opacity-25 transition-opacity group-hover:opacity-40"
-              style={{
-                background: `radial-gradient(ellipse at top, ${s.color}, transparent 70%)`,
-              }}
-            />
-            <div className="relative">
-              <span aria-hidden className="text-4xl">{s.emoji}</span>
-              <h2 className="mt-3 font-display text-2xl font-bold text-white">{s.name}</h2>
-              <p className="mt-1 text-sm font-medium" style={{ color: s.color }}>
+            <div aria-hidden className="h-1 w-full" style={{ backgroundColor: s.color }} />
+            <div className="p-6">
+              <h2 className="font-display text-2xl font-bold text-slate-900">{s.name}</h2>
+              <p className="mt-1 text-sm font-semibold" style={{ color: s.color }}>
                 {s.archetype}
               </p>
-              <p className="mt-3 text-sm leading-relaxed text-night-200">{s.tagline}</p>
-              <p className="mt-4 text-xs text-night-400">
+              <p className="mt-3 text-sm leading-relaxed text-slate-600">{s.tagline}</p>
+              <p className="mt-4 text-xs text-slate-400">
                 Accuracy {s.baseAccuracy} · {s.newPlayerFriendliness} for new players
               </p>
             </div>

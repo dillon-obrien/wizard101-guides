@@ -52,16 +52,16 @@ const ARCS: { key: World["arc"]; title: string; blurb: string }[] = [
 export default function WorldsPage() {
   return (
     <div className="mx-auto max-w-5xl px-4 py-12 sm:px-6">
-      <h1 className="font-display text-4xl font-bold text-white">The Spiral, In Order</h1>
-      <p className="mt-3 max-w-2xl text-lg text-night-300">
+      <h1 className="font-display text-4xl font-bold text-slate-900">The Spiral, In Order</h1>
+      <p className="mt-3 max-w-2xl text-lg text-slate-600">
         Follow the main story and the worlds order themselves — this page is
         your map of what's coming. Level ranges are practical guideposts, not
         hard gates. Pair with the{" "}
-        <Link href="/guides/world-order-and-leveling" className="font-medium text-spark-400 hover:text-spark-300">
+        <Link href="/guides/world-order-and-leveling" className="font-medium text-indigo-700 hover:text-indigo-900">
           leveling roadmap
         </Link>{" "}
         and the{" "}
-        <Link href="/guides/side-content-worth-doing" className="font-medium text-spark-400 hover:text-spark-300">
+        <Link href="/guides/side-content-worth-doing" className="font-medium text-indigo-700 hover:text-indigo-900">
           side-content tier list
         </Link>
         .
@@ -70,31 +70,31 @@ export default function WorldsPage() {
       <div className="mt-12 space-y-16">
         {ARCS.map((arc) => (
           <section key={String(arc.key)} aria-label={arc.title}>
-            <h2 className="font-display text-2xl font-bold text-spark-300">{arc.title}</h2>
-            <p className="mt-1.5 max-w-2xl text-sm text-night-300">{arc.blurb}</p>
-            <ol className="mt-6 space-y-4 border-l-2 border-night-700 pl-6">
+            <h2 className="font-display text-2xl font-bold text-slate-900">{arc.title}</h2>
+            <p className="mt-1.5 max-w-2xl text-sm text-slate-500">{arc.blurb}</p>
+            <ol className="mt-6 space-y-4 border-l-2 border-slate-200 pl-6">
               {worlds
                 .filter((w) => w.arc === arc.key)
                 .map((w) => (
                   <li key={w.name} id={slugify(w.name)} className="relative">
                     <span
                       aria-hidden
-                      className="absolute -left-[2.05rem] top-6 h-3 w-3 rounded-full bg-spark-500 ring-4 ring-night-900"
+                      className="absolute -left-[2.05rem] top-6 h-3 w-3 rounded-full bg-indigo-600 ring-4 ring-slate-50"
                     />
-                    <div className="card p-5 target:border-spark-500/60">
+                    <div className="card p-5 target:border-indigo-400">
                       <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                        <h3 className="font-display text-xl font-bold text-white">
-                          <span aria-hidden>{w.emoji}</span> {w.name}
+                        <h3 className="font-display text-xl font-bold text-slate-900">
+                          {w.name}
                         </h3>
-                        <span className="rounded-full bg-night-700 px-2.5 py-0.5 text-xs font-semibold text-spark-300">
+                        <span className="rounded-full bg-indigo-50 px-2.5 py-0.5 text-xs font-semibold text-indigo-700">
                           Levels {w.levels}
                         </span>
                       </div>
-                      <p className="mt-2 leading-relaxed text-night-200">{w.blurb}</p>
-                      <ul className="mt-3 space-y-1.5 text-sm text-night-300">
+                      <p className="mt-2 leading-relaxed text-slate-600">{w.blurb}</p>
+                      <ul className="mt-3 space-y-1.5 text-sm text-slate-500">
                         {w.highlights.map((h, i) => (
-                          <li key={i} className="flex gap-2">
-                            <span aria-hidden className="text-spark-500">✦</span>
+                          <li key={i} className="flex gap-2.5">
+                            <span aria-hidden className="mt-[0.5rem] h-1 w-1 shrink-0 rounded-full bg-slate-400" />
                             {h}
                           </li>
                         ))}
@@ -107,8 +107,8 @@ export default function WorldsPage() {
         ))}
       </div>
 
-      <p className="mt-14 rounded-xl border border-night-700 bg-night-850 p-5 text-sm leading-relaxed text-night-300">
-        📌 Snapshot note: current through the Darkmoor world (Arc 5, November
+      <p className="mt-14 rounded-xl border border-slate-200 bg-white p-5 text-sm leading-relaxed text-slate-500">
+        Snapshot note: current through the Darkmoor world (Arc 5, November
         2025 — level cap 180). KingsIsle ships new worlds regularly, usually in
         fall updates — whatever exists past this page, the pattern holds:
         follow the story, hit the gear checkpoints, do Zeke, and detour when

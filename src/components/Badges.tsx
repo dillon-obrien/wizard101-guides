@@ -3,15 +3,15 @@ import type { Difficulty } from "@/lib/types";
 const DIFFICULTY: Record<Difficulty, { label: string; cls: string }> = {
   beginner: {
     label: "Beginner friendly",
-    cls: "bg-emerald-500/15 text-emerald-300 ring-emerald-500/30",
+    cls: "bg-emerald-50 text-emerald-700 ring-emerald-200",
   },
   intermediate: {
     label: "Intermediate",
-    cls: "bg-sky-500/15 text-sky-300 ring-sky-500/30",
+    cls: "bg-sky-50 text-sky-700 ring-sky-200",
   },
   advanced: {
     label: "Advanced",
-    cls: "bg-arcane-500/15 text-arcane-300 ring-arcane-500/30",
+    cls: "bg-violet-50 text-violet-700 ring-violet-200",
   },
 };
 
@@ -28,7 +28,7 @@ export function DifficultyBadge({ level }: { level: Difficulty }) {
 
 export function MetaBadge({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center gap-1 rounded-full bg-night-800 px-2.5 py-0.5 text-xs font-medium text-night-200 ring-1 ring-night-600">
+    <span className="inline-flex items-center gap-1 rounded-full bg-white px-2.5 py-0.5 text-xs font-medium text-slate-600 ring-1 ring-slate-200">
       {children}
     </span>
   );

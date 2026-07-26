@@ -28,7 +28,7 @@ export function buildSearchIndex(): SearchDoc[] {
       title: g.title,
       href: `/guides/${g.slug}`,
       type: "Guide",
-      context: `${cat?.emoji ?? ""} ${cat?.name ?? ""} · ${g.blurb}`,
+      context: `${cat?.name ?? ""} · ${g.blurb}`,
       keywords: [g.title, g.blurb, g.tags.join(" "), cat?.name ?? ""]
         .join(" ")
         .toLowerCase(),
@@ -37,7 +37,7 @@ export function buildSearchIndex(): SearchDoc[] {
 
   for (const s of schools) {
     docs.push({
-      title: `${s.emoji} School of ${s.name}`,
+      title: `School of ${s.name}`,
       href: `/schools/${s.slug}`,
       type: "School",
       context: s.tagline,
@@ -47,7 +47,7 @@ export function buildSearchIndex(): SearchDoc[] {
 
   for (const w of worlds) {
     docs.push({
-      title: `${w.emoji} ${w.name}`,
+      title: w.name,
       href: `/worlds#${slugify(w.name)}`,
       type: "World",
       context: `Levels ${w.levels} · ${w.blurb}`,

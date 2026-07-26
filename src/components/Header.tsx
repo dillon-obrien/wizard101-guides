@@ -14,6 +14,23 @@ const NAV = [
   { href: "/faq", label: "FAQ" },
 ];
 
+function HatMark() {
+  return (
+    <svg
+      aria-hidden
+      viewBox="0 0 24 24"
+      className="h-6 w-6"
+      fill="none"
+    >
+      <path d="M12 3 17.5 16h-11L12 3Z" fill="#4f46e5" />
+      <path
+        d="M4 18c5.2-1.6 10.8-1.6 16 0v1.4c-5.2-1.6-10.8-1.6-16 0V18Z"
+        fill="#d97706"
+      />
+    </svg>
+  );
+}
+
 export function Header({ searchDocs }: { searchDocs: SearchDoc[] }) {
   const [menuOpen, setMenuOpen] = useState(false);
   const pathname = usePathname();
@@ -23,17 +40,12 @@ export function Header({ searchDocs }: { searchDocs: SearchDoc[] }) {
   }, [pathname]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-night-700/80 bg-night-900/90 backdrop-blur">
+    <header className="sticky top-0 z-40 border-b border-slate-200 bg-white/90 backdrop-blur">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-4 px-4 sm:px-6">
-        <Link href="/" className="flex shrink-0 items-center gap-2.5">
-          <span
-            aria-hidden
-            className="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-arcane-600 to-night-700 text-lg ring-1 ring-arcane-500/40"
-          >
-            🧙‍♂️
-          </span>
-          <span className="font-display text-lg font-bold tracking-tight text-white">
-            The Spiral <span className="text-spark-400">Scholar</span>
+        <Link href="/" className="flex shrink-0 items-center gap-2">
+          <HatMark />
+          <span className="font-display text-lg font-bold tracking-tight text-slate-900">
+            The Spiral <span className="text-indigo-700">Scholar</span>
           </span>
         </Link>
 
@@ -47,8 +59,8 @@ export function Header({ searchDocs }: { searchDocs: SearchDoc[] }) {
                 href={item.href}
                 className={`rounded-full px-3.5 py-1.5 text-sm font-medium transition ${
                   active
-                    ? "bg-night-700 text-spark-300"
-                    : "text-night-200 hover:bg-night-800 hover:text-white"
+                    ? "bg-indigo-50 text-indigo-700"
+                    : "text-slate-600 hover:bg-slate-100 hover:text-slate-900"
                 }`}
               >
                 {item.label}
@@ -60,14 +72,14 @@ export function Header({ searchDocs }: { searchDocs: SearchDoc[] }) {
         <div className="flex items-center gap-2">
           <Link
             href="/guides/complete-beginners-guide"
-            className="hidden shrink-0 rounded-full bg-spark-500 px-4 py-1.5 text-sm font-semibold text-night-950 transition hover:bg-spark-400 lg:inline-flex"
+            className="hidden shrink-0 rounded-full bg-indigo-600 px-4 py-1.5 text-sm font-semibold text-white transition hover:bg-indigo-700 lg:inline-flex"
           >
-            🧭 Start here
+            Start here
           </Link>
           <SearchDialog docs={searchDocs} />
           <button
             type="button"
-            className="rounded-lg border border-night-600 p-2 text-night-200 md:hidden"
+            className="rounded-lg border border-slate-300 p-2 text-slate-600 md:hidden"
             aria-label={menuOpen ? "Close menu" : "Open menu"}
             aria-expanded={menuOpen}
             onClick={() => setMenuOpen((v) => !v)}
@@ -85,23 +97,23 @@ export function Header({ searchDocs }: { searchDocs: SearchDoc[] }) {
 
       {menuOpen && (
         <nav
-          className="border-t border-night-700 bg-night-900 px-4 py-3 md:hidden"
+          className="border-t border-slate-200 bg-white px-4 py-3 md:hidden"
           aria-label="Mobile"
         >
           {NAV.map((item) => (
             <Link
               key={item.href}
               href={item.href}
-              className="block rounded-lg px-3 py-2.5 text-base font-medium text-night-100 hover:bg-night-800"
+              className="block rounded-lg px-3 py-2.5 text-base font-medium text-slate-700 hover:bg-slate-50"
             >
               {item.label}
             </Link>
           ))}
           <Link
             href="/guides/complete-beginners-guide"
-            className="mt-2 block rounded-lg bg-spark-500 px-3 py-2.5 text-center text-base font-semibold text-night-950"
+            className="mt-2 block rounded-lg bg-indigo-600 px-3 py-2.5 text-center text-base font-semibold text-white"
           >
-            🧭 New player? Start here
+            New player? Start here
           </Link>
         </nav>
       )}

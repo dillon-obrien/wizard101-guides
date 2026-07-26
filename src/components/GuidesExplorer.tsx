@@ -52,7 +52,7 @@ export function GuidesExplorer({
           onClick={() => setCategory("all")}
           className={chip(category === "all")}
         >
-          ✨ All ({guides.length})
+          All ({guides.length})
         </button>
         {categories.map((c) => (
           <button
@@ -61,7 +61,7 @@ export function GuidesExplorer({
             onClick={() => setCategory(c.id)}
             className={chip(category === c.id)}
           >
-            {c.emoji} {c.name}
+            {c.name}
           </button>
         ))}
       </div>
@@ -73,7 +73,7 @@ export function GuidesExplorer({
           onChange={(e) => setQuery(e.target.value)}
           placeholder="Filter guides… (e.g. gold, pets, feint)"
           aria-label="Filter guides by text"
-          className="w-full max-w-xs rounded-full border border-night-600 bg-night-850 px-4 py-2 text-sm text-night-100 placeholder-night-400 outline-none focus:border-spark-500/60"
+          className="w-full max-w-xs rounded-full border border-slate-300 bg-white px-4 py-2 text-sm text-slate-900 placeholder-slate-400 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
         />
         <div className="flex flex-wrap gap-2" role="group" aria-label="Filter by difficulty">
           {DIFFICULTIES.map((d) => (
@@ -90,11 +90,11 @@ export function GuidesExplorer({
       </div>
 
       {activeCat && (
-        <p className="mb-5 text-sm text-night-300">{activeCat.tagline}</p>
+        <p className="mb-5 text-sm text-slate-500">{activeCat.tagline}</p>
       )}
 
       {filtered.length === 0 ? (
-        <p className="rounded-xl border border-night-700 bg-night-850 p-8 text-center text-night-300">
+        <p className="rounded-xl border border-slate-200 bg-white p-8 text-center text-slate-500">
           No guides match those filters — loosen one and try again.
         </p>
       ) : (
@@ -105,7 +105,6 @@ export function GuidesExplorer({
               href={`/guides/${g.slug}`}
               title={g.title}
               blurb={g.blurb}
-              catEmoji={g.catEmoji}
               catName={g.catName}
               minutes={g.minutes}
               difficulty={g.difficulty}
@@ -120,7 +119,7 @@ export function GuidesExplorer({
 function chip(active: boolean): string {
   return `rounded-full border px-3.5 py-1.5 text-sm font-medium transition ${
     active
-      ? "border-spark-500/60 bg-spark-500/15 text-spark-300"
-      : "border-night-600 bg-night-850 text-night-200 hover:border-night-500 hover:text-white"
+      ? "border-indigo-600 bg-indigo-600 text-white"
+      : "border-slate-300 bg-white text-slate-600 hover:border-slate-400 hover:text-slate-900"
   }`;
 }

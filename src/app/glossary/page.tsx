@@ -21,8 +21,8 @@ export default function GlossaryPage() {
 
   return (
     <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6">
-      <h1 className="font-display text-4xl font-bold text-white">The Glossary</h1>
-      <p className="mt-3 max-w-2xl text-lg text-night-300">
+      <h1 className="font-display text-4xl font-bold text-slate-900">The Glossary</h1>
+      <p className="mt-3 max-w-2xl text-lg text-slate-600">
         {entries.length} terms, zero jargon-explained-with-jargon. If the
         Spiral says it, it's defined here.
       </p>

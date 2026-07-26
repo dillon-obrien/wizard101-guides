@@ -19,7 +19,7 @@ export function Inline({ text }: { text: string }): ReactNode {
           return (
             <code
               key={i}
-              className="rounded bg-night-700/60 px-1.5 py-0.5 font-mono text-[0.85em] text-spark-300"
+              className="rounded bg-slate-100 px-1.5 py-0.5 font-mono text-[0.85em] text-slate-800"
             >
               {part.slice(1, -1)}
             </code>
@@ -27,7 +27,7 @@ export function Inline({ text }: { text: string }): ReactNode {
         }
         if (part.startsWith("**") && part.endsWith("**")) {
           return (
-            <strong key={i} className="font-semibold text-white">
+            <strong key={i} className="font-semibold text-slate-900">
               {part.slice(2, -2)}
             </strong>
           );
@@ -39,7 +39,7 @@ export function Inline({ text }: { text: string }): ReactNode {
         if (link) {
           const [, label, href] = link;
           const cls =
-            "font-medium text-spark-400 underline decoration-spark-500/40 underline-offset-2 hover:text-spark-300 hover:decoration-spark-400";
+            "font-medium text-indigo-700 underline decoration-indigo-300 underline-offset-2 hover:text-indigo-900 hover:decoration-indigo-500";
           if (href.startsWith("/") || href.startsWith("#")) {
             return (
               <Link key={i} href={href} className={cls}>

@@ -45,11 +45,11 @@ export const strategyGuides: Guide[] = [
         blocks: [
           {
             list: [
-              "❌ **Same buff, same source, twice** — a second trained Deathblade won't apply while the first sits there.",
-              "✅ **Same buff, different sources** — trained blade + item-card blade + TC blade + pet-card blade: four multiplicative blades of the 'same' spell. This is what 'blade stacking' means.",
-              "✅ **Different buffs, any sources** — school blade + Balanceblade + Elemental/Spirit blade + Feint + school trap + aura + global… all multiply.",
-              "✅ **Sharpened/potent variants** — later-game enchants that create boosted versions of blades/traps also count as distinct from their base versions (more stacking room).",
-              "❌ **Buffs of the wrong school** — a Fire blade does nothing for your Storm hit; universal buffs (Balanceblade, Feint, Tower-style) apply to everything.",
+              "**Doesn't stack — same buff, same source, twice:** a second trained Deathblade won't apply while the first sits there.",
+              "**Stacks — same buff, different sources:** trained blade + item-card blade + TC blade + pet-card blade: four multiplicative blades of the 'same' spell. This is what 'blade stacking' means.",
+              "**Stacks — different buffs, any sources:** school blade + Balanceblade + Elemental/Spirit blade + Feint + school trap + aura + global… all multiply.",
+              "**Stacks — sharpened/potent variants:** later-game enchants that create boosted versions of blades/traps also count as distinct from their base versions (more stacking room).",
+              "**Doesn't stack — buffs of the wrong school:** a Fire blade does nothing for your Storm hit; universal buffs (Balanceblade, Feint, Tower-style) apply to everything.",
             ],
           },
           {

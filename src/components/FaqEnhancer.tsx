@@ -36,14 +36,14 @@ export function FaqEnhancer() {
       <button
         type="button"
         onClick={() => setAll(true)}
-        className="rounded-full border border-night-600 bg-night-850 px-3.5 py-1.5 text-sm font-medium text-night-200 transition hover:border-night-500 hover:text-white"
+        className="rounded-full border border-slate-300 bg-white px-3.5 py-1.5 text-sm font-medium text-slate-600 transition hover:border-slate-400 hover:text-slate-900"
       >
         Expand all
       </button>
       <button
         type="button"
         onClick={() => setAll(false)}
-        className="rounded-full border border-night-600 bg-night-850 px-3.5 py-1.5 text-sm font-medium text-night-200 transition hover:border-night-500 hover:text-white"
+        className="rounded-full border border-slate-300 bg-white px-3.5 py-1.5 text-sm font-medium text-slate-600 transition hover:border-slate-400 hover:text-slate-900"
       >
         Collapse all
       </button>

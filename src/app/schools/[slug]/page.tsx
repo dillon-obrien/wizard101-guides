@@ -41,23 +41,19 @@ export default async function SchoolPage({
   return (
     <article>
       {/* Hero */}
-      <header className="relative overflow-hidden border-b border-night-700/60">
-        <div
-          aria-hidden
-          className="pointer-events-none absolute inset-0 opacity-20"
-          style={{
-            background: `radial-gradient(ellipse 70% 60% at 50% 0%, ${school.color}, transparent 70%)`,
-          }}
-        />
-        <div className="relative mx-auto max-w-4xl px-4 py-16 text-center sm:px-6">
-          <span aria-hidden className="text-6xl">{school.emoji}</span>
-          <h1 className="mt-4 font-display text-4xl font-bold text-white sm:text-5xl">
+      <header className="border-b border-slate-200 bg-white">
+        <div className="mx-auto max-w-4xl px-4 py-14 sm:px-6">
+          <p
+            className="text-sm font-bold uppercase tracking-widest"
+            style={{ color: school.color }}
+          >
             {school.title}
-          </h1>
-          <p className="mt-3 text-lg font-medium" style={{ color: school.color }}>
-            {school.tagline}
           </p>
-          <div className="mt-6 flex flex-wrap items-center justify-center gap-2 text-sm">
+          <h1 className="mt-2 font-display text-4xl font-bold text-slate-900 sm:text-5xl">
+            {school.name}
+          </h1>
+          <p className="mt-3 max-w-2xl text-lg text-slate-600">{school.tagline}</p>
+          <div className="mt-6 flex flex-wrap items-center gap-2 text-sm">
             {[
               school.archetype,
               `Base accuracy ${school.baseAccuracy}`,
@@ -65,23 +61,24 @@ export default async function SchoolPage({
             ].map((chip) => (
               <span
                 key={chip}
-                className="rounded-full border border-night-600 bg-night-850/80 px-3.5 py-1.5 font-medium text-night-100"
+                className="rounded-full border border-slate-200 bg-slate-50 px-3.5 py-1.5 font-medium text-slate-600"
               >
                 {chip}
               </span>
             ))}
           </div>
         </div>
+        <div aria-hidden className="h-1 w-full" style={{ backgroundColor: school.color }} />
       </header>
 
       <div className="mx-auto max-w-4xl space-y-14 px-4 py-12 sm:px-6">
         {/* Overview */}
         <section aria-label="Overview" className="space-y-4">
           {school.overview.map((p, i) => (
-            <p key={i} className="text-lg leading-relaxed text-night-100">
+            <p key={i} className="text-lg leading-relaxed text-slate-700">
               {p.split("**").map((part, j) =>
                 j % 2 === 1 ? (
-                  <strong key={j} className="font-semibold text-white">{part}</strong>
+                  <strong key={j} className="font-semibold text-slate-900">{part}</strong>
                 ) : (
                   <span key={j}>{part}</span>
                 ),
@@ -92,20 +89,24 @@ export default async function SchoolPage({
 
         {/* Strengths / weaknesses */}
         <section className="grid gap-5 md:grid-cols-2" aria-label="Strengths and weaknesses">
-          <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/[0.06] p-6">
-            <h2 className="mb-4 font-display text-xl font-bold text-emerald-300">✅ Where it shines</h2>
-            <ul className="space-y-2.5 text-[0.95rem] leading-relaxed">
+          <div className="rounded-r-xl border-l-4 border-emerald-500 bg-emerald-50/70 p-6">
+            <h2 className="mb-4 text-xs font-bold uppercase tracking-wider text-emerald-700">
+              Where it shines
+            </h2>
+            <ul className="space-y-2.5 text-[0.95rem] leading-relaxed text-slate-700">
               {school.strengths.map((s, i) => (
                 <li key={i} className="flex gap-2.5">
-                  <span aria-hidden className="mt-[0.55rem] h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-400" />
+                  <span aria-hidden className="mt-[0.55rem] h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-500" />
                   {s}
                 </li>
               ))}
             </ul>
           </div>
-          <div className="rounded-2xl border border-red-500/30 bg-red-500/[0.06] p-6">
-            <h2 className="mb-4 font-display text-xl font-bold text-red-300">⚠️ Where it struggles</h2>
-            <ul className="space-y-2.5 text-[0.95rem] leading-relaxed">
+          <div className="rounded-r-xl border-l-4 border-red-400 bg-red-50/70 p-6">
+            <h2 className="mb-4 text-xs font-bold uppercase tracking-wider text-red-700">
+              Where it struggles
+            </h2>
+            <ul className="space-y-2.5 text-[0.95rem] leading-relaxed text-slate-700">
               {school.weaknesses.map((s, i) => (
                 <li key={i} className="flex gap-2.5">
                   <span aria-hidden className="mt-[0.55rem] h-1.5 w-1.5 shrink-0 rounded-full bg-red-400" />
@@ -118,28 +119,28 @@ export default async function SchoolPage({
 
         {/* Signature spells */}
         <section aria-label="Signature spells">
-          <h2 className="mb-5 font-display text-2xl font-bold text-white">Signature spells</h2>
-          <div className="overflow-x-auto rounded-xl border border-night-700">
+          <h2 className="mb-5 font-display text-2xl font-bold text-slate-900">Signature spells</h2>
+          <div className="overflow-x-auto rounded-xl border border-slate-200 bg-white">
             <table className="w-full min-w-[34rem] border-collapse text-left text-sm">
               <thead>
-                <tr className="bg-night-800">
-                  <th className="border-b border-night-700 px-4 py-3 font-semibold text-spark-300">Spell</th>
-                  <th className="border-b border-night-700 px-4 py-3 font-semibold text-spark-300">Role</th>
-                  <th className="border-b border-night-700 px-4 py-3 font-semibold text-spark-300">Why it matters</th>
+                <tr className="bg-slate-50">
+                  <th className="border-b border-slate-200 px-4 py-3 font-semibold text-slate-900">Spell</th>
+                  <th className="border-b border-slate-200 px-4 py-3 font-semibold text-slate-900">Role</th>
+                  <th className="border-b border-slate-200 px-4 py-3 font-semibold text-slate-900">Why it matters</th>
                 </tr>
               </thead>
               <tbody>
                 {school.signatureSpells.map((spell) => (
-                  <tr key={spell.name} className="odd:bg-night-850 even:bg-night-800/50">
-                    <td className="border-b border-night-700/60 px-4 py-2.5 font-medium text-white">{spell.name}</td>
-                    <td className="border-b border-night-700/60 px-4 py-2.5">{spell.role}</td>
-                    <td className="border-b border-night-700/60 px-4 py-2.5 leading-relaxed">{spell.note}</td>
+                  <tr key={spell.name} className="even:bg-slate-50/60">
+                    <td className="border-b border-slate-100 px-4 py-2.5 font-medium text-slate-900">{spell.name}</td>
+                    <td className="border-b border-slate-100 px-4 py-2.5 text-slate-700">{spell.role}</td>
+                    <td className="border-b border-slate-100 px-4 py-2.5 leading-relaxed text-slate-700">{spell.note}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
-          <p className="mt-2 text-xs text-night-400">
+          <p className="mt-2 text-xs text-slate-500">
             Spells are learned automatically from your professor as you level —
             never skip a professor's summons.
           </p>
@@ -148,23 +149,23 @@ export default async function SchoolPage({
         {/* Stats & secondaries */}
         <section className="grid gap-5 md:grid-cols-2" aria-label="Stats and secondary schools">
           <div className="card p-6">
-            <h2 className="mb-4 font-display text-xl font-bold text-white">📊 Stat priorities</h2>
-            <ol className="space-y-2.5 text-[0.95rem] leading-relaxed">
+            <h2 className="mb-4 font-display text-xl font-bold text-slate-900">Stat priorities</h2>
+            <ol className="space-y-2.5 text-[0.95rem] leading-relaxed text-slate-700">
               {school.statPriorities.map((s, i) => (
                 <li key={i} className="flex gap-3">
-                  <span className="font-display font-bold text-spark-400">{i + 1}.</span>
+                  <span className="font-bold text-indigo-700">{i + 1}.</span>
                   {s}
                 </li>
               ))}
             </ol>
           </div>
           <div className="card p-6">
-            <h2 className="mb-4 font-display text-xl font-bold text-white">🎓 Best secondary picks</h2>
+            <h2 className="mb-4 font-display text-xl font-bold text-slate-900">Best secondary picks</h2>
             <ul className="space-y-3 text-[0.95rem] leading-relaxed">
               {school.secondaries.map((s, i) => (
                 <li key={i}>
-                  <span className="font-semibold text-white">{s.pick}</span>
-                  <span className="block text-night-300">{s.why}</span>
+                  <span className="font-semibold text-slate-900">{s.pick}</span>
+                  <span className="block text-slate-500">{s.why}</span>
                 </li>
               ))}
             </ul>
@@ -173,11 +174,14 @@ export default async function SchoolPage({
 
         {/* Leveling tips */}
         <section aria-label="Leveling tips">
-          <h2 className="mb-5 font-display text-2xl font-bold text-white">Leveling tips from the trenches</h2>
+          <h2 className="mb-5 font-display text-2xl font-bold text-slate-900">Leveling tips from the trenches</h2>
           <ul className="space-y-3">
             {school.levelingTips.map((tip, i) => (
-              <li key={i} className="flex gap-3 rounded-xl border border-night-700 bg-night-850 p-4 leading-relaxed">
-                <span aria-hidden>💡</span>
+              <li
+                key={i}
+                className="rounded-r-xl border-l-4 bg-white p-4 leading-relaxed text-slate-700 shadow-sm ring-1 ring-slate-100"
+                style={{ borderLeftColor: school.color }}
+              >
                 {tip}
               </li>
             ))}
@@ -185,22 +189,22 @@ export default async function SchoolPage({
         </section>
 
         {/* Fun fact */}
-        <aside className="rounded-2xl border border-arcane-500/30 bg-arcane-500/[0.07] p-6">
-          <p className="mb-1.5 text-sm font-semibold uppercase tracking-wide text-arcane-300">✨ Spiral lore</p>
-          <p className="leading-relaxed text-night-100">{school.funFact}</p>
+        <aside className="rounded-r-xl border-l-4 border-violet-500 bg-violet-50/70 p-6">
+          <p className="mb-1.5 text-xs font-bold uppercase tracking-wider text-violet-700">Spiral lore</p>
+          <p className="leading-relaxed text-slate-700">{school.funFact}</p>
         </aside>
 
         {/* Related */}
         <section aria-label="Related guides">
-          <h2 className="mb-5 font-display text-2xl font-bold text-white">Now plan your build</h2>
+          <h2 className="mb-5 font-display text-2xl font-bold text-slate-900">Now plan your build</h2>
           <div className="grid gap-4 sm:grid-cols-2">
             {guides.map((g) => (
               <GuideCard key={g.slug} guide={g} />
             ))}
           </div>
-          <p className="mt-6 text-sm text-night-300">
+          <p className="mt-6 text-sm text-slate-500">
             Or compare against the other six on the{" "}
-            <Link href="/schools" className="font-medium text-spark-400 hover:text-spark-300">
+            <Link href="/schools" className="font-medium text-indigo-700 hover:text-indigo-900">
               schools overview
             </Link>
             .

@@ -10,7 +10,6 @@ export interface GuideMeta {
   blurb: string;
   category: CategoryId;
   catName: string;
-  catEmoji: string;
   difficulty: Difficulty;
   minutes: number;
   tags: string[];
@@ -24,7 +23,6 @@ export function toMeta(g: Guide): GuideMeta {
     blurb: g.blurb,
     category: g.category,
     catName: cat?.name ?? g.category,
-    catEmoji: cat?.emoji ?? "📖",
     difficulty: g.difficulty,
     minutes: readingMinutes(g),
     tags: g.tags,

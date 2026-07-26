@@ -110,25 +110,25 @@ export const gardeningGuides: Guide[] = [
               headers: ["Plant", "Grows for you", "Seeds from", "Notes"],
               rows: [
                 [
-                  "🥔 Couch Potatoes",
+                  "Couch Potatoes",
                   "Mega snacks (pet training fuel)",
                   "Grizzleheim-area mob drops; Bazaar seed tab (restocks constantly)",
                   "The community's default garden. A stable Couch Potato patch ≈ permanent free pet training.",
                 ],
                 [
-                  "🫛 Evil Magma Peas",
+                  "Evil Magma Peas",
                   "Top-tier mega snacks",
                   "Rare drops and crowns packs; often gifted/traded via friends",
                   "Better output than potatoes, harder to source. Endgame gardeners run both.",
                 ],
                 [
-                  "🌿 King Parsley / Ultra King Parsley",
+                  "King Parsley / Ultra King Parsley",
                   "Amber (rare reagent) from the Ultra variant",
                   "King Parsley from vendors/Bazaar; Ultra seeds emerge from elder King Parsley luck",
                   "Amber gates several famous crafted spells — this garden is a long-term investment.",
                 ],
                 [
-                  "🌼 Pink Dandelions",
+                  "Pink Dandelions",
                   "Cheap snacks, fast cycles",
                   "Bazaar / vendors, pennies",
                   "The tutorial plant. Graduate when ranks allow.",

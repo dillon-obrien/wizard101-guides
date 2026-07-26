@@ -39,10 +39,10 @@ export default function FaqPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <h1 className="font-display text-4xl font-bold text-white">
+      <h1 className="font-display text-4xl font-bold text-slate-900">
         Frequently Asked Questions
       </h1>
-      <p className="mt-3 text-lg text-night-300">
+      <p className="mt-3 text-lg text-slate-600">
         The questions every wizard asks, answered fast — each one links to the
         full guide when you want depth.
       </p>
@@ -53,7 +53,7 @@ export default function FaqPage() {
       <div className="mt-10 space-y-12">
         {categories.map((cat) => (
           <section key={cat} aria-label={cat}>
-            <h2 className="mb-4 font-display text-xl font-bold text-spark-300">{cat}</h2>
+            <h2 className="mb-4 font-display text-xl font-bold text-slate-900">{cat}</h2>
             <div className="space-y-3">
               {faqs
                 .filter((f) => f.category === cat)
@@ -63,18 +63,18 @@ export default function FaqPage() {
                     <details
                       key={id}
                       id={id}
-                      className="faq-item group rounded-xl border border-night-700 bg-night-850 target:border-spark-500/60"
+                      className="faq-item group rounded-xl border border-slate-200 bg-white target:border-indigo-400"
                     >
-                      <summary className="flex cursor-pointer items-center justify-between gap-4 p-4 font-semibold text-night-100 [&::-webkit-details-marker]:hidden">
+                      <summary className="flex cursor-pointer items-center justify-between gap-4 p-4 font-semibold text-slate-800 [&::-webkit-details-marker]:hidden">
                         {f.q}
                         <span
                           aria-hidden
-                          className="shrink-0 text-spark-400 transition-transform group-open:rotate-45"
+                          className="shrink-0 text-indigo-600 transition-transform group-open:rotate-45"
                         >
                           ＋
                         </span>
                       </summary>
-                      <div className="space-y-3 border-t border-night-700 p-4 text-[0.95rem] leading-relaxed text-night-200">
+                      <div className="space-y-3 border-t border-slate-200 p-4 text-[0.95rem] leading-relaxed text-slate-600">
                         {f.a.map((p, i) => (
                           <p key={i}>
                             <Inline text={p} />

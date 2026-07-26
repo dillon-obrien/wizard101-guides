@@ -9,7 +9,6 @@ export function GuideCard({ guide }: { guide: Guide }) {
       href={`/guides/${m.slug}`}
       title={m.title}
       blurb={m.blurb}
-      catEmoji={m.catEmoji}
       catName={m.catName}
       minutes={m.minutes}
       difficulty={m.difficulty}

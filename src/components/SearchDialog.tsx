@@ -125,7 +125,7 @@ export function SearchDialog({ docs }: { docs: SearchDoc[] }) {
       <button
         type="button"
         onClick={() => setOpen(true)}
-        className="flex items-center gap-2 rounded-full border border-night-600 bg-night-800/80 px-3.5 py-1.5 text-sm text-night-300 transition hover:border-night-500 hover:text-night-100"
+        className="flex items-center gap-2 rounded-full border border-slate-300 bg-white px-3.5 py-1.5 text-sm text-slate-500 transition hover:border-slate-400 hover:text-slate-700"
         aria-label="Search the site"
       >
         <svg aria-hidden viewBox="0 0 20 20" className="h-4 w-4" fill="none" stroke="currentColor" strokeWidth="2">
@@ -133,25 +133,28 @@ export function SearchDialog({ docs }: { docs: SearchDoc[] }) {
           <path d="m14 14 3.5 3.5" strokeLinecap="round" />
         </svg>
         <span className="hidden sm:inline">Search…</span>
-        <kbd className="hidden rounded border border-night-600 bg-night-900 px-1.5 py-0.5 text-[10px] font-semibold text-night-400 sm:inline">
+        <kbd className="hidden rounded border border-slate-300 bg-slate-50 px-1.5 py-0.5 text-[10px] font-semibold text-slate-500 sm:inline">
           ⌘K
         </kbd>
       </button>
 
       {open && (
         <div
-          className="fixed inset-0 z-50 flex items-start justify-center bg-night-950/80 p-4 pt-[12vh] backdrop-blur-sm"
+          className="fixed inset-0 z-50 flex items-start justify-center bg-slate-900/25 p-4 pt-[12vh] backdrop-blur-sm"
           onClick={close}
           role="dialog"
           aria-modal="true"
           aria-label="Site search"
         >
           <div
-            className="w-full max-w-xl overflow-hidden rounded-2xl border border-night-600 bg-night-850 shadow-2xl shadow-night-950"
+            className="w-full max-w-xl overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-2xl shadow-slate-900/10"
             onClick={(e) => e.stopPropagation()}
           >
-            <div className="flex items-center gap-3 border-b border-night-700 px-4">
-              <span aria-hidden className="text-night-400">🔮</span>
+            <div className="flex items-center gap-3 border-b border-slate-200 px-4">
+              <svg aria-hidden viewBox="0 0 20 20" className="h-4 w-4 shrink-0 text-slate-400" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="9" cy="9" r="6" />
+                <path d="m14 14 3.5 3.5" strokeLinecap="round" />
+              </svg>
               <input
                 ref={inputRef}
                 value={query}
@@ -159,12 +162,12 @@ export function SearchDialog({ docs }: { docs: SearchDoc[] }) {
                 onKeyDown={onInputKeyDown}
                 placeholder="Search guides, schools, glossary…"
                 aria-label="Search query"
-                className="w-full bg-transparent py-3.5 text-base text-night-100 placeholder-night-400 outline-none"
+                className="w-full bg-transparent py-3.5 text-base text-slate-900 placeholder-slate-400 outline-none"
               />
               <button
                 type="button"
                 onClick={close}
-                className="rounded border border-night-600 px-1.5 py-0.5 text-[10px] font-semibold text-night-400 hover:text-night-200"
+                className="rounded border border-slate-300 px-1.5 py-0.5 text-[10px] font-semibold text-slate-400 hover:text-slate-600"
               >
                 ESC
               </button>
@@ -172,21 +175,21 @@ export function SearchDialog({ docs }: { docs: SearchDoc[] }) {
 
             <div ref={listRef} className="max-h-[55vh] overflow-y-auto p-2">
               {query.trim() === "" && (
-                <p className="px-3 py-6 text-center text-sm text-night-300">
-                  Try <span className="text-spark-400">“feint”</span>,{" "}
-                  <span className="text-spark-400">“waterworks”</span>,{" "}
-                  <span className="text-spark-400">“couch potatoes”</span> or{" "}
-                  <span className="text-spark-400">“best school”</span>
+                <p className="px-3 py-6 text-center text-sm text-slate-500">
+                  Try <span className="font-medium text-indigo-700">“feint”</span>,{" "}
+                  <span className="font-medium text-indigo-700">“waterworks”</span>,{" "}
+                  <span className="font-medium text-indigo-700">“couch potatoes”</span> or{" "}
+                  <span className="font-medium text-indigo-700">“best school”</span>
                 </p>
               )}
               {query.trim() !== "" && flat.length === 0 && (
-                <p className="px-3 py-6 text-center text-sm text-night-300">
+                <p className="px-3 py-6 text-center text-sm text-slate-500">
                   Nothing found — the spell fizzled. Try a shorter word?
                 </p>
               )}
               {grouped.map((group) => (
                 <div key={group.type} className="mb-1">
-                  <p className="px-3 pb-1 pt-2 text-[11px] font-bold uppercase tracking-wider text-night-400">
+                  <p className="px-3 pb-1 pt-2 text-[11px] font-bold uppercase tracking-wider text-slate-400">
                     {group.type === "Guide" ? "Guides" : group.type === "School" ? "Schools" : group.type === "World" ? "Worlds" : group.type}
                   </p>
                   {group.items.map((doc) => {
@@ -200,13 +203,13 @@ export function SearchDialog({ docs }: { docs: SearchDoc[] }) {
                         onMouseEnter={() => setSelected(index)}
                         data-selected={isSelected || undefined}
                         className={`block rounded-lg px-3 py-2 ${
-                          isSelected ? "bg-night-700/80" : "hover:bg-night-700/60"
+                          isSelected ? "bg-indigo-50" : "hover:bg-slate-50"
                         }`}
                       >
-                        <span className="block text-sm font-semibold text-night-100">
+                        <span className="block text-sm font-semibold text-slate-900">
                           {doc.title}
                         </span>
-                        <span className="mt-0.5 block truncate text-xs text-night-300">
+                        <span className="mt-0.5 block truncate text-xs text-slate-500">
                           {doc.context}
                         </span>
                       </Link>
@@ -215,7 +218,7 @@ export function SearchDialog({ docs }: { docs: SearchDoc[] }) {
                 </div>
               ))}
               {flat.length > 0 && (
-                <p className="border-t border-night-700 px-3 pb-1 pt-2 text-center text-[11px] text-night-400">
+                <p className="border-t border-slate-200 px-3 pb-1 pt-2 text-center text-[11px] text-slate-400">
                   ↑↓ to navigate · Enter to open · Esc to close
                 </p>
               )}

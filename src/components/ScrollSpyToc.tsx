@@ -29,14 +29,11 @@ export function ScrollSpyToc({ items }: { items: TocItem[] }) {
   }, [items]);
 
   return (
-    <nav
-      aria-label="Table of contents"
-      className="sticky top-24 rounded-xl border border-night-700 bg-night-850/70 p-4"
-    >
-      <p className="mb-3 text-xs font-bold uppercase tracking-wider text-night-400">
+    <nav aria-label="Table of contents" className="sticky top-24">
+      <p className="mb-3 text-xs font-bold uppercase tracking-wider text-slate-400">
         On this page
       </p>
-      <ol className="space-y-1 text-sm">
+      <ol className="space-y-0.5 text-sm">
         {items.map((item) => {
           const isActive = active === item.id;
           return (
@@ -44,10 +41,10 @@ export function ScrollSpyToc({ items }: { items: TocItem[] }) {
               <a
                 href={`#${item.id}`}
                 aria-current={isActive ? "true" : undefined}
-                className={`block rounded-lg border-l-2 py-1.5 pl-3 pr-2 leading-snug transition ${
+                className={`block border-l-2 py-1.5 pl-3 pr-2 leading-snug transition ${
                   isActive
-                    ? "border-spark-400 bg-spark-500/10 font-medium text-spark-300"
-                    : "border-transparent text-night-300 hover:border-night-500 hover:text-night-100"
+                    ? "border-indigo-600 font-medium text-indigo-700"
+                    : "border-slate-200 text-slate-500 hover:border-slate-400 hover:text-slate-800"
                 }`}
               >
                 {item.title}
@@ -58,7 +55,7 @@ export function ScrollSpyToc({ items }: { items: TocItem[] }) {
       </ol>
       <a
         href="#content"
-        className="mt-4 block border-t border-night-700 pt-3 text-xs font-medium text-night-400 hover:text-spark-300"
+        className="mt-4 block pl-3 text-xs font-medium text-slate-400 hover:text-indigo-700"
       >
         ↑ Back to top
       </a>

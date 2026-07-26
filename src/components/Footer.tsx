@@ -17,6 +17,7 @@ export function Footer() {
           <Link className="text-slate-600 hover:text-indigo-700" href="/guides">All guides</Link>
           <Link className="text-slate-600 hover:text-indigo-700" href="/schools">The 7 schools</Link>
           <Link className="text-slate-600 hover:text-indigo-700" href="/worlds">World order</Link>
+          <Link className="text-slate-600 hover:text-indigo-700" href="/tools">Tools</Link>
           <Link className="text-slate-600 hover:text-indigo-700" href="/glossary">Glossary</Link>
           <Link className="text-slate-600 hover:text-indigo-700" href="/faq">FAQ</Link>
           <Link className="text-slate-600 hover:text-indigo-700" href="/guides/complete-beginners-guide">Start here</Link>

@@ -8,8 +8,9 @@ import { SearchDialog } from "./SearchDialog";
 
 const NAV = [
   { href: "/guides", label: "Guides" },
-  { href: "/schools", label: "Schools" },
   { href: "/worlds", label: "Worlds" },
+  { href: "/schools", label: "Schools" },
+  { href: "/tools", label: "Tools" },
   { href: "/glossary", label: "Glossary" },
   { href: "/faq", label: "FAQ" },
 ];

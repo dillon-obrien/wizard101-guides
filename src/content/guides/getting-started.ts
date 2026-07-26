@@ -719,7 +719,7 @@ export const gettingStartedGuides: Guide[] = [
       {
         title: "Points are scarcer than they feel — budget",
         blocks: [
-          "A rough lifetime budget: leveling to the cap plus every Zeke quest yields somewhere around 55–65 points. The universal buys above eat ~15. Sun/Star school enchants and auras across all arcs eat another sizable chunk. That leaves less spare than you'd think — which is exactly why \"cool-looking attack at level 12\" is the cardinal sin.",
+          "The lifetime budget at cap 180: **37 points from levels**, **21 from Zeke**, and **16 from named givers** — about **74 total** with every quest done ([count yours](/tools/training-points)). The universal buys above eat ~15; Sun/Star enchants and auras across all arcs eat another sizable chunk. That leaves less spare than the total suggests — which is exactly why \"cool-looking attack at level 12\" is the cardinal sin.",
           {
             callout: {
               kind: "tip",

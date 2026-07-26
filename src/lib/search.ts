@@ -13,15 +13,39 @@ export interface SearchDoc {
   /** Where it lives */
   href: string;
   /** Result group label */
-  type: "Guide" | "School" | "World" | "Glossary" | "FAQ";
+  type: "Guide" | "School" | "World" | "Tool" | "Glossary" | "FAQ";
   /** Small context line under the title */
   context: string;
   /** Lowercased haystack for matching */
   keywords: string;
 }
 
+const TOOL_DOCS: SearchDoc[] = [
+  {
+    title: "Damage Calculator",
+    href: "/tools/damage-calculator",
+    type: "Tool",
+    context: "Stack blades, traps, pierce and crits — see the exact hit",
+    keywords: "damage calculator tool blades traps feint crit pierce resist math",
+  },
+  {
+    title: "Training Point Planner",
+    href: "/tools/training-points",
+    type: "Tool",
+    context: "Levels + Zeke + named givers — count your points",
+    keywords: "training point planner tool calculator zeke points count",
+  },
+  {
+    title: "Level Advisor",
+    href: "/tools/level-advisor",
+    type: "Tool",
+    context: "Your world, gear standard, and next milestones at any level",
+    keywords: "level advisor tool what to do at my level milestones gear checkpoint",
+  },
+];
+
 export function buildSearchIndex(): SearchDoc[] {
-  const docs: SearchDoc[] = [];
+  const docs: SearchDoc[] = [...TOOL_DOCS];
 
   for (const g of allGuides) {
     const cat = categoryById.get(g.category);

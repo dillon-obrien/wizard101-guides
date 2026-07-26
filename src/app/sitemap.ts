@@ -5,7 +5,18 @@ import { allGuides } from "@/lib/guides";
 import { SITE_URL } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticRoutes = ["", "/guides", "/schools", "/worlds", "/glossary", "/faq"].map(
+  const staticRoutes = [
+    "",
+    "/guides",
+    "/schools",
+    "/worlds",
+    "/tools",
+    "/tools/damage-calculator",
+    "/tools/training-points",
+    "/tools/level-advisor",
+    "/glossary",
+    "/faq",
+  ].map(
     (path) => ({
       url: `${SITE_URL}${path}`,
       changeFrequency: "weekly" as const,

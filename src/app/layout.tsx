@@ -1,10 +1,20 @@
 import type { Metadata, Viewport } from "next";
+import localFont from "next/font/local";
 import { BackToTop } from "@/components/BackToTop";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import { buildSearchIndex } from "@/lib/search";
 import { SITE_NAME, SITE_TAGLINE, SITE_URL } from "@/lib/site";
 import "./globals.css";
+
+const inter = localFont({
+  src: [
+    { path: "./fonts/InterVariable.woff2", style: "normal" },
+    { path: "./fonts/InterVariable-Italic.woff2", style: "italic" },
+  ],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
@@ -28,7 +38,7 @@ export default function RootLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   const searchDocs = buildSearchIndex();
   return (
-    <html lang="en">
+    <html lang="en" className={inter.variable}>
       <body className="min-h-screen antialiased">
         <a
           href="#content"

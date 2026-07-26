@@ -7,6 +7,7 @@ import type { SearchDoc } from "@/lib/search";
 
 const GROUP_ORDER: SearchDoc["type"][] = [
   "Guide",
+  "Tool",
   "School",
   "World",
   "Glossary",
@@ -190,7 +191,7 @@ export function SearchDialog({ docs }: { docs: SearchDoc[] }) {
               {grouped.map((group) => (
                 <div key={group.type} className="mb-1">
                   <p className="px-3 pb-1 pt-2 text-[11px] font-bold uppercase tracking-wider text-slate-400">
-                    {group.type === "Guide" ? "Guides" : group.type === "School" ? "Schools" : group.type === "World" ? "Worlds" : group.type}
+                    {group.type === "Guide" ? "Guides" : group.type === "School" ? "Schools" : group.type === "World" ? "Worlds" : group.type === "Tool" ? "Tools" : group.type}
                   </p>
                   {group.items.map((doc) => {
                     const index = flat.indexOf(doc);

@@ -52,7 +52,7 @@ const QUICK_ANSWERS = [
   ["Fights feel slow", "The tiny-deck trick and blade math that end fights in 3 rounds.", "/guides/deck-building-basics"],
   ["My pet is useless", "The talents that matter and the breeding loop to get them.", "/guides/pet-talents-that-matter"],
   ["What gear at my level?", "The free checkpoint path from Bazaar rags to Darkmoor.", "/guides/gear-guide-levels-1-50"],
-  ["Where do I quest next?", "Every world in order, with detours worth taking.", "/guides/world-order-and-leveling"],
+  ["Where do I quest next?", "Per-world playbooks: fast route, Zeke items, what to skip.", "/worlds"],
   ["I can't find a team", "Team-Up, sigil manners, and why supports blade the hitter.", "/guides/team-up-and-dungeon-etiquette"],
   ["What does this word mean?", "Every Spiral term, defined in plain English.", "/glossary"],
 ];

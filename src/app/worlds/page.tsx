@@ -56,8 +56,9 @@ export default function WorldsPage() {
       <h1 className="font-display text-4xl font-bold text-slate-900">The Spiral, In Order</h1>
       <p className="mt-3 max-w-2xl text-lg text-slate-600">
         Follow the main story and the worlds order themselves — this page is
-        your map of what's coming. Level ranges are practical guideposts, not
-        hard gates. Pair with the{" "}
+        the map, and every world has a <strong className="font-semibold text-slate-900">playbook</strong>:
+        the fast route, every Zeke item zone, what to grab, what to skip.
+        Level ranges are practical guideposts, not hard gates. Pair with the{" "}
         <Link href="/guides/world-order-and-leveling" className="font-medium text-indigo-700 hover:text-indigo-900">
           leveling roadmap
         </Link>{" "}
@@ -111,6 +112,12 @@ export default function WorldsPage() {
                           </li>
                         ))}
                       </ul>
+                      <Link
+                        href={`/worlds/${slugify(w.name)}`}
+                        className="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-indigo-700 hover:text-indigo-900"
+                      >
+                        Open the playbook — route, Zeke items, skips →
+                      </Link>
                     </div>
                   </li>
                 ))}

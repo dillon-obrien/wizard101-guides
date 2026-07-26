@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { playbooks } from "@/content/playbooks";
 import { schools } from "@/content/schools";
 import { allGuides } from "@/lib/guides";
 import { SITE_URL } from "@/lib/site";
@@ -24,5 +25,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  return [...staticRoutes, ...guideRoutes, ...schoolRoutes];
+  const playbookRoutes = playbooks.map((p) => ({
+    url: `${SITE_URL}/worlds/${p.slug}`,
+    changeFrequency: "monthly" as const,
+    priority: 0.7,
+  }));
+
+  return [...staticRoutes, ...guideRoutes, ...schoolRoutes, ...playbookRoutes];
 }

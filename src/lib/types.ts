@@ -116,6 +116,31 @@ export interface World {
   highlights: string[];
 }
 
+export interface WorldPlaybook {
+  /** Must equal slugify(world name) from the worlds list. */
+  slug: string;
+  name: string;
+  /** One blunt line about what this world is. */
+  pitch: string;
+  /** The route, beat by beat — one line each, no fluff. */
+  route: string[];
+  /** Zeke collectible quest for this world. */
+  zeke?: {
+    collectible: string;
+    count: number;
+    zones: string[];
+    note?: string;
+  };
+  /** Extra training-point quests available in this world. */
+  extraTp?: string[];
+  /** Must-dos before moving on. */
+  grab: string[];
+  /** Explicit permission slips. */
+  skip: string[];
+  /** The advanced-player lane: farms, keys, secrets tied to this world. */
+  advanced: string[];
+}
+
 export interface GlossaryEntry {
   term: string;
   def: string;

@@ -20,7 +20,7 @@ deeper when you want the details.
 - **Custom SVG icon sets** for the seven schools and nine guide categories
 - **7 school deep-dives** — playstyle, strengths/weaknesses, signature
   spells, stat priorities, secondary picks, leveling tips
-- **Worlds timeline** — every world by arc with level ranges and highlights
+- **Worlds timeline + 22 per-world playbooks** — the fast route, every Zeke collectible and its zones (verified), extra training-point quests, what to grab, what to skip, and an advanced lane for each world
 - **60+ term glossary** and a **FAQ**, both searchable
 - **Site-wide search** (⌘K / `/`) across guides, schools, worlds, glossary
   and FAQ

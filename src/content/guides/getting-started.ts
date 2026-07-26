@@ -585,10 +585,33 @@ export const gettingStartedGuides: Guide[] = [
           {
             list: [
               "**Leveling:** a point every 4 levels until level 20, then every 5 levels (so: 4, 8, 12, 16, 20, 25, 30, …).",
-              "**Prospector Zeke:** every world has a Zeke collectible quest worth **one full training point**. These add up to a big chunk of your lifetime points — details in the [Zeke & side quests guide](/guides/side-content-worth-doing).",
-              "**Story milestones:** a few arc-completion quests award extra points.",
+              "**Prospector Zeke:** every world has a Zeke collectible quest worth **one full training point** — 21 points across the Spiral (Khrysalis pays twice). Each [world playbook](/worlds) lists that world's collectible and zones.",
+              "**Named side-quest givers:** a handful of NPCs pay additional points (full census below).",
               "Hover your Spellbook's training tab to see points available; trainers with a glowing icon have something you can afford.",
             ],
+          },
+        ],
+      },
+      {
+        title: "The full training-point census (verified)",
+        blocks: [
+          "Beyond leveling, these are the collectible points veterans make sure they never miss:",
+          {
+            table: {
+              headers: ["Source", "Points", "Where"],
+              rows: [
+                ["Prospector Zeke quests", "21", "One per world — two in Khrysalis (Khryckets + Iron Butterflies). Collectibles and zones in each [world playbook](/worlds)"],
+                ["Eloise Merryweather quests", "5", "Her reagent-collect quests across early worlds"],
+                ["Ogden Peake", "3", "Celestia side chain"],
+                ["Francis Lux", "3 (across 4 quests)", "Avalon"],
+                ["Inyanga Whitestripes", "2", "Zafaria"],
+                ["Zaltanna the Mirrormask", "1", "Khrysalis"],
+                ["Preservationist Zach", "1", "Lemuria"],
+                ["Louise Mayqueen", "1", "Lemuria"],
+              ],
+              caption:
+                "Totals verified against community training-point guides as of mid-2026 — newer worlds occasionally add givers, so grab every side quest attached to a named collector.",
+            },
           },
         ],
       },

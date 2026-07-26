@@ -1,6 +1,7 @@
 import { categoryById } from "@/content/categories";
 import { faqs } from "@/content/faq";
 import { glossary } from "@/content/glossary";
+import { playbookBySlug } from "@/content/playbooks";
 import { schools } from "@/content/schools";
 import { worlds } from "@/content/worlds";
 import { allGuides } from "./guides";
@@ -46,12 +47,15 @@ export function buildSearchIndex(): SearchDoc[] {
   }
 
   for (const w of worlds) {
+    const slug = slugify(w.name);
+    const pb = playbookBySlug.get(slug);
     docs.push({
-      title: w.name,
-      href: `/worlds#${slugify(w.name)}`,
+      title: `${w.name} playbook`,
+      href: `/worlds/${slug}`,
       type: "World",
-      context: `Levels ${w.levels} · ${w.blurb}`,
-      keywords: `${w.name} world levels ${w.levels} ${w.blurb}`.toLowerCase(),
+      context: `Levels ${w.levels} · route, Zeke ${pb?.zeke?.collectible ?? ""}, grabs & skips`,
+      keywords:
+        `${w.name} world playbook levels ${w.levels} zeke ${pb?.zeke?.collectible ?? ""} route ${w.blurb}`.toLowerCase(),
     });
   }
 

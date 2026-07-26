@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+  /* Night sky base palette */
+  --color-night-950: #070912;
+  --color-night-900: #0b0e1a;
+  --color-night-850: #101426;
+  --color-night-800: #151a30;
+  --color-night-700: #1e2442;
+  --color-night-600: #2b3358;
+  --color-night-500: #3d4670;
+  --color-night-400: #5d668f;
+  --color-night-300: #8d95b8;
+  --color-night-200: #bcc2da;
+  --color-night-100: #e2e5f1;
+
+  /* Spiral gold accent */
+  --color-spark-300: #ffe9a3;
+  --color-spark-400: #ffd866;
+  --color-spark-500: #f0b429;
+  --color-spark-600: #d69e18;
+
+  /* Arcane purple accent */
+  --color-arcane-300: #c4b5fd;
+  --color-arcane-400: #a78bfa;
+  --color-arcane-500: #8b5cf6;
+  --color-arcane-600: #7c3aed;
+
+  /* School colors */
+  --color-school-fire: #f4623a;
+  --color-school-ice: #67c8f0;
+  --color-school-storm: #a259e6;
+  --color-school-myth: #e8c94a;
+  --color-school-life: #58c26a;
+  --color-school-death: #9aa3b2;
+  --color-school-balance: #d9975a;
+
+  --font-display: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia,
+    "Times New Roman", serif;
+  --font-body: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Offset anchor targets below the sticky header */
+[id] {
+  scroll-margin-top: 5.5rem;
+}
+
+body {
+  background-color: var(--color-night-900);
+  color: var(--color-night-100);
+  font-family: var(--font-body);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(139, 92, 246, 0.14), transparent),
+    radial-gradient(ellipse 60% 40% at 90% 10%, rgba(240, 180, 41, 0.05), transparent);
+  background-repeat: no-repeat;
+}
+
+.font-display {
+  font-family: var(--font-display);
+}
+
+/* Starfield sprinkle for hero areas */
+.starfield {
+  background-image:
+    radial-gradient(1px 1px at 20% 30%, rgba(255, 255, 255, 0.5), transparent),
+    radial-gradient(1px 1px at 40% 70%, rgba(255, 255, 255, 0.35), transparent),
+    radial-gradient(1.5px 1.5px at 60% 20%, rgba(255, 232, 163, 0.5), transparent),
+    radial-gradient(1px 1px at 80% 50%, rgba(255, 255, 255, 0.4), transparent),
+    radial-gradient(1px 1px at 10% 80%, rgba(196, 181, 253, 0.45), transparent),
+    radial-gradient(1.5px 1.5px at 90% 85%, rgba(255, 255, 255, 0.3), transparent),
+    radial-gradient(1px 1px at 70% 90%, rgba(255, 232, 163, 0.35), transparent),
+    radial-gradient(1px 1px at 30% 10%, rgba(255, 255, 255, 0.4), transparent);
+}
+
+.card {
+  background-color: var(--color-night-850);
+  border: 1px solid var(--color-night-700);
+  border-radius: 1rem;
+}
+
+a.card {
+  transition: border-color 150ms ease, transform 150ms ease, background-color 150ms ease;
+}
+
+a.card:hover {
+  border-color: var(--color-night-500);
+  background-color: var(--color-night-800);
+  transform: translateY(-2px);
+}
+
+/* Prose defaults inside guide bodies */
+.guide-body p {
+  line-height: 1.75;
+}
+
+::selection {
+  background-color: rgba(240, 180, 41, 0.3);
+}
+
+details.faq-item summary::-webkit-details-marker {
+  display: none;
+}

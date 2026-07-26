@@ -66,6 +66,22 @@ The site is fully static (54 prerendered pages, no database, no API routes),
 so it also runs anywhere else Next.js does (`npm run build && npm start`,
 Docker, etc.).
 
+### Troubleshooting: `No Output Directory named "public" found`
+
+This error means the deployment was built with the **"Other"** framework
+preset instead of Next.js (Vercel then expects a static `public/` output
+folder). Three-part fix, any one of which is sufficient:
+
+1. **Deploy the latest commit.** `vercel.json` in this repo pins
+   `"framework": "nextjs"`, which overrides the project's preset — but only
+   for commits that contain it. Clicking **Redeploy** on an old failed
+   deployment rebuilds that *old commit*; push a new commit or use
+   "Create Deployment" from the latest `main` instead.
+2. In **Project Settings → Build and Deployment → Framework Preset**,
+   select **Next.js**.
+3. In **Project Settings → Git → Production Branch**, set **`main`** so
+   production always tracks the up-to-date branch.
+
 ## Editing & adding content
 
 | What | Where |

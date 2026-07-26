@@ -63,6 +63,13 @@ const TOOL_DOCS: SearchDoc[] = [
     context: "Exact feedings from any age to Mega, by snack quality",
     keywords: "pet xp snack planner calculator mega snacks feedings age train leveling",
   },
+  {
+    title: "Talent Reveal Odds",
+    href: "/tools/talent-odds",
+    type: "Tool",
+    context: "Keep training or rehatch — live reveal probabilities",
+    keywords: "talent odds reveal probability pool keep training rehatch 252 pet",
+  },
 ];
 
 export function buildSearchIndex(): SearchDoc[] {

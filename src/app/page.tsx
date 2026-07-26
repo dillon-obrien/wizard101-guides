@@ -225,6 +225,37 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* Tools strip */}
+      <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
+        <div className="flex items-end justify-between gap-4">
+          <h2 className="font-display text-3xl font-bold text-slate-900">
+            Do the math
+          </h2>
+          <Link href="/tools" className="text-sm font-medium text-indigo-700 hover:text-indigo-900">
+            All tools →
+          </Link>
+        </div>
+        <p className="mt-2 max-w-2xl text-slate-500">
+          Interactive calculators on the same verified numbers as the guides.
+        </p>
+        <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {[
+            ["Damage Calculator", "Blades × traps × pierce × crit — the exact hit", "/tools/damage-calculator"],
+            ["Hatch Odds", "Wow Factor return chances + exclusive rules", "/tools/hatch-calculator"],
+            ["Talent Reveal Odds", "Keep training or rehatch, answered honestly", "/tools/talent-odds"],
+            ["Pet XP & Snacks", "Exact feedings from any age to Mega", "/tools/pet-snacks"],
+            ["Deck Draw Odds", "Why small decks always draw the blade", "/tools/draw-odds"],
+            ["Training Points", "Levels + Zeke + named givers, totaled", "/tools/training-points"],
+            ["Level Advisor", "Your world, gear, and next milestones", "/tools/level-advisor"],
+          ].map(([name, blurb, href]) => (
+            <Link key={href} href={href} className="card p-4">
+              <span className="block font-semibold text-slate-900">{name}</span>
+              <span className="mt-1 block text-xs leading-relaxed text-slate-500">{blurb}</span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* Schools strip */}
       <section className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
         <h2 className="font-display text-3xl font-bold text-slate-900">

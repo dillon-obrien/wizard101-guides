@@ -318,6 +318,7 @@ export const petGuides: Guide[] = [
               "**Redundant may-cast clutter** — three different may-cast blades is chaos, not synergy.",
               "**Attribute-only pools with no payoffs** — Mighty is great *next to* Dealer/Proof, pointless alone.",
               "Remember: you can't delete talents from a pool, only out-breed them across generations. Every kiosk hatch with a cleaner parent dilutes the junk.",
+              "Mid-training doubt? The [Talent Reveal Odds tool](/tools/talent-odds) gives the honest keep-or-rehatch probability from your current reveals.",
             ],
           },
         ],

@@ -33,6 +33,12 @@ const TOOLS = [
       "How many snacks from here to Mega — exact feedings for any age, snack quality, and double-XP weekends.",
   },
   {
+    href: "/tools/talent-odds",
+    name: "Talent Reveal Odds",
+    blurb:
+      "Keep training or rehatch? The live odds your wanted talents reveal by Mega, as reveals come in.",
+  },
+  {
     href: "/tools/training-points",
     name: "Training Point Planner",
     blurb:

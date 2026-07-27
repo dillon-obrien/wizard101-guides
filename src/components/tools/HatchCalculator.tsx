@@ -1,28 +1,39 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo, useRef, useState } from "react";
+import petsData from "@/data/pets.json";
 
-const WF_EXAMPLES: [number, string][] = [
-  [0, "Sand Worm Larva, Holiday Hoppers"],
-  [1, "Firecat, Imp, Unicorn, Bloodbat"],
-  [2, "Blue Cyclops, Stormbat"],
-  [3, "Ice Cat, Ninja Pig, Brass Golem"],
-  [4, "Goat Monk, Friendly Oni, Orca"],
-  [5, "Flurry Fairy, Emerald Beetle"],
-  [6, "Blood Hound, Danger Hound"],
-  [7, "Azure Dragon, Ash Quetzal"],
-  [8, "Arctic Elf, Auspicious Lantern"],
-  [9, "Archfiend, Alert Hound"],
-  [10, "Clockwork Paladin, Coal Colossus"],
-];
+/** [name, school, wowFactor, flags(1=exclusive,2=unhatchable,4=retired,8=special), tag] */
+type PetRow = [string, string, number, number, string];
+const PETS = petsData as PetRow[];
+
+const SCHOOL_COLORS: Record<string, string> = {
+  Fire: "#dc2626",
+  Ice: "#0369a1",
+  Storm: "#7c3aed",
+  Myth: "#a16207",
+  Life: "#15803d",
+  Death: "#475569",
+  Balance: "#c2410c",
+};
 
 interface PetInput {
   label: string;
   wf: number;
   exclusive: boolean;
+  meta?: { school: string; flags: number; tag: string };
 }
 
-function WfPicker({
+function flagBadges(flags: number, tag: string) {
+  const badges: { text: string; cls: string }[] = [];
+  if (flags & 1) badges.push({ text: "Exclusive", cls: "bg-amber-50 text-amber-700 ring-amber-200" });
+  if (flags & 2) badges.push({ text: "Unhatchable", cls: "bg-red-50 text-red-600 ring-red-200" });
+  if (flags & 4) badges.push({ text: "Retired", cls: "bg-slate-100 text-slate-500 ring-slate-200" });
+  if (tag) badges.push({ text: tag, cls: "bg-sky-50 text-sky-700 ring-sky-200" });
+  return badges;
+}
+
+function PetPicker({
   pet,
   setPet,
   title,
@@ -31,17 +42,144 @@ function WfPicker({
   setPet: (p: PetInput) => void;
   title: string;
 }) {
+  const [query, setQuery] = useState("");
+  const [open, setOpen] = useState(false);
+  const [highlight, setHighlight] = useState(0);
+  const blurTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const matches = useMemo(() => {
+    const q = query.trim().toLowerCase();
+    if (q.length < 2) return [];
+    const starts: PetRow[] = [];
+    const contains: PetRow[] = [];
+    for (const p of PETS) {
+      const n = p[0].toLowerCase();
+      if (n.startsWith(q)) starts.push(p);
+      else if (n.includes(q)) contains.push(p);
+      if (starts.length >= 10) break;
+    }
+    return [...starts, ...contains].slice(0, 10);
+  }, [query]);
+
+  function choose(p: PetRow) {
+    setPet({
+      label: p[0],
+      wf: p[2],
+      exclusive: Boolean(p[3] & 1),
+      meta: { school: p[1], flags: p[3], tag: p[4] },
+    });
+    setQuery("");
+    setOpen(false);
+  }
+
   return (
     <div className="rounded-xl border border-slate-200 bg-white p-5">
       <p className="text-xs font-bold uppercase tracking-wider text-slate-400">{title}</p>
-      <input
-        type="text"
-        value={pet.label}
-        onChange={(e) => setPet({ ...pet, label: e.target.value })}
-        placeholder="Pet name (optional)"
-        aria-label={`${title} name`}
-        className="mt-2 w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder-slate-400 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
-      />
+
+      {/* Search */}
+      <div className="relative mt-2">
+        <input
+          type="text"
+          value={query}
+          onChange={(e) => {
+            setQuery(e.target.value);
+            setOpen(true);
+            setHighlight(0);
+          }}
+          onFocus={() => setOpen(true)}
+          onBlur={() => {
+            blurTimer.current = setTimeout(() => setOpen(false), 150);
+          }}
+          onKeyDown={(e) => {
+            if (e.key === "ArrowDown") {
+              e.preventDefault();
+              setHighlight((h) => Math.min(h + 1, matches.length - 1));
+            } else if (e.key === "ArrowUp") {
+              e.preventDefault();
+              setHighlight((h) => Math.max(h - 1, 0));
+            } else if (e.key === "Enter" && matches[highlight]) {
+              e.preventDefault();
+              choose(matches[highlight]);
+            } else if (e.key === "Escape") {
+              setOpen(false);
+            }
+          }}
+          placeholder="Type a pet name… (1,391 bodies)"
+          aria-label={`Search pet for ${title}`}
+          className="w-full rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm text-slate-900 placeholder-slate-400 outline-none focus:border-indigo-400 focus:ring-2 focus:ring-indigo-100"
+        />
+        {open && matches.length > 0 && (
+          <ul className="absolute z-20 mt-1 max-h-72 w-full overflow-y-auto rounded-xl border border-slate-200 bg-white shadow-lg">
+            {matches.map((p, i) => (
+              <li key={p[0] + p[1]}>
+                <button
+                  type="button"
+                  onMouseDown={(e) => {
+                    e.preventDefault();
+                    if (blurTimer.current) clearTimeout(blurTimer.current);
+                    choose(p);
+                  }}
+                  onMouseEnter={() => setHighlight(i)}
+                  className={`flex w-full items-center gap-2 px-3 py-2 text-left text-sm ${
+                    i === highlight ? "bg-indigo-50" : ""
+                  }`}
+                >
+                  <span
+                    aria-hidden
+                    className="h-2 w-2 shrink-0 rounded-full"
+                    style={{ backgroundColor: SCHOOL_COLORS[p[1]] ?? "#94a3b8" }}
+                  />
+                  <span className="flex-1 truncate font-medium text-slate-900">{p[0]}</span>
+                  <span className="text-xs tabular-nums text-slate-400">WF {p[2]}</span>
+                  {flagBadges(p[3], p[4]).map((b) => (
+                    <span key={b.text} className={`rounded-full px-1.5 py-0.5 text-[10px] font-semibold ring-1 ${b.cls}`}>
+                      {b.text}
+                    </span>
+                  ))}
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+
+      {/* Selected pet card */}
+      {pet.meta ? (
+        <div className="mt-3 flex items-start justify-between gap-2 rounded-lg border border-slate-200 bg-slate-50 p-3">
+          <div>
+            <p className="flex items-center gap-2 text-sm font-semibold text-slate-900">
+              <span
+                aria-hidden
+                className="h-2 w-2 rounded-full"
+                style={{ backgroundColor: SCHOOL_COLORS[pet.meta.school] ?? "#94a3b8" }}
+              />
+              {pet.label}
+            </p>
+            <p className="mt-0.5 text-xs text-slate-500">
+              {pet.meta.school} · Wow Factor {pet.wf}
+            </p>
+            <p className="mt-1 flex flex-wrap gap-1">
+              {flagBadges(pet.meta.flags, pet.meta.tag).map((b) => (
+                <span key={b.text} className={`rounded-full px-1.5 py-0.5 text-[10px] font-semibold ring-1 ${b.cls}`}>
+                  {b.text}
+                </span>
+              ))}
+            </p>
+          </div>
+          <button
+            type="button"
+            onClick={() => setPet({ label: "", wf: pet.wf, exclusive: false })}
+            className="rounded-md px-1.5 text-slate-400 hover:bg-slate-200 hover:text-slate-700"
+            aria-label="Clear selected pet"
+          >
+            ×
+          </button>
+        </div>
+      ) : (
+        <p className="mt-2 text-xs text-slate-400">…or set it manually:</p>
+      )}
+
+      {/* Manual controls (always live; picking a pet fills them) */}
       <p className="mt-4 flex items-center justify-between text-sm font-medium text-slate-700">
         Wow Factor
         <span className="text-xl font-bold tabular-nums text-slate-900">{pet.wf}</span>
@@ -51,18 +189,15 @@ function WfPicker({
         min={0}
         max={10}
         value={pet.wf}
-        onChange={(e) => setPet({ ...pet, wf: Number(e.target.value) })}
+        onChange={(e) => setPet({ ...pet, wf: Number(e.target.value), meta: undefined, label: pet.meta ? "" : pet.label })}
         className="mt-1 w-full accent-indigo-600"
         aria-label={`${title} wow factor`}
       />
-      <p className="mt-1 min-h-8 text-xs leading-snug text-slate-400">
-        e.g. {WF_EXAMPLES.find(([v]) => v === pet.wf)?.[1]}
-      </p>
       <label className="mt-2 flex items-center gap-2 text-sm font-medium text-slate-700">
         <input
           type="checkbox"
           checked={pet.exclusive}
-          onChange={(e) => setPet({ ...pet, exclusive: e.target.checked })}
+          onChange={(e) => setPet({ ...pet, exclusive: e.target.checked, meta: undefined })}
           className="h-4 w-4 accent-indigo-600"
         />
         Exclusive body
@@ -80,8 +215,6 @@ export function HatchCalculator() {
     const nameL = left.label.trim() || (mode === "self" ? "Left pet" : "Your selected pet");
     const nameR = right.label.trim() || (mode === "self" ? "Right pet" : "Partner pet");
 
-    // Exclusive override: in a self-hatch, an exclusive body on the RIGHT
-    // always returns the LEFT body.
     if (mode === "self" && right.exclusive) {
       return {
         pL: 1,
@@ -102,6 +235,10 @@ export function HatchCalculator() {
       override: null as string | null,
     };
   }, [mode, left, right]);
+
+  const unhatchableWarning = [left, right]
+    .filter((p) => p.meta && p.meta.flags & 2)
+    .map((p) => p.label);
 
   const pct = (n: number) => `${(n * 100).toFixed(1)}%`;
 
@@ -128,8 +265,8 @@ export function HatchCalculator() {
       </div>
 
       <div className="grid gap-5 lg:grid-cols-[1fr_1fr_20rem]">
-        <WfPicker pet={left} setPet={setLeft} title={mode === "self" ? "Left pet" : "Your selected pet"} />
-        <WfPicker pet={right} setPet={setRight} title={mode === "self" ? "Right pet" : "Partner pet"} />
+        <PetPicker pet={left} setPet={setLeft} title={mode === "self" ? "Left pet" : "Your selected pet"} />
+        <PetPicker pet={right} setPet={setRight} title={mode === "self" ? "Right pet" : "Partner pet"} />
 
         <div className="h-fit rounded-xl border border-indigo-200 bg-indigo-50/60 p-5 lg:sticky lg:top-24">
           <p className="text-xs font-bold uppercase tracking-wider text-indigo-700">Body return odds</p>
@@ -166,40 +303,26 @@ export function HatchCalculator() {
               in-person hatches so normal wow-factor odds apply.
             </p>
           )}
+          {unhatchableWarning.length > 0 && (
+            <p className="mt-3 rounded-lg border border-red-200 bg-red-50 p-3 text-xs leading-relaxed text-red-700">
+              Heads up: {unhatchableWarning.join(" and ")} is flagged
+              Unhatchable — it can't be offered as a normal hatch partner.
+            </p>
+          )}
         </div>
       </div>
 
-      <section className="mt-8">
-        <h2 className="text-sm font-bold uppercase tracking-wider text-slate-400">
-          Wow Factor reference (0–10)
-        </h2>
-        <div className="mt-3 overflow-x-auto rounded-xl border border-slate-200 bg-white">
-          <table className="w-full min-w-[30rem] text-left text-sm">
-            <thead>
-              <tr className="bg-slate-50">
-                <th className="border-b border-slate-200 px-4 py-2.5 font-semibold text-slate-900">WF</th>
-                <th className="border-b border-slate-200 px-4 py-2.5 font-semibold text-slate-900">Example bodies</th>
-              </tr>
-            </thead>
-            <tbody>
-              {WF_EXAMPLES.map(([v, ex]) => (
-                <tr key={v} className="even:bg-slate-50/60">
-                  <td className="border-b border-slate-100 px-4 py-2 font-bold tabular-nums text-slate-900">{v}</td>
-                  <td className="border-b border-slate-100 px-4 py-2 text-slate-600">{ex}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-        <p className="mt-2 text-xs leading-relaxed text-slate-400">
-          Wow factor is hidden in-game; the community has mapped it for ~1,700
-          pets. Rough intuition: common drop pets sit low (0–3), rare and
-          crowns-tier bodies sit high (7–10). Look up your exact pet in a
-          community pet tome, or estimate from the tier above. Mechanics per
-          the community's hatching research — the same rules behind the
-          original petcalc tool.
-        </p>
-      </section>
+      <p className="mt-6 text-xs leading-relaxed text-slate-400">
+        Dataset: 1,391 pet bodies with wow factors and exclusive/retired/
+        unhatchable flags, from the community's hatching research (pet tome
+        lineage of the original petcalc), snapshot mid-2026. New pets arrive
+        with every update — a missing pet just means the snapshot predates it;
+        use the manual sliders. Strategy:{" "}
+        <a href="/guides/pet-hatching-guide" className="font-medium text-indigo-700 underline">
+          the hatching guide
+        </a>
+        .
+      </p>
     </div>
   );
 }

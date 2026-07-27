@@ -2,6 +2,133 @@ import type { Guide } from "@/lib/types";
 
 export const gearGuides: Guide[] = [
   {
+    slug: "the-skip-list",
+    title: "The Skip List: What Veterans Don't Do Anymore",
+    category: "gear",
+    difficulty: "advanced",
+    blurb:
+      "Deep player knowledge: the classic advice experienced players now skip — which gear grinds to walk past, which systems replaced old staples, and the few things you should never skip.",
+    tags: ["skip", "veteran", "meta", "efficiency", "gear", "deep knowledge"],
+    updated: "July 2026",
+    tldr: [
+      "A decade of guides says farm everything. Veterans don't — they skip grinds whose payoff dies before it pays rent.",
+      "The core test: **how many levels will this gear live before its replacement?** Waterworks lives ~40 levels; Hades lives ~10. That math decides everything.",
+      "System changes quietly killed old staples: **Archmastery made most Mastery amulets a luxury**, and event/gauntlet gear patched the leveling-gear gaps.",
+      "This is judgment, not law — every skip below says who should *still* do it the old way. First wizard? Skip less. Fourth wizard? Skip nearly everything.",
+      "Some things remain unskippable: Zeus at 30, Feint, Sun enchants, the level-48 spell quest, and every Zeke point.",
+    ],
+    sections: [
+      {
+        title: "How veterans decide what to skip",
+        blocks: [
+          "The old guides treated every gear checkpoint as mandatory. Experienced players run three questions instead:",
+          {
+            list: [
+              "**Lifespan:** how many levels until this gear is replaced? A set that lives 40 levels (Waterworks) justifies farming; a set that lives 10 (Hades, if you're mid-rush) usually doesn't.",
+              "**Blocker test:** is the content actually stopping me? Gear exists to un-stick you. If nothing is killing you, better gear is a luxury purchase paid in hours.",
+              "**Which wizard is this?** A first wizard earns knowledge from every farm; a fourth wizard inherits TCs, gold, seeds, and a full pet line from the Shared Bank — half the old checkpoints exist to solve problems that wizard doesn't have.",
+            ],
+          },
+          {
+            callout: {
+              kind: "info",
+              body: [
+                "Everything below is a decision framework, not a decree — where community practice genuinely varies, we say so. The verified facts behind each call live in the linked guides.",
+              ],
+            },
+          },
+        ],
+      },
+      {
+        title: "The gear skip table",
+        blocks: [
+          {
+            table: {
+              headers: ["The classic advice", "The veteran move", "Who should still do it the old way"],
+              rows: [
+                [
+                  "Farm **Poseidon** at 70",
+                  "Skip by default. It beats Waterworks in a few slots for some schools — a marginal upgrade that costs real farming hours and dies at 90–100 anyway.",
+                  "Nobody, really — grab pieces only if Atlantea drops them while you're there for the story.",
+                ],
+                [
+                  "Farm **Hades** at 90",
+                  "Skip if you're rushing: you're ~10 levels from Castle Darkmoor, which replaces it wholesale. Quest through Khrysalis in Waterworks-era gear and save the farm.",
+                  "Anyone finding Khrysalis genuinely painful, and soloists who want the smoothest part-two — it's still the 90s' best set.",
+                ],
+                [
+                  "**Bazaar refresh every 5 levels after 60**",
+                  "Stop. Post-60 Bazaar gear is a treadmill of ±1% pieces. Checkpoint sets only.",
+                  "Pre-60 players — the Bazaar habit is correct while leveling to Waterworks.",
+                ],
+                [
+                  "Buy a **Mastery amulet** for off-school play",
+                  "Mostly obsolete: [Archmastery school pips](/guides/shadow-magic-and-archmastery) give everyone switchable off-school power pips for free. Amulets are now a min-max luxury for dedicated support builds.",
+                  "Hardcore healers/PvP builds that want pips in two off-schools at once.",
+                ],
+                [
+                  "Craft the **Wintertusk gear set** at 56",
+                  "Skip if you'll Team-Up Waterworks anyway — the queue is always warm and the WW set is better. Craft it only as the deliberate no-RNG route.",
+                  "Solo players who hate drop RNG, and crafters leveling the badge anyway.",
+                ],
+                [
+                  "Farm **Waterworks until the full set drops**",
+                  "The headline pieces (hat/robe) carry the value; boots are the piece veterans most often settle on. Cap your runs — 'good enough and gone' beats completionism.",
+                  "First-wizard players: the full farm is still the classic rite of passage, and the fight literacy it teaches is worth more than the boots.",
+                ],
+                [
+                  "Complete **Dragoon in every slot** at 130",
+                  "Craft the big three (hat/robe/boots) first; round out remaining slots only when raids or walls demand them — Vanguard fills gaps fine meanwhile.",
+                  "Raiders gearing for Voracious Void-era content, where full sets justify themselves.",
+                ],
+              ],
+            },
+          },
+        ],
+      },
+      {
+        title: "Leveling skips the guides won't tell you",
+        blocks: [
+          {
+            list: [
+              "**Skip the 'do every side quest' instinct** — mainline XP dwarfs it. The only always-dos are the [training-point payers](/guides/side-content-worth-doing). Colossus Boulevard is a catch-up lever, not a checklist item (grab its Smith and go).",
+              "**Skip pre-50 gold farming as an activity.** Selling drops funds everything early; a single [Halfang session](/guides/gold-farming-guide) after Wintertusk out-earns hours of low-level grinding.",
+              "**Skip perfect-petting while leveling.** An Adult/Ancient triple-double is plenty until the endgame — pushing Mega before 100 burns snacks a [benefit weekend](/guides/daily-and-weekly-routines) would have halved. ([The math.](/tools/pet-snacks))",
+              "**Skip hoarding treasure cards 'for later.'** Feint TCs and Tower Shields exist to be spent on the boss in front of you; the Bazaar restocks forever.",
+              "**Skip-elixir etiquette:** never on a first wizard (you'd skip the training points, gear literacy, and spell quests that make the endgame playable) — defensible on a third or fourth, where the account already owns everything the levels teach.",
+              "**One-shot gauntlets and housing dungeons are the forgotten leveling-gear patch** — level-scaled drops from a friend's placed gauntlet cover awkward gear gaps without any Bazaar treadmill.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "The never-skips",
+        blocks: [
+          "Skipping culture has limits. Veterans across every playstyle still treat these as untouchable:",
+          {
+            list: [
+              "**Zeus gear + Sky Iron Hasta at 30** — twenty minutes for gear that lives thirty levels. The single best time-to-value farm in the game, unchanged since forever.",
+              "**Feint** (7 points at Dworgyn) and **every Sun damage enchant** — they scale with you forever; no system has ever obsoleted them.",
+              "**Professor spell quests (48/58/…) and the Wintertusk 35/55 bonus spells** — permanent kit, minutes of effort.",
+              "**Every Zeke point** — [21 across the Spiral](/tools/training-points), and Khrysalis pays double.",
+              "**Waterworks *as an experience* on your first wizard** — even the skip-happy agree: learning cheat scripts with three strangers at level 60 is the tutorial for everything after.",
+            ],
+          },
+          {
+            callout: {
+              kind: "tip",
+              body: [
+                "The meta-lesson under all of it: gear is a means. Veterans skip because they measure grinds in *levels of useful life per hour farmed* — run that math yourself with the [gear comparator](/tools/gear-compare) and you'll make the same calls.",
+              ],
+            },
+          },
+        ],
+      },
+    ],
+    related: ["gear-progression-60-to-max", "waterworks-gear-guide", "questing-faster", "niche-knowledge-hidden-details"],
+  },
+
+  {
     slug: "gear-guide-levels-1-50",
     title: "Gear Guide: Levels 1–50 (Spend Nothing, Look Dangerous)",
     category: "gear",
@@ -202,6 +329,15 @@ export const gearGuides: Guide[] = [
               kind: "tip",
               body: [
                 "Level a bit past 60 first (say 62–65 via Zafaria's opening) and the dungeon's difficulty drops noticeably while the gear stays just as good.",
+              ],
+            },
+          },
+          {
+            callout: {
+              kind: "info",
+              title: "The veteran skip argument",
+              body: [
+                "Not every experienced player farms the full set anymore — the hat/robe carry most of the value, and rushed alt wizards often walk past Waterworks entirely. Where the skip logic applies to you (and where it doesn't): [The Skip List](/guides/the-skip-list).",
               ],
             },
           },

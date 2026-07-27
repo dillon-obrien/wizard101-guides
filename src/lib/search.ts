@@ -22,6 +22,13 @@ export interface SearchDoc {
 
 const TOOL_DOCS: SearchDoc[] = [
   {
+    title: "Build Planner",
+    href: "/tools/build-planner",
+    type: "Tool",
+    context: "Search real gear by slot/school/level — live stat totals",
+    keywords: "build planner gear database items loadout stats wizbuilder real data",
+  },
+  {
     title: "Damage Calculator",
     href: "/tools/damage-calculator",
     type: "Tool",

@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/schools",
     "/worlds",
     "/tools",
+    "/tools/build-planner",
     "/tools/damage-calculator",
     "/tools/hatch-calculator",
     "/tools/draw-odds",

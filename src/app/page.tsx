@@ -240,6 +240,7 @@ export default function HomePage() {
         </p>
         <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {[
+            ["Build Planner", "Real gear database — live loadout totals", "/tools/build-planner"],
             ["Damage Calculator", "Blades × traps × pierce × crit — the exact hit", "/tools/damage-calculator"],
             ["Hatch Odds", "Wow Factor return chances + exclusive rules", "/tools/hatch-calculator"],
             ["Talent Reveal Odds", "Keep training or rehatch, answered honestly", "/tools/talent-odds"],

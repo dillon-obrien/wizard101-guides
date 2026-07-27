@@ -5,7 +5,7 @@ import { BuildPlanner } from "@/components/tools/BuildPlanner";
 export const metadata: Metadata = {
   title: "Build Planner (real gear data)",
   description:
-    "Plan a Wizard101 loadout from a real item database: search actual hats, robes, wands and rings by school and level, and see live stat totals.",
+    "Plan a Wizard101 endgame loadout from a real item database: search actual hats, robes, wands and rings (levels 150-180) by school, and see live stat totals.",
 };
 
 export default function BuildPlannerPage() {
@@ -18,8 +18,9 @@ export default function BuildPlannerPage() {
       </nav>
       <h1 className="font-display text-4xl font-bold text-slate-900">Build Planner</h1>
       <p className="mt-3 max-w-2xl text-lg text-slate-600">
-        Real items, real numbers: search the actual gear database by slot,
-        school, and level — totals update live. Strategy context lives in the{" "}
+        Real items, real numbers: search the actual endgame gear database
+        (levels 150–180) by slot, school, and level — totals update live.
+        Strategy context lives in the{" "}
         <Link href="/guides/gear-progression-60-to-max" className="font-medium text-indigo-700 hover:text-indigo-900">
           gear progression guide
         </Link>{" "}

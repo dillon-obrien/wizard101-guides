@@ -6,7 +6,7 @@ import { useEffect, useMemo, useRef, useState } from "react";
 interface GearItem {
   k: string; // id
   n: string; // name
-  s: string; // school ("Fire", …, "Global"/"Any"/null-ish)
+  s: string; // school ("Fire", …, or "Any")
   l: number; // level requirement
   t: string; // type: Hats/Robes/…
   st: Record<string, number>;
@@ -22,36 +22,56 @@ const INITIAL: Record<string, string> = {
   Fire: "F", Ice: "I", Storm: "S", Myth: "M", Life: "L", Death: "D", Balance: "B",
 };
 
-/** Stat bases we know how to label; anything else still sums and displays raw. */
-const STAT_LABELS: [string, string][] = [
-  ["health", "Health"],
-  ["mana", "Mana"],
-  ["damage", "Damage %"],
-  ["res", "Resist %"],
-  ["acc", "Accuracy %"],
-  ["crit", "Critical"],
-  ["block", "Block"],
-  ["pierce", "Pierce %"],
-  ["pip_chance", "Power pip %"],
-  ["power_pip", "Power pip %"],
-  ["shadow_pip_rating", "Shadow rating"],
-  ["archmastery", "Archmastery"],
-  ["stun_res", "Stun resist %"],
-  ["in_heal", "Incoming heal %"],
-  ["out_heal", "Outgoing heal %"],
-  ["energy", "Energy"],
-  ["fishing_luck", "Fishing luck %"],
-  ["starting_pips", "Starting pips"],
-  ["starting_power_pips", "Starting power pips"],
+// The database covers endgame gear only — these are the real level tiers in it.
+const MIN_LEVEL = 150;
+const MAX_LEVEL = 180;
+
+/** base key → [label, isPercent] — matches the dataset's actual stat bases. */
+const STAT_META: Record<string, [string, boolean]> = {
+  damage: ["Damage", true],
+  flatdamage: ["Flat damage", false],
+  res: ["Resist", true],
+  flatresist: ["Flat resist", false],
+  pierce: ["Pierce", true],
+  crit: ["Critical", false],
+  block: ["Block", false],
+  acc: ["Accuracy", true],
+  hp: ["Health", false],
+  mana: ["Mana", false],
+  mana_percent: ["Mana", true],
+  power_pip_chance: ["Power pip", true],
+  shadow_pip_rating: ["Shadow pip rating", false],
+  archmastery: ["Archmastery", false],
+  pipconv: ["Pip conversion", false],
+  starting_pips: ["Starting pips", false],
+  starting_power_pips: ["Starting power pips", false],
+  incoming_heal: ["Incoming heal", true],
+  outgoing_heal: ["Outgoing heal", true],
+  stun_resist: ["Stun resist", true],
+  energy: ["Energy", false],
+  fishing_luck: ["Fishing luck", true],
+};
+
+const DISPLAY_ORDER = [
+  "damage", "res", "pierce", "crit", "block", "acc", "hp",
+  "power_pip_chance", "shadow_pip_rating", "archmastery", "pipconv",
+  "starting_pips", "starting_power_pips", "flatdamage", "flatresist",
+  "incoming_heal", "outgoing_heal", "stun_resist", "mana", "mana_percent",
+  "energy", "fishing_luck",
 ];
 
-function totalsFor(items: GearItem[], school: string) {
-  const raw: Record<string, number> = {};
-  for (const it of items) {
-    for (const [k, v] of Object.entries(it.st)) raw[k] = (raw[k] ?? 0) + v;
-  }
+function labelFor(base: string): string {
+  return STAT_META[base]?.[0] ?? base.replace(/_/g, " ");
+}
+
+function fmt(base: string, v: number): string {
+  const pct = STAT_META[base]?.[1] ?? false;
+  return pct ? `${v}%` : String(v);
+}
+
+/** Fold school-suffixed keys into their base for the selected school; keep _all. */
+function foldStats(raw: Record<string, number>, school: string): Record<string, number> {
   const ini = INITIAL[school];
-  // Fold school-suffixed keys into base for the selected school; keep _all.
   const folded: Record<string, number> = {};
   for (const [k, v] of Object.entries(raw)) {
     const m = k.match(/^(.*)_(F|I|S|M|L|D|B|all)$/);
@@ -65,12 +85,30 @@ function totalsFor(items: GearItem[], school: string) {
   return folded;
 }
 
-function labelFor(base: string): string {
-  const hit = STAT_LABELS.find(([k]) => k === base);
-  return hit ? hit[1] : base.replace(/_/g, " ");
+function totalsFor(items: GearItem[], school: string) {
+  const raw: Record<string, number> = {};
+  for (const it of items) {
+    for (const [k, v] of Object.entries(it.st)) raw[k] = (raw[k] ?? 0) + v;
+  }
+  return foldStats(raw, school);
 }
 
-const DISPLAY_ORDER = ["damage", "res", "pierce", "crit", "block", "acc", "health", "pip_chance", "power_pip", "shadow_pip_rating", "archmastery"];
+/** Short headline like "40% dmg · 11% res · 1106 HP" for picker rows and chosen cards. */
+function headline(item: GearItem, school: string): string {
+  const f = foldStats(item.st, school);
+  const parts: string[] = [];
+  if (f.damage) parts.push(`${f.damage}% dmg`);
+  if (f.res) parts.push(`${f.res}% res`);
+  if (f.pierce) parts.push(`${f.pierce}% prc`);
+  if (f.crit && parts.length < 3) parts.push(`${f.crit} crit`);
+  if (f.hp && parts.length < 3) parts.push(`${f.hp} HP`);
+  if (parts.length === 0) {
+    if (f.block) parts.push(`${f.block} block`);
+    if (f.pipconv) parts.push(`${f.pipconv} pipconv`);
+    if (f.archmastery) parts.push(`${f.archmastery} archm`);
+  }
+  return parts.slice(0, 3).join(" · ");
+}
 
 function SlotPicker({
   slot,
@@ -94,10 +132,7 @@ function SlotPicker({
   const pool = useMemo(
     () =>
       items.filter(
-        (i) =>
-          i.t === slot &&
-          i.l <= maxLevel &&
-          (i.s === school || !SCHOOLS.includes(i.s as (typeof SCHOOLS)[number])),
+        (i) => i.t === slot && i.l <= maxLevel && (i.s === school || i.s === "Any"),
       ),
     [items, slot, school, maxLevel],
   );
@@ -105,9 +140,12 @@ function SlotPicker({
   const matches = useMemo(() => {
     const q = query.trim().toLowerCase();
     const base = q.length < 2 ? pool : pool.filter((i) => i.n.toLowerCase().includes(q));
-    // Highest level first — "what's best available" default ordering.
-    return [...base].sort((a, b) => b.l - a.l).slice(0, 12);
-  }, [pool, query]);
+    // Highest level first, then strongest school-damage — "best available" ordering.
+    const dmg = (i: GearItem) => foldStats(i.st, school).damage ?? 0;
+    return [...base]
+      .sort((a, b) => b.l - a.l || dmg(b) - dmg(a) || a.n.localeCompare(b.n))
+      .slice(0, 12);
+  }, [pool, query, school]);
 
   return (
     <div className="rounded-xl border border-slate-200 bg-white p-4">
@@ -124,6 +162,7 @@ function SlotPicker({
               Lv {chosen.l} · {chosen.s}
               {chosen.set ? ` · ${chosen.set}` : ""}
             </p>
+            <p className="mt-0.5 text-xs tabular-nums text-indigo-700">{headline(chosen, school)}</p>
           </div>
           <button
             type="button"
@@ -159,10 +198,15 @@ function SlotPicker({
                       setQuery("");
                       setOpen(false);
                     }}
-                    className="flex w-full items-baseline gap-2 px-3 py-1.5 text-left text-sm hover:bg-indigo-50"
+                    className="w-full px-3 py-1.5 text-left text-sm hover:bg-indigo-50"
                   >
-                    <span className="min-w-0 flex-1 truncate font-medium text-slate-900">{i.n}</span>
-                    <span className="shrink-0 text-xs tabular-nums text-slate-400">Lv {i.l}</span>
+                    <span className="flex items-baseline gap-2">
+                      <span className="min-w-0 flex-1 truncate font-medium text-slate-900">{i.n}</span>
+                      <span className="shrink-0 text-xs tabular-nums text-slate-400">Lv {i.l}</span>
+                    </span>
+                    <span className="block truncate text-[11px] tabular-nums text-slate-400">
+                      {headline(i, school)}
+                    </span>
                   </button>
                 </li>
               ))}
@@ -178,7 +222,7 @@ export function BuildPlanner() {
   const [items, setItems] = useState<GearItem[] | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [school, setSchool] = useState<string>("Fire");
-  const [maxLevel, setMaxLevel] = useState(180);
+  const [maxLevel, setMaxLevel] = useState(MAX_LEVEL);
   const [picks, setPicks] = useState<Record<string, GearItem | null>>({});
 
   useEffect(() => {
@@ -209,7 +253,7 @@ export function BuildPlanner() {
   if (error) {
     return (
       <p className="rounded-xl border border-red-200 bg-red-50 p-6 text-sm text-red-700">
-        Couldn't load the gear database ({error}). Refresh to retry.
+        Couldn&apos;t load the gear database ({error}). Refresh to retry.
       </p>
     );
   }
@@ -244,15 +288,18 @@ export function BuildPlanner() {
           Level cap
           <input
             type="range"
-            min={1}
-            max={180}
+            min={MIN_LEVEL}
+            max={MAX_LEVEL}
+            step={5}
             value={maxLevel}
             onChange={(e) => setMaxLevel(Number(e.target.value))}
             className="accent-indigo-600"
           />
           <span className="w-8 text-right text-lg font-bold tabular-nums text-slate-900">{maxLevel}</span>
         </label>
-        <span className="text-xs text-slate-400">{items.length.toLocaleString()} items loaded</span>
+        <span className="text-xs text-slate-400">
+          {items.length.toLocaleString()} endgame items (Lv {MIN_LEVEL}–{MAX_LEVEL})
+        </span>
       </div>
 
       <div className="grid gap-6 lg:grid-cols-[1fr_20rem]">
@@ -276,15 +323,16 @@ export function BuildPlanner() {
           </p>
           {chosenItems.length === 0 ? (
             <p className="mt-3 text-sm text-slate-500">
-              Pick items on the left; totals appear here (school-specific stats
-              are folded into your selected school's view).
+              Pick items on the left; totals appear here. Stats for your
+              selected school and universal (&ldquo;all schools&rdquo;) stats are
+              combined; other schools&apos; stats are ignored.
             </p>
           ) : (
             <dl className="mt-3 space-y-1.5 text-sm">
               {orderedStats.map(([k, v]) => (
                 <div key={k} className="flex justify-between gap-3">
-                  <dt className="capitalize text-slate-600">{labelFor(k)}</dt>
-                  <dd className="font-bold tabular-nums text-slate-900">{v}</dd>
+                  <dt className="text-slate-600">{labelFor(k)}</dt>
+                  <dd className="font-bold tabular-nums text-slate-900">{fmt(k, v)}</dd>
                 </div>
               ))}
             </dl>
@@ -300,7 +348,8 @@ export function BuildPlanner() {
               <a href="/tools/gear-compare" className="font-medium text-indigo-700 underline">
                 comparator
               </a>
-              .
+              . Critical, block, and shadow/archmastery pips are ratings, not
+              percentages — the chance they convert to depends on your level.
             </p>
           )}
         </div>
@@ -311,9 +360,15 @@ export function BuildPlanner() {
         <a href="https://www.wizbuilder.net" target="_blank" rel="noopener noreferrer" className="font-medium text-indigo-700 underline">
           WizBuilder
         </a>{" "}
-        (snapshot, mid-2026) — for jewels, socketing, set-bonus math, and
-        shareable builds, use their full builder. Set-membership shows on
-        items here, but set *bonuses* aren't totaled in this lightweight view.
+        (snapshot, mid-2026). The database covers endgame gear — levels{" "}
+        {MIN_LEVEL}–{MAX_LEVEL} — which is where build planning actually gets
+        hard; for leveling gear standards see the{" "}
+        <a href="/guides/gear-progression-60-to-max" className="font-medium text-indigo-700 underline">
+          gear progression guide
+        </a>
+        . For jewels, socketing, set-bonus math, and shareable builds, use
+        WizBuilder&apos;s full builder. Set-membership shows on items here, but
+        set bonuses aren&apos;t totaled in this lightweight view.
       </p>
     </div>
   );

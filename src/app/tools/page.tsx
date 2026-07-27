@@ -12,7 +12,7 @@ const TOOLS = [
     href: "/tools/build-planner",
     name: "Build Planner",
     blurb:
-      "Real item database: search actual gear by slot, school, and level — live stat totals as you build.",
+      "Real endgame item database (levels 150–180): search actual gear by slot, school, and level — live stat totals as you build.",
   },
   {
     href: "/tools/damage-calculator",

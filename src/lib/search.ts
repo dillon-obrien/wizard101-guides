@@ -25,8 +25,8 @@ const TOOL_DOCS: SearchDoc[] = [
     title: "Build Planner",
     href: "/tools/build-planner",
     type: "Tool",
-    context: "Search real gear by slot/school/level — live stat totals",
-    keywords: "build planner gear database items loadout stats wizbuilder real data",
+    context: "Real endgame gear database (Lv 150–180) — live stat totals",
+    keywords: "build planner gear database items loadout stats wizbuilder real data endgame max level",
   },
   {
     title: "Damage Calculator",

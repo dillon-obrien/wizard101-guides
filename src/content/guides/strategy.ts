@@ -176,6 +176,22 @@ export const strategyGuides: Guide[] = [
         ],
       },
       {
+        title: "Veteran movement tech",
+        blocks: [
+          "The habits that separate a 10-minute street from a 25-minute one — none of them are in the tutorial:",
+          {
+            list: [
+              "**The port bus**: teleporting to a friend is free fast-travel anywhere they can stand. Duos leapfrog long walk-ins by having one player run ahead as the anchor; farming groups keep a 'bus' wizard parked at the boss.",
+              "**Realm-dodge crowded spawns**: mid-collect quest with picked-clean spawns? Switch realms on the spot — every realm respawns independently ([same trick as reagents](/guides/reagent-farming-guide)).",
+              "**Aggro geometry**: street mobs have forward-facing detection cones. Hug the wall *behind* patrol paths, hop ledges, and mount through gaps — most 'mandatory' street fights are optional geometry tests.",
+              "**Wisp routes**: health/mana wisps respawn along fixed shorelines and edges. Veterans path *through* wisp lines between fights instead of detouring to refill — the Commons pond lap before a dungeon is a ritual for a reason.",
+              "**The pre-dungeon reset**: potions full, deck rebuilt, backpack under cap, pet correct — done *while queueing* Team-Up, never after the sigil fires.",
+              "**Flee is a tool, not a failure**: fleeing an unwinnable pull, healing at a wisp line, and porting back to your anchor friend costs ~60 seconds and keeps the dungeon alive. Solo without an anchor, that same flee costs the whole walk-in — which is why veterans bring the anchor.",
+            ],
+          },
+        ],
+      },
+      {
         title: "When a fight wall-stops you",
         blocks: [
           {

@@ -661,6 +661,110 @@ export const systemsGuides: Guide[] = [
   },
 
   {
+    slug: "second-wizard-alt-meta",
+    title: "The Second Wizard: Alt Meta & the Shared Bank Economy",
+    category: "systems",
+    difficulty: "advanced",
+    blurb:
+      "Deep account knowledge: why your second wizard levels twice as fast, what actually transfers through the Shared Bank, multi-wizard energy tech, and the day-one alt checklist.",
+    tags: ["alts", "shared bank", "second wizard", "account", "veteran", "meta"],
+    updated: "July 2026",
+    tldr: [
+      "Your account is the real character. Wizards are loadouts — and the second one starts rich: inherited treasure cards, a running garden, a finished pet line, and every crowns zone already unlocked.",
+      "The **Shared Bank** moves tradeable goods between your own wizards: treasure cards, reagents, seeds, pets, and non-school-locked gear. Levels, quests, and training points never move — knowledge does.",
+      "The quietest alt tech: **energy is per-wizard**. Every alt is another full energy pool — parallel gardens and pet-training capacity the account gains for free.",
+      "A hatched pet doesn't care about levels: your Mega triple-double can be equipped by a level 1. Alt questing with an endgame pet is a different game.",
+      "The [Skip List](/guides/the-skip-list) applies at full strength to alts — most gear checkpoints exist to solve problems a stocked account no longer has.",
+    ],
+    sections: [
+      {
+        title: "Why alts level absurdly faster",
+        blocks: [
+          {
+            list: [
+              "**The TC library**: your main banks Feint, Tower Shield, and heal treasure cards for years — an alt draws on that from level 1 and one-turns bosses the first wizard bled on.",
+              "**The pet line**: pets transfer through the Shared Bank, and pet stats don't scale with wizard level — a finished damage-and-proof pet on a level 5 alt trivializes Arc 1. Hatch a copy from your own line ([the loop](/guides/pet-hatching-guide)) and every future alt inherits it too.",
+              "**The garden never stops**: mega snacks and gold keep flowing from your main's garden while the alt quests — the alt's own energy can start a second garden on day one.",
+              "**Crowns zones are account-wide**: areas bought with crowns are open for every wizard, forever. The alt just walks in.",
+              "**You know the scripts**: half of first-wizard time is learning cheats, routes, and Zeke spots. The alt speedruns your own knowledge — with the [playbooks](/worlds) as the checklist.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "The Shared Bank: what moves, what doesn't",
+        blocks: [
+          {
+            table: {
+              headers: ["Transfers between your wizards", "Never transfers"],
+              rows: [
+                ["Treasure cards (the big one)", "Levels, quests, badges, training points"],
+                ["Reagents and pet snacks", "Equipped/'No Trade' flagged items"],
+                ["Seeds — including Couch Potato lines", "School-locked gear beyond the matching alt"],
+                ["Pets, with talents and training intact", "Deck contents (the deck item moves; rebuild the strategy)"],
+                ["Tradeable gear, wands, mounts (non-No-Trade)", "Arena/event currencies tied to a wizard"],
+              ],
+              caption:
+                "Check the item's tooltip: 'No Trade' means bank-blocked; 'No Auction' only blocks the Bazaar. Gold and crowns items follow their own account rules — the bank UI shows what it accepts.",
+            },
+          },
+          {
+            callout: {
+              kind: "tip",
+              body: [
+                "Veteran habit: before ANY wizard vendors a drop, ask 'would a future alt want this?' Level-appropriate school gear for other schools, universal wands, and every mega snack goes to the bank, not Elik. Your fourth wizard is a hoarder's thank-you note.",
+              ],
+            },
+          },
+        ],
+      },
+      {
+        title: "Multi-wizard energy: the parallel economy",
+        blocks: [
+          "Energy regenerates **per wizard**, not per account. That single fact powers the classic alt techs:",
+          {
+            list: [
+              "**Garden hosts**: a low-level alt parked at its house can run a full Couch Potato garden on its own energy — the account's snack output scales with wizard count, not playtime.",
+              "**Parallel pet training**: train one pet per wizard during a double-XP weekend and the account finishes several ages at once ([plan it](/tools/pet-snacks)).",
+              "**Fishing rotations**: spare energy on idle alts becomes chests and rare fish without touching your main's pool.",
+              "The constraint that remains is *your* time — five gardens is compound interest, ten is a job. The [routine guide's](/guides/daily-and-weekly-routines) twenty-minute cap applies to the whole account.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Picking the second school",
+        blocks: [
+          {
+            list: [
+              "**Cover a missing role**: a hitter main pairs with a Life or Balance alt (your duo/team toolkit doubles); a support main finally gets to be Storm.",
+              "**Feint still costs 7 points on every wizard** — quest-relevant secondaries retrain per wizard; plan with the [planner](/tools/training-points).",
+              "**Death alts are famously smooth** — drains plus an inherited pet is near-unkillable Arc 1–2 soloing.",
+              "**Same-school alts are legal fun** (PvP loadout experiments, 'what if I built Ice full-damage') — the account inherits everything either way.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Day one on the alt: the checklist",
+        blocks: [
+          {
+            steps: [
+              "Before creating: bank a starter kit on your main — heal/Feint/shield TCs, a spare wand, level-1-wearable gear, a hatched pet, 20+ mega snacks, and a seed set.",
+              "Create the alt; rush the tutorial; grab the bank kit from any house's Shared Bank chest.",
+              "Equip the inherited pet immediately and set the deck up with banked TCs — Unicorn Way will not know what hit it.",
+              "Start the alt's own garden the day gardening unlocks; its energy was idling anyway.",
+              "Quest with [Skip List](/guides/the-skip-list) rules: Zeus at 30 and spell quests yes; most gear farms no. Playbooks open, Zeke chips ticking.",
+              "Bank discipline from day one: everything a *third* wizard might want goes back in. The flywheel is the point.",
+            ],
+          },
+        ],
+      },
+    ],
+    related: ["the-skip-list", "pet-hatching-guide", "daily-and-weekly-routines", "training-points-guide"],
+  },
+
+  {
     slug: "housing-basics",
     title: "Housing: Castles, Gauntlets & Castle Magic",
     category: "systems",

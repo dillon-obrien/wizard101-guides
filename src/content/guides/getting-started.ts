@@ -623,10 +623,10 @@ export const gettingStartedGuides: Guide[] = [
               headers: ["Buy", "Trainer school", "Cost", "Why it's core"],
               rows: [
                 [
-                  "Dark Sprite → Ghoul → Dream Shield → Banshee → **Feint**",
+                  "Death line → **Feint** (via Dworgyn in Nightside: Dark Sprite → Ghoul → Dream Shield → Banshee → Vampire → Skeletal Pirate → Feint)",
                   "Death (Ravenwood / Nightside), needs level 26",
-                  "5 points total",
-                  "Feint = +70% trap for 1 pip. The best damage-per-pip card in the game; every boss guide assumes you have it.",
+                  "7 points total",
+                  "Feint = +70% trap for 1 pip. The best damage-per-pip card in the game; every boss guide assumes you have it — and yes, it's worth all seven points.",
                 ],
                 [
                   "**Sun damage enchants** (Strong → … → Colossal → …)",

@@ -16,7 +16,7 @@ const MILESTONES: Milestone[] = [
   { level: 20, what: "Grizzleheim opens (Ambrose's summons)", href: "/worlds/grizzleheim" },
   { level: 20, what: "Marleybone", href: "/worlds/marleybone" },
   { level: 25, what: "Wysteria opens — the easiest training point", href: "/worlds/wysteria" },
-  { level: 26, what: "Feint becomes trainable (Death line, 5 points) — the best buy in the game", href: "/guides/training-points-guide" },
+  { level: 26, what: "Feint becomes trainable (Death line at Dworgyn, 7 points) — the best buy in the game", href: "/guides/training-points-guide" },
   { level: 30, what: "Mount Olympus: farm Zeus gear + Sky Iron Hasta before continuing", href: "/worlds/aquila" },
   { level: 30, what: "MooShu", href: "/worlds/mooshu" },
   { level: 35, what: "Grizzleheim bonus spell (Baldur Goldpaws, Olde Town)", href: "/guides/grizzleheim-and-wintertusk" },

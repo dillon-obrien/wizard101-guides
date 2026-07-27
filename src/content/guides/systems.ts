@@ -554,6 +554,113 @@ export const systemsGuides: Guide[] = [
   },
 
   {
+    slug: "niche-knowledge-hidden-details",
+    title: "Niche Knowledge: Secrets the Game Never Tells You",
+    category: "systems",
+    difficulty: "intermediate",
+    blurb:
+      "Hidden trainers behind waterfalls, faked boat rides, invisible odds systems, and dev secrets straight from KingsIsle — the deep-cut layer under the guides.",
+    tags: ["secrets", "hidden trainers", "easter eggs", "dev facts", "niche knowledge", "obscure"],
+    updated: "July 2026",
+    tldr: [
+      "Wizard101 is full of systems and places the UI never mentions: secret trainers, hidden shops, invisible odds mechanics, and development tricks hiding in plain sight.",
+      "Every fact on this page is verified — official KingsIsle dev posts, documented community research, or mechanics confirmed elsewhere on this site.",
+      "The genre's flagship is KaiserNoah's obscure-facts series on YouTube — consider this page the checkable companion, and his channel the rabbit hole.",
+      "Highlights: the boats don't move (the world does), the game began as a physical card game, Feint's real price is 7 points at a hidden trainer, and a secret Krokotopia shop sits behind a puzzle teleporter.",
+    ],
+    sections: [
+      {
+        title: "Where this knowledge comes from",
+        blocks: [
+          "Guides tell you what to do. This page collects the layer underneath: things that are *true* about Wizard101 that almost nobody learns from playing. Every entry is verified against an official KingsIsle source or established community documentation — no creepypasta, no 'my friend said'.",
+          {
+            callout: {
+              kind: "lore",
+              title: "Credit where it's due",
+              body: [
+                "The patron saint of this genre is **KaiserNoah**, whose obscure-facts videos ([9 Obscure Wizard101 Facts](https://www.youtube.com/watch?v=PGYAAw8EKWw), [12 MORE Obscure Facts](https://www.youtube.com/watch?v=FXynfPqlIeg), and the rest of [his channel](https://www.youtube.com/@KaiserNoah)) turned Spiral trivia into an art form. The facts below were independently gathered and verified from official and community sources — watch his series for the full video treatment.",
+              ],
+            },
+          },
+        ],
+      },
+      {
+        title: "Development secrets, from KingsIsle themselves",
+        blocks: [
+          "All of these come from KingsIsle's own developer retrospective on the making of the game:",
+          {
+            list: [
+              "**Wizard101 started as a physical card game.** The team prototyped the combat 'for a long time' with paper character cards, dice, and beads before a line of code existed — the turn-based circle you play today is a digitized tabletop game.",
+              "**The boats never move.** Krokotopia's boat ride is stationary; the *world* is animated around it. The same trick powers Marleybone's balloon cars and Dragonspyre's dragon rides. You've been standing still the whole time.",
+              "**Early worlds are LEGO sets.** Krokotopia and Marleybone were assembled from snappable modular pieces; Grizzleheim was the first world built entirely from custom maps — one reason it *feels* different.",
+              "**KingsIsle employees voice the Spiral.** Staff voice many background characters; Senior Narrative Designer Mike Sears alone voices numerous NPCs.",
+              "**Pixar was the design north star** — worlds meant to charm kids and still engage adults, which is why the game reads all-ages instead of childish.",
+              "**It shipped in about three years** and was deliberately engineered to run on weak family computers — a low-spec philosophy that shaped the art style you see today.",
+              "**Wizard City is a compromise.** Multiple artists pitched concepts — a floating city, a great central tree, crystals — and the final city blends elements of each. That's why Ravenwood's Bartleby and the Commons feel like different postcards stitched together.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Hidden trainers & secret shops (verified locations)",
+        blocks: [
+          "The Spiral hides real vendors behind waterfalls, puzzle teleporters, and unmarked staircases. The documented early-game set:",
+          {
+            table: {
+              headers: ["Who", "Where (exactly)", "Why you'd visit"],
+              rows: [
+                ["Sabrina Greenstar", "Wizard City — Fairegrounds, left of the carousel", "A FREE shield for your school at level 10+ (skip the rest)"],
+                ["Mortis (the Death tree)", "Nightside — under the Commons waterfall, through the Cave to Nightside", "Free spell + Infection line; the moody tree everyone forgets exists"],
+                ["Dworgyn", "Nightside — the building left of Mortis", "The real Feint trainer: the Death line through Vampire and Skeletal Pirate, **7 points total to Feint**"],
+                ["Mildred Farseer", "Colossus Boulevard — Coldstone Cottage, past Mindy PixieCrown", "Dispels and **Reshuffle** — the PvP essential hiding on a street most players skip"],
+                ["Tish'mah (secret shop)", "Krokotopia Oasis — cross the second rope bridge past the recipe vendors, teleporter between two towers (towers must be fully lit)", "Myth manipulation spells 10–25, free for Myth — behind an actual puzzle"],
+                ["Niles (the sphinx's palm tree)", "The Krokosphinx — by boat", "Elemental/Spirit blades & traps: the stacking backbone"],
+                ["Alhazred", "The Krokosphinx — down the ladder", "The Balance school's real headquarters, a world away from Ravenwood"],
+                ["Croaky", "Marleybone — Digmoore Station, stairs behind Mayor Pimsbury to Air Dales Hideaway", "A free minion-manipulation spell at 25 from a frog in a basement"],
+              ],
+              caption:
+                "Locations verified against community documentation (Final Bastion's hidden-trainer research). More secret trainers exist in later worlds — Astral trainers in Celestia's depths, shadow trainers in Khrysalis.",
+            },
+          },
+        ],
+      },
+      {
+        title: "Invisible mechanics (the game rolls dice you can't see)",
+        blocks: [
+          {
+            list: [
+              "**Every pet body has a hidden 0–10 'Wow Factor'** deciding hatch return odds — flashier body, lower return chance. The community mapped ~1,400 pets; the game shows none of it. ([Full mechanic + calculator](/tools/hatch-calculator).)",
+              "**Exclusive pets break hatching rules positionally**: an Exclusive body on the RIGHT of a self-hatch always returns the left body. Placement is a real mechanic the UI never hints at.",
+              "**Your battle seat is your join order.** Whoever enters the fight first acts first every round, forever — which is why organized teams choreograph who walks in last. ([Turn order, precisely](/guides/combat-basics).)",
+              "**Waterworks' Luska only punishes *single-target* traps** — mass traps, item traps, and pet traps are exempt from his script. A decade of 'NO TRAPS' folklore is only one-third true. ([The real script](/guides/waterworks-gear-guide).)",
+              "**Wand hits eat your blades.** Any qualifying attack consumes all applicable charms — the classic self-own is shield-breaking *after* blading.",
+              "**DoT spells lock their buffs at cast time.** Blade after the burn starts and the remaining ticks gain nothing.",
+              "**Khrysalis pays two Zeke training points** — one per part (Khryckets, then Iron Butterflies). Most veterans have exactly one and don't know it. ([Playbook](/worlds/khrysalis).)",
+              "**Ultra King Parsley isn't planted — it emerges.** Elder-harvesting ordinary King Parsley occasionally returns the Ultra seed, whose elder drops amber. The amber economy is a garden lottery two layers deep.",
+              "**Pet may-casts count as *your* casts to boss scripts** — a helpful fairy can trigger a cheat mid-choreography, which is why endgame players keep a 'silent' stat-only pet.",
+            ],
+          },
+        ],
+      },
+      {
+        title: "Go see it yourself",
+        blocks: [
+          {
+            steps: [
+              "Stand at the Commons waterfall and walk *through* it — the Cave to Nightside is the game's oldest hidden door.",
+              "Ride the Krokotopia boat and watch the shoreline instead of the boat: the parallax gives the trick away once you know.",
+              "Take the Colossus Boulevard detour to Mildred Farseer's cottage — a whole vendor most decade-long players have never met.",
+              "Light the Oasis towers and find Tish'mah's teleporter — a secret shop behind an actual puzzle, in the game's second world.",
+              "Then go watch KaiserNoah's series and realize the rabbit hole goes far deeper than one page.",
+            ],
+          },
+        ],
+      },
+    ],
+    related: ["side-content-worth-doing", "training-points-guide", "pet-hatching-guide", "waterworks-gear-guide"],
+  },
+
+  {
     slug: "housing-basics",
     title: "Housing: Castles, Gauntlets & Castle Magic",
     category: "systems",

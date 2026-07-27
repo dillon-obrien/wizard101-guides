@@ -247,6 +247,7 @@ export default function HomePage() {
             ["Deck Draw Odds", "Why small decks always draw the blade", "/tools/draw-odds"],
             ["Training Points", "Levels + Zeke + named givers, totaled", "/tools/training-points"],
             ["Level Advisor", "Your world, gear, and next milestones", "/tools/level-advisor"],
+            ["Gear Comparator", "New drop or current set — honest deltas", "/tools/gear-compare"],
           ].map(([name, blurb, href]) => (
             <Link key={href} href={href} className="card p-4">
               <span className="block font-semibold text-slate-900">{name}</span>

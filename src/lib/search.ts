@@ -70,6 +70,13 @@ const TOOL_DOCS: SearchDoc[] = [
     context: "Keep training or rehatch — live reveal probabilities",
     keywords: "talent odds reveal probability pool keep training rehatch 252 pet",
   },
+  {
+    title: "Gear Comparator",
+    href: "/tools/gear-compare",
+    type: "Tool",
+    context: "Two loadouts, honest deltas: expected hit and effective HP",
+    keywords: "gear compare comparator loadout stats damage resist pierce crit effective hp",
+  },
 ];
 
 export function buildSearchIndex(): SearchDoc[] {

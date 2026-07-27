@@ -18,6 +18,10 @@ deeper when you want the details.
   locally from `public/images/`, © KingsIsle Entertainment, credited in the
   footer as non-commercial fan-site use of promotional material
 - **Custom SVG icon sets** for the seven schools and nine guide categories
+- **8 interactive tools** (`/tools`): damage calculator, hatch odds (Wow
+  Factor), talent reveal odds, pet XP & snack planner, deck draw odds,
+  training point planner, level advisor, and gear comparator — all
+  client-side, all on verified numbers
 - **7 school deep-dives** — playstyle, strengths/weaknesses, signature
   spells, stat priorities, secondary picks, leveling tips
 - **Worlds timeline + 22 per-world playbooks** — the fast route, every Zeke collectible and its zones (verified), extra training-point quests, what to grab, what to skip, and an advanced lane for each world

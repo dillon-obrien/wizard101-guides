@@ -18,6 +18,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/tools/talent-odds",
     "/tools/training-points",
     "/tools/level-advisor",
+    "/tools/gear-compare",
     "/glossary",
     "/faq",
   ].map(

@@ -50,6 +50,12 @@ const TOOLS = [
     blurb:
       "Set your level; get your world, gear standard, what should already be done, and what's coming next.",
   },
+  {
+    href: "/tools/gear-compare",
+    name: "Gear Comparator",
+    blurb:
+      "New drop or current set? Two stat lines in, honest deltas out — expected hit and effective HP.",
+  },
 ];
 
 export default function ToolsPage() {
